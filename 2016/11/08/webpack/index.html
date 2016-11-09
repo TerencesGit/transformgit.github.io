@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>前端革命--webpack | Transform&#39;s Blog</title>
+  <title>前端模块化--webpack | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……
 备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端革命--webpack">
+<meta property="og:title" content="前端模块化--webpack">
 <meta property="og:url" content="http://yoursite.com/2016/11/08/webpack/index.html">
 <meta property="og:site_name" content="Transform's Blog">
 <meta property="og:description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……
 备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的">
-<meta property="og:updated_time" content="2016-11-08T15:29:45.750Z">
+<meta property="og:updated_time" content="2016-11-09T01:13:45.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端革命--webpack">
+<meta name="twitter:title" content="前端模块化--webpack">
 <meta name="twitter:description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……
 备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.ico">
   
   
       <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
@@ -141,7 +141,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+                        <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
                     </div>
                 </section>
                 
@@ -228,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      前端革命--webpack
+      前端模块化--webpack
     </h1>
   
 
@@ -257,6 +257,8 @@
 <p>备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的历史使命。</p>
 <p>五年过去了，RequireJS战胜了同级生LabJS，带起了中国小伙伴SeaJS。他完美地引领了前端模块化的革命，但今天看来，它有些过时了：它重浏览器端，轻打包编译，没有及时跟进包管理体系，almond没有成为标配而只是周边，配置晦涩……诞生太早的RequireJS，虽然一度成为了前端模块化的某种程度上的事实标准，但难掩其缺点。</p>
 <p>五年间，NodeJS成为了服务端以及脚本工具的一代翘楚，NPM的成功让大家意识到一个集中式的依赖／包管理体系的重要性，Bower应运而生，还有试图将CMD和NPM包带到前端领域，统一前后端包格式的Browserify等等，大量的前端工具爆发式地出现，WebPack是其中的(又)一款模块打包工具。</p>
+<p>webpack的优势一言难尽，相比其他竞争者，他的好处有</p>
+<p>-模块来源广泛，支持包括npm/bower等等的各种主流模块安装／依赖解决方案<br>-模块规范支持全面，amd/cmd以及shimming等一应具全<br>-浏览器端足迹小，移动端友好，却对热加载乃至热替换有很好的支持<br>-插件机制完善，实现本身实现同样模块化，容易扩展<br>但其最大的特点是“用着舒服，不折腾”，这是一款工具最难能可贵的优点。</p>
 
       
     </div>
@@ -265,12 +267,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/08/webpack/">前端革命--webpack</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/08/webpack/">前端模块化--webpack</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
         <p><span>发布时间:</span>2016年11月08日 - 22时42分</p>
-        <p><span>最后更新:</span>2016年11月08日 - 23时29分</p>
+        <p><span>最后更新:</span>2016年11月09日 - 09时13分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/08/webpack/" title="前端革命--webpack">http://yoursite.com/2016/11/08/webpack/</a>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/08/webpack/" title="前端模块化--webpack">http://yoursite.com/2016/11/08/webpack/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/08/webpack/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
@@ -284,18 +286,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/08/react/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          react简介
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/10/09/react-0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">选择 Reac​​tJS 的理由</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -354,7 +347,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/11/08/webpack/" data-title="前端革命--webpack" data-url="http://yoursite.com/2016/11/08/webpack/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/08/webpack/" data-title="前端模块化--webpack" data-url="http://yoursite.com/2016/11/08/webpack/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -377,18 +370,16 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/08/react/" title="上一篇: react简介">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/11/08/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/10/09/react-0/" title="下一篇: 选择 Reac​​tJS 的理由">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/react/">react简介</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/webpack/">前端革命--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/react-0/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/react/">react入门</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -421,7 +412,7 @@
                 &copy; 2016 Transform
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
             </div>
         </div>
         
