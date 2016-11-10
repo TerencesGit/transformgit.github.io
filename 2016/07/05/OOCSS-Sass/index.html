@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>OOCSS+Sass | Transform&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Krasimir Tsonev在《Starting to Write CSS》让我们领略了CSS其实也是有思想的,今天我们一起跟随Takeshi Takatsudo写的PPT来领略一下OOCSS与Sass的结合。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OOCSS+Sass">
+<meta property="og:url" content="http://transform.com/2016/07/05/OOCSS-Sass/index.html">
+<meta property="og:site_name" content="Transform's Blog">
+<meta property="og:description" content="Krasimir Tsonev在《Starting to Write CSS》让我们领略了CSS其实也是有思想的,今天我们一起跟随Takeshi Takatsudo写的PPT来领略一下OOCSS与Sass的结合。">
+<meta property="og:image" content="http://transform.com/images/oocss-sass-2.jpg">
+<meta property="og:image" content="http://transform.com/images/oocss-sass-4.jpg">
+<meta property="og:updated_time" content="2016-11-10T10:59:23.422Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OOCSS+Sass">
+<meta name="twitter:description" content="Krasimir Tsonev在《Starting to Write CSS》让我们领略了CSS其实也是有思想的,今天我们一起跟随Takeshi Takatsudo写的PPT来领略一下OOCSS与Sass的结合。">
+<meta name="twitter:image" content="http://transform.com/images/oocss-sass-2.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Transform</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我的博客</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/u/5063790859" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://TransformGit.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">技术控、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Transform</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Transform</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/u/5063790859" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-OOCSS-Sass" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/05/OOCSS-Sass/" class="article-date">
+      <time datetime="2016-07-05T10:07:01.000Z" itemprop="datePublished">2016-07-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OOCSS+Sass
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Sass/">Sass</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OOCSS/">OOCSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Krasimir Tsonev在《Starting to Write CSS》让我们领略了CSS其实也是有思想的,今天我们一起跟随Takeshi Takatsudo写的PPT来领略一下OOCSS与Sass的结合。<br><a id="more"></a><br>在这篇文章，主要以两个按钮的制作，来探讨OOCSS的思想以及如何结合Sass更完美的实现。或者说，通过按钮的制作，一起探讨在Sass中如何使用OOCSS的思想。</p>
+<h1 id="OOCSS"><a href="#OOCSS" class="headerlink" title="OOCSS"></a>OOCSS</h1><p>面向对像对于一位程序员来说并不会陌生，因为他成任何现代编程语言的一种基本形式，数据的抽象化、模块化和继承等特点在编写代码中得到了大规模的应用。而面向对象的CSS简称为OOCSS熟悉的人并不太多。面向对象的CSS是一种容易重用的一种CSS规则，也是OOP概念，从而降低了页面加载时间，提高网站性能。</p>
+<p>OOCSS不是一个框架，也不是一种技术，更不是一种新的语言，他只不过是一种方法，一种书写方法。换句话说OOCSS其核心就是用最简单的方式编写最整洁，最干净的CSS代码，从而使用代码更具重用性，可维护性和可扩展性。</p>
+<p>OOCSS咱们可以理解成为一种书写CSS的思想，而这种思想最关键的一点是如何在页面中识别，创建和模块化可重用的对像，并在页面中任何需要的地方重用，并扩展其附加功能。简单一句话概括：</p>
+<p>OOCSS就是的确定对象，并给这个对象创建CSS样式规则<br>引用OOCSS之父Nicole Sullivan的话来说，OOCSS有两个原则：</p>
+<ul>
+<li>独立的结构和样式</li>
+<li>独立的容器和内容</li>
+</ul>
+<h1 id="OOCSS与Sass的结合"><a href="#OOCSS与Sass的结合" class="headerlink" title="OOCSS与Sass的结合"></a>OOCSS与Sass的结合</h1><p>前面说过,CSS总是脆弱的。我们应该寻找更强大的东西来代替CSS。接下来也就是我们今天最主要的一部分内容——OOCSS与Sass的结合。</p>
+<p>接下来我们用一个简单的按钮示例来做为整篇文章的路线。首先我们有两个这样的按钮，如下图所示：<br><img src="/images/oocss-sass-2.jpg" alt="OOCSS"><br>根据上图的效果，很多CSSer不经意定义出一个没有任何语意化的类名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;blackborder redbg&quot;&gt;Twitter&lt;/a&gt;</div><div class="line">&lt;a href=&quot;#&quot; class=&quot;blackborder bluebg&quot;&gt;Facebook&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>两个具有黑色边框的按钮都定义了一个blackborder的类名，用来控制按钮的边框，同时在红色按钮上添加了类名redbg，在蓝色按钮添加了类名bluebg。但定义这样的类名是否有考虑过，如果哪一天，页面的按钮边框不在是黑色，背景不在是红色和蓝色时候，你将又是如何考虑。所以说这样定义类名是你样式中的一大败笔。对于我个人而言，我是无法忍受的。</p>
+<p>或许你也发现，这样命名类名也自己无法接受，想来想去，是要换点有语义化的类名，这样一来看到类名，就知道了按钮指的是什么按钮，于是就将前面的类名修改成了twitterbtn和facebookbtn：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;twitterbtn&quot;&gt;Twitter&lt;/a&gt;</div><div class="line">&lt;a href=&quot;#&quot; class=&quot;facebookbtn&quot;&gt;Facebook&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>类名已经有语义化了，接着我看这两个按钮的样式：</p>
+<p>/<em>twitter button</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.twitterbtn &#123;</div><div class="line">  border:3px solid #000;</div><div class="line">  padding:10px 20px;</div><div class="line">  color:#fff;</div><div class="line">  border-radius:10px;</div><div class="line">  background:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>/<em>facebook button</em>/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.facebookbtn &#123;</div><div class="line">  border:3px solid #000;</div><div class="line">  padding:10px 20px;</div><div class="line">  color:#fff;</div><div class="line">  border-radius:10px;</div><div class="line">  background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从样式中，我们不难发现，两个按钮有很多样式都是一样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">border:3px solid #000;</div><div class="line">padding:10px 20px;</div><div class="line">color:#fff;</div><div class="line">border-radius:10px;</div></pre></td></tr></table></figure></p>
+<p>在CSS中，可以将这个样式称之为公用样式，或许你首先想到的是，将两个按钮公用样式提取出来，通过组合选择器来处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.twitterbtn,</div><div class="line">.facebookbtn&#123;</div><div class="line">  border:3px solid #000;</div><div class="line">  padding:10px 20px;</div><div class="line">  color:#fff;</div><div class="line">  border-radius:10px;</div><div class="line">&#125;</div><div class="line">.twitterbtn&#123;</div><div class="line">  background:red;</div><div class="line">&#125;</div><div class="line">.facebookbtn&#123;</div><div class="line">  background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>根据OOCSS的原则，可以将按钮共同样式部分定义为一个对象btnbase，并且将这部分相同的样式赋予给他。这样一来，将这个对像类名加到按钮标签中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;btnbase twitter&quot;&gt;Twitter&lt;/a&gt;</div><div class="line">&lt;a href=&quot;#&quot; class=&quot;btnbase facebook&quot;&gt;Facebook&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>使用OOCSS之后，相同样式（此处称之为皮肤）赋予给对像btnbase，在两个按钮中都可以调用这个对象btnbase，并且重用他的样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.btnbase &#123;</div><div class="line">  border:3px solid #000;</div><div class="line">  padding:10px 20px;</div><div class="line">  color:#fff;</div><div class="line">  border-radius:10px;</div><div class="line">&#125;</div><div class="line">.twitter &#123;</div><div class="line">  background:red;</div><div class="line">&#125;</div><div class="line">.facebook &#123;</div><div class="line">  background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>按上面的方法，你已成功的将OOCSS运用到你的CSS中，或许你又会开始纠结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;btnbase twitter&quot;&gt;Twitter&lt;/a&gt;</div><div class="line">&lt;a href=&quot;#&quot; class=&quot;btnbase facebook&quot;&gt;Facebook&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>添加对象类名btnbase之后，他具有语义化吗？开始纠结中，也开始思考中…</p>
+<p>相比之下，没有对象类名btnbase：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;twitterbtn&quot;&gt;Twitter&lt;/a&gt;</div><div class="line">&lt;a href=&quot;#&quot; class=&quot;facebookbtn&quot;&gt;Facebook&lt;/a&gt; </div></pre></td></tr></table></figure>  
+<p>上面的更具语义化，但是又脱离了OOCSS，真心的又纠结起来了…</p>
+<p>纠结来纠结去，还是因为CSS离完美化太遥远，仅靠CSS自身几乎不可能做好每件事。既然CSS无法完美的解决，为何不考虑CSS预处理器Sass呢？可以使用@extend来扩展CSS的类。</p>
+<p>如果你对Sass有过了解，扩展CSS的类，在Sass中有两种方法都可以轻意实现：</p>
+<p>首先使用Sass中的mixin将按钮的公用样式定义一个@mixin btnbase，然后通过@include在各个按钮中调用这个mixin:</p>
+<p>//HTML</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot; class=&quot;twitterbtn&quot;&gt;Twitter&lt;/a&gt;</div><div class="line">&lt;a href=&quot;#&quot; class=&quot;facebookbtn&quot;&gt;Facebook&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p>//SCSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@mixin btnbase &#123;</div><div class="line">    border:3px solid #000;</div><div class="line">    padding:10px 20px;</div><div class="line">    color:#fff;</div><div class="line">    border-radius:10px;</div><div class="line">&#125;   </div><div class="line">.twitterbtn &#123;</div><div class="line">    @include btnbase;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.facebookbtn &#123;</div><div class="line">    @include btnbase;</div><div class="line">    background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果你从未接触过Sass中的mixin，个人强烈建议您阅读这篇文章《理解SASS的嵌套，@extend，%Placeholders和Mixins》。<br>编译出来的CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.twitterbtn&#123;</div><div class="line">    border:3px solid #000;</div><div class="line">    padding:10px 20px;</div><div class="line">    color:#fff;</div><div class="line">    border-radius:10px;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.facebookbtn&#123;</div><div class="line">    border:3px solid #000;</div><div class="line">    padding:10px 20px;</div><div class="line">    color:#fff;</div><div class="line">    border-radius:10px;</div><div class="line">    background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过mixin扩展出来的CSS类，编译出来的CSS并不完美，重复生成了一些相同的代码，对于有代码洁癖的同学是无法接受的。</p>
+<p>熟悉Sass的同学都知道，实现类似上面扩展CSS类名功能，除了mixin之外，还有一个@extend。使用@extend和mixin基本类似，不同的是，直接在Sass中定义一个类名，然后通过@extend来调用：</p>
+<p>//SCSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.btnbase&#123;</div><div class="line">    border:3px solid #000;</div><div class="line">    padding:10px 20px;</div><div class="line">    color:#fff;</div><div class="line">    border-radius:10px;</div><div class="line">&#125;</div><div class="line">.twitterbtn&#123;</div><div class="line">    @extend .btnbase;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.facebookbtn&#123;</div><div class="line">    @extend .btnbase;</div><div class="line">    background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>//编译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.btnbase,</div><div class="line">.twitterbtn,</div><div class="line">.facebookbtn&#123;</div><div class="line">    border:3px solid #000;</div><div class="line">    padding:10px 20px;</div><div class="line">    color:#fff;</div><div class="line">    border-radius:10px;</div><div class="line">&#125;</div><div class="line">.twitterbtn&#123;</div><div class="line">    background:red;</div><div class="line">&#125;</div><div class="line">.facebookbtn&#123;</div><div class="line">    background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用@extend扩展类名较mixin扩展类名，编译出来的CSS代码更干净，从而让你的样式文件体积也变得更小，性能更优。不过其有一个缺点就是，HTML结构中并没有使用btnbase类名，在样式中会生成这个类名。不过在Sass3.2中，可以使用%placeholder修改这个问题，稍后会介绍这个东东。</p>
+<p>上面分别介绍了CSS和Sass使用对象的方法，从中也看出他们略有不同，结合前面的内容，通过一张图更能向大家说明CSS和Sass中使用对象解析机制：<br><img src="/images/oocss-sass-4.jpg" alt="OOCSS-Sass"></p>
+<p>上图可以清晰的看出，在CSS中，对象都收集在样式中，并以一个类名定义，比如此例中使用了btnbase，然后通过HTML中添加类名来扩展。也就是说需要HTML和CSS同时维护这个公用对象。而在Sass中，将公用对象收集在Scss文件中，并且直接在Scss文件中扩展对象，通过编译出新的CSS。也就是说只需要在Scss文件中维护和扩展公用对象。明显在Sass中使用面向对象要比在CSS中使用面向对象来得简单与方便。概括起来主要有以下几点：</p>
+<ul>
+<li>CSS太脆弱，很难维护</li>
+<li>CSS可以使用多类名来辅助</li>
+<li>Sass易于维护</li>
+<li>Sass需要编译<br>那么我们在回过头来，在Sass中通过定义一个类名.btnbase，并使用@include调用.btnbase，编译出来的CSS会有.btnbase存在，无论这个.btnbase是否在结构中调用都将存在。那么在Sass3.2中，我们可以使用%placeholder来代替.btnbase。这样一来，编译的CSS中.btnbase将不会存在。</li>
+</ul>
+<p>//SCSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">%btnbase &#123;</div><div class="line">  border:3px solid #000;</div><div class="line">  padding:10px 20px;</div><div class="line">  color:#fff;</div><div class="line">  border-radius:10px;</div><div class="line">&#125;</div><div class="line">.twitterbtn &#123;</div><div class="line">  @extend %btnbase;</div><div class="line">  background:red;</div><div class="line">&#125;</div><div class="line">.facebookbtn &#123;</div><div class="line">  @extend %btnbase;</div><div class="line">  background:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>//编译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.twitterbtn, .facebookbtn &#123;</div><div class="line">  border: 3px solid #000;</div><div class="line">  padding: 10px 20px;</div><div class="line">  color: #fff;</div><div class="line">  border-radius: 10px; </div><div class="line">&#125;</div><div class="line"></div><div class="line">.twitterbtn &#123;</div><div class="line">  background: red; </div><div class="line">&#125;</div><div class="line"></div><div class="line">.facebookbtn &#123;</div><div class="line">  background: blue; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>#总结</p>
+<p>将面向对象运向到Sass中，让你让明显的体会到CSS是多么的脆弱，就算是使用了面向对象，也会让你的代码增加一些额外的代码，而这些代码让你难易维护。而在Sass中却不一样，可以将面向对象（公用代码）提取出来，通过%placeholder来定义（当然有很多时候也可以使用mixin，比如要传参的时候），将在Sass中直接调用。这样避免在了HTML中通过扩展类名来调用公用部分（对象）。本文通过两个按钮的简单实例为路线，简单的介绍了OOCSS与Sass结合的强大力量与优势。希望这篇文章对大家会有所帮助。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
+        <p><span>发布时间:</span>2016年07月05日 - 18时07分</p>
+        <p><span>最后更新:</span>2016年11月10日 - 18时59分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/07/05/OOCSS-Sass/" title="OOCSS+Sass">http://transform.com/2016/07/05/OOCSS-Sass/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/07/05/OOCSS-Sass/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/09/08/前端模块化--webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端模块化--webpack
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/15/网页性能优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网页性能优化</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OOCSS"><span class="toc-number">1.</span> <span class="toc-text">OOCSS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OOCSS与Sass的结合"><span class="toc-number">2.</span> <span class="toc-text">OOCSS与Sass的结合</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/07/05/OOCSS-Sass/" data-title="OOCSS+Sass" data-url="http://transform.com/2016/07/05/OOCSS-Sass/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/08/前端模块化--webpack/" title="上一篇: 前端模块化--webpack">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/06/15/网页性能优化/" title="下一篇: 网页性能优化">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/React入门/">React入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/网页性能优化/">网页性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Transform
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
