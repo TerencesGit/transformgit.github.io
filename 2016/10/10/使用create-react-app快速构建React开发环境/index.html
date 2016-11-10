@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>选择 Reac​​tJS 的理由 | Transform&#39;s Blog</title>
+  <title>使用create-react-app快速构建React开发环境 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：">
+  <meta name="description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="选择 Reac​​tJS 的理由">
-<meta property="og:url" content="http://yoursite.com/2016/10/09/选择 Reac​​tJS 的理由/index.html">
+<meta property="og:title" content="使用create-react-app快速构建React开发环境">
+<meta property="og:url" content="http://yoursite.com/2016/10/10/使用create-react-app快速构建React开发环境/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：">
-<meta property="og:updated_time" content="2016-11-10T07:36:28.508Z">
+<meta property="og:description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
+<meta property="og:updated_time" content="2016-11-10T08:07:24.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="选择 Reac​​tJS 的理由">
-<meta name="twitter:description" content="ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：">
+<meta name="twitter:title" content="使用create-react-app快速构建React开发环境">
+<meta name="twitter:description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-选择 Reac​​tJS 的理由" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-使用create-react-app快速构建React开发环境" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/09/选择 Reac​​tJS 的理由/" class="article-date">
-      <time datetime="2016-10-09T01:06:32.000Z" itemprop="datePublished">2016-10-09</time>
+      <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" class="article-date">
+      <time datetime="2016-10-10T07:57:43.000Z" itemprop="datePublished">2016-10-10</time>
 </a>
     </div>
   
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      选择 Reac​​tJS 的理由
+      使用create-react-app快速构建React开发环境
     </h1>
   
 
@@ -236,7 +236,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构建工具/">构建工具</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,22 +246,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：<br><a id="more"></a><br>“构建数据随着时间的推移一次又一次改变的大型应用程序。”</p>
-<p>　　我们经常使用的工具有很多，但只有少数彻底改变了我们的工作流程。ReactJS就是其中之一。随着现在可用框架变得越来越多，我们很难找到一个最终不会穷途末路的框架。这就是为什么在ValueCoders我们建议去往React。<br>　下面是如Facebook，Instagram和WhatsApp这些巨头之所以依赖于ReactJS的5大理由：</p>
-<p>　React极其高效</p>
-<p>　　React创建了自己的DOM（虚拟），这也是组件存在的地方。这种方法为开发人员提供了高度的灵活性和惊人的性能提升，因为React提前计算到了在DOM中所需要的改变并相应地更新了DOM树。React用这种方式避免了高昂的DOM操作并用一种高效的方式执行更新。</p>
-<p>JavaScript库</p>
-<p>　　JSX语法是JavaScript和HTML良好又健康的交融，专用于ReactJS。JSX简化了为网站编写组件的全过程。并且HTML方面允许开发人员渲染函数而无需连接字符串。</p>
-<p>　　React的主要优点是，正确使用本地API以及，导致的结果是，跨平台栈工作。<br>对于SEO真的太棒了</p>
-<p>　　JavaScript框架的主要挑战之一是，它们对搜索引擎一点也不友好，虽然最近在这方面已经有了一些改进。</p>
-<p>　　出人意料的是，React.js与众不同，因为你能在服务器上运行React.js，并且将返回虚拟DOM，并作为常规网页呈现给浏览器。无需任何其他技巧！</p>
-<p>　专注用户界面</p>
-<p>　　React Native不同于MeteorJS，Firebase和AngularJS，它更关注于用户界面。它在JavaScript与设备及React Native之间互动的帮助下，给予你用户高度灵敏的界面。其结果是，增加了应用程序的加载时间，有助于保持运行顺利没有任何瞬断。</p>
-<p>　简单、开箱即用</p>
-<p>　　当你用React启动项目时，不要忘了安装ReactJS的官方Chrome扩展程序。它能使得调试app变得更加容易。</p>
-<p>　　安装该扩展后，你可以直接查看虚拟DOM，如果你是在元素面板中浏览规则DOM树的话。相当令人惊叹！</p>
-<p>　总结</p>
-<p>　　希望使用ReactJS的这五大好处可以让你相信这个框架的独特性。如果你正试图开发一个需要对SEO友好并能处理沉重流量负担的web应用程序，那么ReactJS或许可以帮到你。</p>
+        <p>create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line">create-react-app my-app</div><div class="line">cd my-app/</div><div class="line">npm start</div></pre></td></tr></table></figure></p>
+<p>执行完上述命令之后，你可以直接打开<a href="http://localhost:3000，即可以看到你" target="_blank" rel="external">http://localhost:3000，即可以看到你</a> React APP 的运行效果。此时也是处于开发模式下，如果你要进行发布，则使用npm run build进行编译。<br>create-react-app生成的目录格式如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">my-app/</div><div class="line">  README.md</div><div class="line">  index.html</div><div class="line">  favicon.ico</div><div class="line">  node_modules/</div><div class="line">  package.json</div><div class="line">  src/</div><div class="line">    App.css</div><div class="line">    App.js</div><div class="line">    index.css</div><div class="line">    index.js</div><div class="line">    logo.svg</div></pre></td></tr></table></figure></p>
+<p>这样一个简单React开发环境就搭建好了。<br>如果你是使用npm start来启动配置，那么自动会进入开发模式，此时热替换是处于自动激活状态，你也可以实时地在界面或者命令行中看到错误提示。</p>
+<p>如果你使用npm run build来编译得到生产环境，此时代码会被编译到build目录下，此时会自动将整个应用打包发布，它会自动使用Webpack控件进行优化与压缩。</p>
 
       
     </div>
@@ -270,13 +258,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></p>
+        <p><span>本文标题:</span><a href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年10月09日 - 09时06分</p>
-        <p><span>最后更新:</span>2016年11月10日 - 15时36分</p>
+        <p><span>发布时间:</span>2016年10月10日 - 15时57分</p>
+        <p><span>最后更新:</span>2016年11月10日 - 16时07分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/09/选择 Reac​​tJS 的理由/" title="选择 Reac​​tJS 的理由">http://yoursite.com/2016/10/09/选择 Reac​​tJS 的理由/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/09/选择 Reac​​tJS 的理由/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/10/使用create-react-app快速构建React开发环境/" title="使用create-react-app快速构建React开发环境">http://yoursite.com/2016/10/10/使用create-react-app快速构建React开发环境/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/10/使用create-react-app快速构建React开发环境/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -289,18 +277,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          使用create-react-app快速构建React开发环境
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/08/react入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">react入门</div>
+    <a href="/2016/10/09/选择 Reac​​tJS 的理由/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">选择 Reac​​tJS 的理由</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -359,7 +338,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/10/09/选择 Reac​​tJS 的理由/" data-title="选择 Reac​​tJS 的理由" data-url="http://yoursite.com/2016/10/09/选择 Reac​​tJS 的理由/"></div>
+    <div class="ds-thread" data-thread-key="2016/10/10/使用create-react-app快速构建React开发环境/" data-title="使用create-react-app快速构建React开发环境" data-url="http://yoursite.com/2016/10/10/使用create-react-app快速构建React开发环境/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -382,13 +361,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" title="上一篇: 使用create-react-app快速构建React开发环境">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/10/08/react入门/" title="下一篇: react入门">
+            <a href="/2016/10/09/选择 Reac​​tJS 的理由/" title="下一篇: 选择 Reac​​tJS 的理由">
                 <i class="fa fa-angle-right"></i>
             </a>
         
