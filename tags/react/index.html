@@ -132,7 +132,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/网页优化/" style="font-size: 10px;">网页优化</a>
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a>
                     </div>
                 </section>
                 
@@ -246,6 +246,76 @@
   </div>
 </article>
   
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/10/09/选择 Reac​​tJS 的理由/" class="archive-article-date">
+      <time datetime="2016-10-09T01:06:32.000Z" itemprop="datePublished">10-09</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JS框架/">JS框架</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2016/10/08/React入门/" class="archive-article-date">
+      <time datetime="2016-10-08T15:24:55.000Z" itemprop="datePublished">10-08</time>
+</a>
+        </div>
+         
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/10/08/React入门/">React入门</a>
+    </h1>
+  
+
+        <div class="article-info info-on-archive">
+          
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JS框架/">JS框架</a>
+    </div>
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
   
     </div></section>
   
@@ -336,31 +406,6 @@
         $("a[title]").each(function() {
             var a = $(this);
             var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
-  </div>
-</body>
-</html>     var title = a.attr('title');
             if (title == undefined || title == "") return;
             a.data('title', title).removeAttr('title').hover(
 

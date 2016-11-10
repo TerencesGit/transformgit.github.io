@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>React入门 | Transform&#39;s Blog</title>
+  <title>如何在Sass中使用BEM | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。">
+  <meta name="description" content="BEM是由Yandex团队提出的一种CSS Class 命名方法，旨在更好的创建CSS/Sass模块。他需要遵循一些特殊规定，有些人认为这些规定很冗余，但是我发现他们对于理解DOM有着很大的帮助。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React入门">
-<meta property="og:url" content="http://yoursite.com/2016/10/08/React入门/index.html">
+<meta property="og:title" content="如何在Sass中使用BEM">
+<meta property="og:url" content="http://yoursite.com/2016/06/10/如何在Sass中使用BEM/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。">
-<meta property="og:updated_time" content="2016-11-10T08:13:51.536Z">
+<meta property="og:description" content="BEM是由Yandex团队提出的一种CSS Class 命名方法，旨在更好的创建CSS/Sass模块。他需要遵循一些特殊规定，有些人认为这些规定很冗余，但是我发现他们对于理解DOM有着很大的帮助。">
+<meta property="og:updated_time" content="2016-11-10T10:02:23.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React入门">
-<meta name="twitter:description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。">
+<meta name="twitter:title" content="如何在Sass中使用BEM">
+<meta name="twitter:description" content="BEM是由Yandex团队提出的一种CSS Class 命名方法，旨在更好的创建CSS/Sass模块。他需要遵循一些特殊规定，有些人认为这些规定很冗余，但是我发现他们对于理解DOM有着很大的帮助。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-React入门" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-如何在Sass中使用BEM" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/08/React入门/" class="article-date">
-      <time datetime="2016-10-08T15:24:55.000Z" itemprop="datePublished">2016-10-08</time>
+      <a href="/2016/06/10/如何在Sass中使用BEM/" class="article-date">
+      <time datetime="2016-06-10T09:55:32.000Z" itemprop="datePublished">2016-06-10</time>
 </a>
     </div>
   
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React入门
+      如何在Sass中使用BEM
     </h1>
   
 
@@ -230,13 +230,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JS框架/">JS框架</a>
+    <a class="article-category-link" href="/categories/Sass/">Sass</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BEM/">BEM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,16 +246,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。<br><a id="more"></a></p>
-<p>React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数据变化时，React都会重新构建整个DOM树，然后React将当前整个DOM树和上一次的DOM树进行对比，得到DOM结构的区别，然后仅仅将需要变化的部分进行实际的浏览器DOM更新。而且React能够批处理虚拟DOM的刷新，在一个事件循环（Event Loop）内的两次数据变化会被合并，例如你连续的先将节点内容从A变成B，然后又从B变成A，React会认为UI不发生任何变化，而如果通过手动控制，这种逻辑通常是极其复杂的。尽管每一次都需要构造完整的虚拟DOM树，但是因为虚拟DOM是内存数据，性能是极高的，而对实际DOM进行操作的仅仅是Diff部分，因而能达到提高性能的目的。这样，在保证性能的同时，开发者将不再需要关注某个数据的变化如何更新到一个或多个具体的DOM元素，而只需要关心在任意一个数据状态下，整个界面是如何Render的。</p>
-<p>如果你像在90年代那样写过服务器端Render的纯Web页面那么应该知道，服务器端所要做的就是根据数据Render出HTML送到浏览器端。如果这时因为用户的一个点击需要改变某个状态文字，那么也是通过刷新整个页面来完成的。服务器端并不需要知道是哪一小段HTML发生了变化，而只需要根据数据刷新整个页面。换句话说，任何UI的变化都是通过整体刷新来完成的。而React将这种开发模式以高性能的方式带到了前端，每做一点界面的更新，你都可以认为刷新了整个页面。至于如何进行局部更新以保证性能，则是React框架要完成的事情。</p>
-<p>借用Facebook介绍React的视频中聊天应用的例子，当一条新的消息过来时，传统开发的思路如上图，你的开发过程需要知道哪条数据过来了，如何将新的DOM结点添加到当前DOM树上；而基于React的开发思路如下图，你永远只需要关心数据整体，两次数据之间的UI如何变化，则完全交给框架去做。可以看到，使用React大大降低了逻辑复杂性，意味着开发难度降低，可能产生Bug的机会也更少。</p>
-<p>2、组件化</p>
-<p>虚拟DOM(virtual-dom)不仅带来了简单的UI开发逻辑，同时也带来了组件化开发的思想，所谓组件，即封装起来的具有独立功能的UI部件。React推荐以组件的方式去重新思考UI构成，将UI上每一个功能相对独立的模块定义成组件，然后将小的组件通过组合或者嵌套的方式构成大的组件，最终完成整体UI的构建。例如，Facebook的instagram.com整站都采用了React来开发，整个页面就是一个大的组件，其中包含了嵌套的大量其它组件，大家有兴趣可以看下它背后的代码。</p>
-<p>如果说MVC的思想让你做到视图-数据-控制器的分离，那么组件化的思考方式则是带来了UI功能模块之间的分离。我们通过一个典型的Blog评论界面来看MVC和组件化开发思路的区别。</p>
-<p>对于MVC开发模式来说，开发者将三者定义成不同的类，实现了表现，数据，控制的分离。开发者更多的是从技术的角度来对UI进行拆分，实现松耦合。</p>
-<p>对于React而言，则完全是一个新的思路，开发者从功能的角度出发，将UI分成不同的组件，每个组件都独立封装。</p>
-<p>在React中，你按照界面模块自然划分的方式来组织和编写你的代码，对于评论界面而言，整个UI是一个通过小组件构成的大组件，每个组件只关心自己部分的逻辑，彼此独立。</p>
+        <p>BEM是由Yandex团队提出的一种CSS Class 命名方法，旨在更好的创建CSS/Sass模块。他需要遵循一些特殊规定，有些人认为这些规定很冗余，但是我发现他们对于理解DOM有着很大的帮助。<br><a id="more"></a><br>许多人认为BEM是一种多余的，丑陋的长命名。我完全能够理解当你在使用一种臃肿的和过度描述的命名方式时会发出这样的抱怨。这种情况下你会发现Sass编译后的CSS会非常的冗余和丑陋，尤其是当你在很长的BEM命名内又嵌套了更长的BEM命名时。这简直是非常糟糕和令人沮丧的一件事。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.aboutSection &#123;</div><div class="line">    background-color: tomato;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.aboutSection__wrapper &#123;</div><div class="line">    max-width: 108rem;</div><div class="line">    padding: 3rem 0;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.aboutSection__headingContainer &#123;</div><div class="line">    background-color steelblue;</div><div class="line">    .aboutSection__header &#123;</div><div class="line">        font-size: 2.4rem;</div><div class="line">        font-weight: 700;</div><div class="line">    &#125;</div><div class="line">    .aboutSection__subHeader &#123;</div><div class="line">        font-size: 1.8rem;</div><div class="line">        color: green;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可能很多刚开始使用BEM的程序员会写出像上面一样的CSS/Scss代码。虽然手指已经很酸痛了但是还是每次都兢兢业业地输入完整的类名。我完全能够理解这时你会感觉BEM是一种很傻很多余的命名规则。我们在不断的重复自己来为不同的类名设置不同的样式，而且不具有可重复性。</p>
+<h1 id="在Sass中使用BEM"><a href="#在Sass中使用BEM" class="headerlink" title="在Sass中使用BEM"></a>在Sass中使用BEM</h1><h2 id="灵活的-amp"><a href="#灵活的-amp" class="headerlink" title="灵活的&amp;__"></a>灵活的&amp;__</h2><p>通过使用一组便利的选择器和运算符，我们可以使得BEM出类拔萃。其中最重要的是新加入Sass中的&amp;选择器.在声明内&amp;选择器会直接引用他的父选择器。当嵌套使用’&amp;’时，它会直接抓取父选择器的类名。因为我们的类名遵循真正可靠的模式，所以我们可以把它作为我们的优势来打造真正可读的代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">.aboutSection &#123;</div><div class="line">    &amp;__wrapper &#123;</div><div class="line">        max-width 108rem;</div><div class="line">        padding: 3rem 0;</div><div class="line">    &#125;</div><div class="line">    &amp;__headingContainer &#123;</div><div class="line">        background-color: steelblue;</div><div class="line">    &#125;</div><div class="line">    &amp;__header &#123;</div><div class="line">        font-size: 2.4rem;</div><div class="line">        font-weight: 700;</div><div class="line">    &#125;</div><div class="line">    &amp;__subHeader &#123;</div><div class="line">        font-size: 1.8rem;</div><div class="line">        color: green;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上这段代码就是一个利用&amp;选择器的BEM创建的Sass模块，这个模块看上去像是嵌套但并不会带来嵌套所造成的权重差异等问题。这将有效帮助你避免CSS文件中组件样式的冲突。同时采用Sass的嵌套选择器也使我们的代码更加直观可读。</p>
+<h2 id="强大的-extend"><a href="#强大的-extend" class="headerlink" title="强大的@extend"></a>强大的@extend</h2><p>我们可以进一步使用@extend来改进我们的BEM。BEM允许我们在类的最后添加一个修饰符，当以纯CSS编写样式时，就需要你给同一个元素两个类的标记，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;nav&quot;&gt;</div><div class="line">    &lt;ul class=&quot;nav__container&quot;&gt;</div><div class="line">        &lt;li class=&quot;nav__item&quot;&gt;&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;nav__item&quot;&gt;&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;nav__item&quot;&gt;&lt;/li&gt;</div><div class="line">        &lt;li class=&quot;nav__item nav__item--active&quot;&gt;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/nav&gt;</div></pre></td></tr></table></figure></p>
+<p>以上这种情况是令人很沮丧的，为什么我们需要添加一个又长又绕的类来说明这个元素是active的？为什么我们不能仅仅增加一个名为active的类？通过使用@extend指令，我们就可以很好地消除这种冗余。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.nav &#123;</div><div class="line">    background-color: steelblue;</div><div class="line">    &amp;__container &#123;</div><div class="line">        display: flex;</div><div class="line">        justify-content: space-between;</div><div class="line">    &#125;</div><div class="line">    &amp;__item &#123;</div><div class="line">        color: white;</div><div class="line">        &amp;--active &#123;</div><div class="line">            @extend .nav__item;</div><div class="line">            border-bottom: 1px solid red;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>@extend指令能让我们确保所选择的项目也具有nav_item类中的所有样式，从而清除HTML中的nav_item标记。使用这种方法，我们能够随心所欲地改变活动状态的颜色，而无需重写我们之前创建的样式。在我看来，一个元素应该只有一个类，我们应该活用Sass来达到我们想要的结果。</p>
+<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>我希望这篇文章能够使你相信尽管BEM的好处远远超过它的那点瑕疵。也许有人会告诉你相反的结果，也许在一开始你会觉得它很冗余，但是通过BEM，我们CSS文件中所有选择器都保持相似的特异性水平。当我们使用’&amp;’选择器时我们可以在保持有很好的组织性和可读性的同时避免嵌套带来的样式冲突。通过使用@extend指令，我们不仅可以消除BEM命名的冗余，而且可以修剪下来你的标记。</p>
 
       
     </div>
@@ -264,13 +263,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/08/React入门/">React入门</a></p>
+        <p><span>本文标题:</span><a href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年10月08日 - 23时24分</p>
-        <p><span>最后更新:</span>2016年11月10日 - 16时13分</p>
+        <p><span>发布时间:</span>2016年06月10日 - 17时55分</p>
+        <p><span>最后更新:</span>2016年11月10日 - 18时02分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/08/React入门/" title="React入门">http://yoursite.com/2016/10/08/React入门/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/08/React入门/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/10/如何在Sass中使用BEM/" title="如何在Sass中使用BEM">http://yoursite.com/2016/06/10/如何在Sass中使用BEM/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/06/10/如何在Sass中使用BEM/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -283,18 +282,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/10/09/选择 Reac​​tJS 的理由/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/06/15/网页性能优化/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          选择 Reac​​tJS 的理由
+          网页性能优化
         
       </div>
     </a>
   
   
-    <a href="/2016/09/08/前端模块化--webpack/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">前端模块化--webpack</div>
+    <a href="/2016/06/09/使用CSS完成元素居中的七种方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用CSS完成元素居中的七种方法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -305,7 +304,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#在Sass中使用BEM"><span class="toc-number">1.</span> <span class="toc-text">在Sass中使用BEM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#灵活的-amp"><span class="toc-number">1.1.</span> <span class="toc-text">灵活的&__</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强大的-extend"><span class="toc-number">1.2.</span> <span class="toc-text">强大的@extend</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结束语"><span class="toc-number">2.</span> <span class="toc-text">结束语</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -353,7 +352,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/10/08/React入门/" data-title="React入门" data-url="http://yoursite.com/2016/10/08/React入门/"></div>
+    <div class="ds-thread" data-thread-key="2016/06/10/如何在Sass中使用BEM/" data-title="如何在Sass中使用BEM" data-url="http://yoursite.com/2016/06/10/如何在Sass中使用BEM/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -376,13 +375,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/09/选择 Reac​​tJS 的理由/" title="上一篇: 选择 Reac​​tJS 的理由">
+            <a href="/2016/06/15/网页性能优化/" title="上一篇: 网页性能优化">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/09/08/前端模块化--webpack/" title="下一篇: 前端模块化--webpack">
+            <a href="/2016/06/09/使用CSS完成元素居中的七种方法/" title="下一篇: 使用CSS完成元素居中的七种方法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
