@@ -115,9 +115,7 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                            <li><a href="/">博客首页</a></li>
                         
                         </ul>
                     </nav>
@@ -186,9 +184,7 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                    <li><a href="/">博客首页</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -236,24 +232,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：</p>
-<p>“构建数据随着时间的推移一次又一次改变的大型应用程序。”</p>
-<p>　　我们经常使用的工具有很多，但只有少数彻底改变了我们的工作流程。ReactJS就是其中之一。随着现在可用框架变得越来越多，我们很难找到一个最终不会穷途末路的框架。这就是为什么在ValueCoders我们建议去往React。<br>　下面是如Facebook，Instagram和WhatsApp这些巨头之所以依赖于ReactJS的5大理由：</p>
-<p>　React极其高效</p>
-<p>　　React创建了自己的DOM（虚拟），这也是组件存在的地方。这种方法为开发人员提供了高度的灵活性和惊人的性能提升，因为React提前计算到了在DOM中所需要的改变并相应地更新了DOM树。React用这种方式避免了高昂的DOM操作并用一种高效的方式执行更新。</p>
-<p>JavaScript库</p>
-<p>　　JSX语法是JavaScript和HTML良好又健康的交融，专用于ReactJS。JSX简化了为网站编写组件的全过程。并且HTML方面允许开发人员渲染函数而无需连接字符串。</p>
-<p>　　React的主要优点是，正确使用本地API以及，导致的结果是，跨平台栈工作。<br>对于SEO真的太棒了</p>
-<p>　　JavaScript框架的主要挑战之一是，它们对搜索引擎一点也不友好，虽然最近在这方面已经有了一些改进。</p>
-<p>　　出人意料的是，React.js与众不同，因为你能在服务器上运行React.js，并且将返回虚拟DOM，并作为常规网页呈现给浏览器。无需任何其他技巧！</p>
-<p>　专注用户界面</p>
-<p>　　React Native不同于MeteorJS，Firebase和AngularJS，它更关注于用户界面。它在JavaScript与设备及React Native之间互动的帮助下，给予你用户高度灵敏的界面。其结果是，增加了应用程序的加载时间，有助于保持运行顺利没有任何瞬断。</p>
-<p>　简单、开箱即用</p>
-<p>　　当你用React启动项目时，不要忘了安装ReactJS的官方Chrome扩展程序。它能使得调试app变得更加容易。</p>
-<p>　　安装该扩展后，你可以直接查看虚拟DOM，如果你是在元素面板中浏览规则DOM树的话。相当令人惊叹！</p>
-<p>　总结</p>
-<p>　　希望使用ReactJS的这五大好处可以让你相信这个框架的独特性。如果你正试图开发一个需要对SEO友好并能处理沉重流量负担的web应用程序，那么ReactJS或许可以帮到你。</p>
-
+              <p>　ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：<br>
+          
       
     </div>
     
@@ -270,6 +250,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/09/选择 Reac​​tJS 的理由/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -314,16 +298,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数据变化时，React都会重新构建整个DOM树，然后React将当前整个DOM树和上一次的DOM树进行对比，得到DOM结构的区别，然后仅仅将需要变化的部分进行实际的浏览器DOM更新。而且React能够批处理虚拟DOM的刷新，在一个事件循环（Event Loop）内的两次数据变化会被合并，例如你连续的先将节点内容从A变成B，然后又从B变成A，React会认为UI不发生任何变化，而如果通过手动控制，这种逻辑通常是极其复杂的。尽管每一次都需要构造完整的虚拟DOM树，但是因为虚拟DOM是内存数据，性能是极高的，而对实际DOM进行操作的仅仅是Diff部分，因而能达到提高性能的目的。这样，在保证性能的同时，开发者将不再需要关注某个数据的变化如何更新到一个或多个具体的DOM元素，而只需要关心在任意一个数据状态下，整个界面是如何Render的。</p>
-<p>如果你像在90年代那样写过服务器端Render的纯Web页面那么应该知道，服务器端所要做的就是根据数据Render出HTML送到浏览器端。如果这时因为用户的一个点击需要改变某个状态文字，那么也是通过刷新整个页面来完成的。服务器端并不需要知道是哪一小段HTML发生了变化，而只需要根据数据刷新整个页面。换句话说，任何UI的变化都是通过整体刷新来完成的。而React将这种开发模式以高性能的方式带到了前端，每做一点界面的更新，你都可以认为刷新了整个页面。至于如何进行局部更新以保证性能，则是React框架要完成的事情。</p>
-<p>借用Facebook介绍React的视频中聊天应用的例子，当一条新的消息过来时，传统开发的思路如上图，你的开发过程需要知道哪条数据过来了，如何将新的DOM结点添加到当前DOM树上；而基于React的开发思路如下图，你永远只需要关心数据整体，两次数据之间的UI如何变化，则完全交给框架去做。可以看到，使用React大大降低了逻辑复杂性，意味着开发难度降低，可能产生Bug的机会也更少。</p>
-<p>2、组件化</p>
-<p>虚拟DOM(virtual-dom)不仅带来了简单的UI开发逻辑，同时也带来了组件化开发的思想，所谓组件，即封装起来的具有独立功能的UI部件。React推荐以组件的方式去重新思考UI构成，将UI上每一个功能相对独立的模块定义成组件，然后将小的组件通过组合或者嵌套的方式构成大的组件，最终完成整体UI的构建。例如，Facebook的instagram.com整站都采用了React来开发，整个页面就是一个大的组件，其中包含了嵌套的大量其它组件，大家有兴趣可以看下它背后的代码。</p>
-<p>如果说MVC的思想让你做到视图-数据-控制器的分离，那么组件化的思考方式则是带来了UI功能模块之间的分离。我们通过一个典型的Blog评论界面来看MVC和组件化开发思路的区别。</p>
-<p>对于MVC开发模式来说，开发者将三者定义成不同的类，实现了表现，数据，控制的分离。开发者更多的是从技术的角度来对UI进行拆分，实现松耦合。</p>
-<p>对于React而言，则完全是一个新的思路，开发者从功能的角度出发，将UI分成不同的组件，每个组件都独立封装。</p>
-<p>在React中，你按照界面模块自然划分的方式来组织和编写你的代码，对于评论界面而言，整个UI是一个通过小组件构成的大组件，每个组件只关心自己部分的逻辑，彼此独立。</p>
-
+              <p>在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。<br>
+          
       
     </div>
     
@@ -340,6 +316,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/08/react入门/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -384,18 +364,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……</p>
-<p>备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的历史使命。</p>
-<p>五年过去了，RequireJS战胜了同级生LabJS，带起了中国小伙伴SeaJS。他完美地引领了前端模块化的革命，但今天看来，它有些过时了：它重浏览器端，轻打包编译，没有及时跟进包管理体系，almond没有成为标配而只是周边，配置晦涩……诞生太早的RequireJS，虽然一度成为了前端模块化的某种程度上的事实标准，但难掩其缺点。</p>
-<p>五年间，NodeJS成为了服务端以及脚本工具的一代翘楚，NPM的成功让大家意识到一个集中式的依赖／包管理体系的重要性，Bower应运而生，还有试图将CMD和NPM包带到前端领域，统一前后端包格式的Browserify等等，大量的前端工具爆发式地出现，WebPack是其中的(又)一款模块打包工具。</p>
-<p>webpack的优势一言难尽，相比其他竞争者，他的好处有</p>
-<ul>
-<li>模块来源广泛，支持包括npm/bower等等的各种主流模块安装／依赖解决方案</li>
-<li>模块规范支持全面，amd/cmd以及shimming等一应具全</li>
-<li>浏览器端足迹小，移动端友好，却对热加载乃至热替换有很好的支持</li>
-<li>插件机制完善，实现本身实现同样模块化，容易扩展<br>但其最大的特点是“用着舒服，不折腾”，这是一款工具最难能可贵的优点。</li>
-</ul>
-
+              <p>时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……<br>
+          
       
     </div>
     
@@ -412,6 +382,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/09/08/前端模块化--webpack/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -456,86 +430,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Yahoo!性能优化现在有35条，划分成了几个类别，content、server、Cookie、CSS、JavaScript、Images、Mobile。</p>
-<h1 id="减少HTTP的请求数"><a href="#减少HTTP的请求数" class="headerlink" title="减少HTTP的请求数"></a>减少HTTP的请求数</h1><p>合并Js、CSS文件，使用CSS sprites，使用Inline images（将base64的图片数据放在页面中会加大页面大小，可以放在可缓存的css中），使用iconfont。</p>
-<h1 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h1><p>用户80%~90%的时间是用来下载图片、样式、脚本、Flash等静态资源，将静态资源分发到离用户最近的服务器上，可加快下载速度。</p>
-<h1 id="使用缓存"><a href="#使用缓存" class="headerlink" title="使用缓存"></a>使用缓存</h1><p>某站点设置静态资源缓存后，浏览网页时，一些公用的静态资源已经在浏览其它页面时下载缓存了，不用再发起请求。在缓存过期前，网页内容也没变动时，再次访问网页，所有静态资源都可以从缓存读取。</p>
-<p>合理配置缓存策略，在公用的静态资源和请求数之间达到平衡，站点的不同页面间可以共用更多的公用的静态资源。站点更新不仅能即时反馈，而且做到网页只需加载有变动的文件。</p>
-<p>http响应头信息Expires、Cache-Control是缓存字段。这里的缓存是指浏览器缓存，缓存过期前不用发起请求。</p>
-<p>浏览器中刷新页面，会重新发起所有的请求；如果在地址栏按回车键，可以看到设置缓存的静态资源没有再次发起请求。</p>
-<h1 id="Gzip压缩"><a href="#Gzip压缩" class="headerlink" title="Gzip压缩"></a>Gzip压缩</h1><p>服务端收到浏览器请求后，经gzip压缩后传输的大小可减小70%，浏览器接收后解压。pdf、图片本身已经压缩了不再需要gzip。一般文档类型默认启用了gzip，其它静态资源，比如样式、脚本要单独配置启用gzip。</p>
-<h1 id="将样式表放在页面上方"><a href="#将样式表放在页面上方" class="headerlink" title="将样式表放在页面上方"></a>将样式表放在页面上方</h1><p>网页渲染是从上往下执行，边下载边解析页面元素，将样式放在页尾，下载完样式后执行会使页面样式闪烁。</p>
-<p>貌似有些浏览器只有等css下载好了之后，才展示出页面。chrome访问过国外网站，出现过css没下载好，整个页面都是空白。</p>
-<h1 id="将脚本放在底部"><a href="#将脚本放在底部" class="headerlink" title="将脚本放在底部"></a>将脚本放在底部</h1><p>浏览器中JavaScript与UI共用一个线程，现在的浏览器Js下载是并行的（IE8、Firefox3、Chrome2是串行），下载时会阻止页面一些资源加载（google说下载、解释、执行都会阻止），如图片；执行是阻塞浏览器的页面的下载和渲染，所以引入的Js要放在页末。</p>
-<p>Ps:</p>
-<p>css文件下载是并行的，不阻碍其它文件下载。而Js基本都用来操作Dom的，代码的执行要等Dom渲染完成，所以一般Js代码可以直接放在页尾，如果放在页首，处理Dom元素的Js代码要放在Dom下载完成的事件回调内。</p>
-<p>除非你在DOM标签内部指定事件类型和回调函数名（不推荐），不然把Js放在页首没意义。</p>
-<h1 id="避免使用CSS中的Expressions"><a href="#避免使用CSS中的Expressions" class="headerlink" title="避免使用CSS中的Expressions"></a>避免使用CSS中的Expressions</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background-color: expression( (new Date()).getHours()%2 ? &quot;# B8D4FF&quot; : &quot;# F08A00&quot; );</div></pre></td></tr></table></figure>
-<p> 这种写法只有IE支持，浏览器不仅在渲染页面或者改变页面大小时触发，甚至在滚动、移动鼠标时也触发，统计发现操作了一次浏览器产生10000个evaluations。</p>
-<h1 id="将JavaScript和CSS独立成外部文件"><a href="#将JavaScript和CSS独立成外部文件" class="headerlink" title="将JavaScript和CSS独立成外部文件"></a>将JavaScript和CSS独立成外部文件</h1><p>实现结构、样式、行为分离，独立成文件可以利用浏览器缓存。</p>
-<h1 id="压缩-JavaScript-和CSS"><a href="#压缩-JavaScript-和CSS" class="headerlink" title="压缩 JavaScript 和CSS"></a>压缩 JavaScript 和CSS</h1><p>压缩JavaScript时，如果使用模块化开发时，比如seajs不能直接压缩，要先transport下，具体可参考spm的grunt-cmd-transport插件</p>
-<h1 id="避免重定向"><a href="#避免重定向" class="headerlink" title="避免重定向"></a>避免重定向</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Request URL:http://yun.ys7.com/gc.html</div><div class="line">Request Method:GET</div><div class="line">Status Code:301 Moved Permanently (from cache)</div><div class="line"></div><div class="line">Response Headers</div><div class="line">Content-Length:178</div><div class="line">Content-Type:text/html</div><div class="line">Date:Tue, 03 Feb 2015 15:34:42 GMT</div><div class="line">Location:http://i.ys7.com/square/index.jsp</div><div class="line">Server:nginx</div></pre></td></tr></table></figure>
-<p>重定向的http请求返回301或者302，返回的报文的body部分是空的。</p>
-<p>上面是访问<a href="http://yun.ys7.com/gc.html，服务器告诉浏览器重定向到//i.ys7.com/square/index.jsp，浏览器重新发起//i.ys7.com/square/index.jsp请求。" target="_blank" rel="external">http://yun.ys7.com/gc.html，服务器告诉浏览器重定向到//i.ys7.com/square/index.jsp，浏览器重新发起//i.ys7.com/square/index.jsp请求。</a></p>
-<p>浏览器访问网页，通过重定向而发起两次请求，影响性能。</p>
-<h1 id="剔除重复的脚本"><a href="#剔除重复的脚本" class="headerlink" title="剔除重复的脚本"></a>剔除重复的脚本</h1><p>团队规模越大、代码越多，越有可能出现；如果出现，会导致没必要的请求和Js运算</p>
-<h1 id="配置ETags"><a href="#配置ETags" class="headerlink" title="配置ETags"></a>配置ETags</h1><p>etag判断一个静态资源有没有更新。请求一个静态资源，返回的头信息有etag字段，再次请求时，通过头信息中If-None-Match字段将etag值带过去，与服务端的文件etag值比对，如果一致就直接返回状态码 304，浏览器使用缓存中的静态资源；不一致，服务器将最新文件传输过来。 etag值很重要，能反应出资源有无更新。一般的etag值inode-size-timestamp，虽然不同的服务器上inode值不一样。 这样如果静态资源部署在多台服务器上的，用etag就有问题。关闭etag，将判断一个静态资源有没有更新就交给Last-Modified。</p>
-<h1 id="使用AJAX缓存"><a href="#使用AJAX缓存" class="headerlink" title="使用AJAX缓存"></a>使用AJAX缓存</h1><p>使用get类型的ajax请求，后台处理接口时，加上http头信息Expires，以后浏览器再次发起请求时，在缓存的时间内，直接从浏览器缓存中读取。</p>
-<p>比如有个网页联系人列表不经常变动，ajax请求联系人列表接口的url带上资源标志id（id是页面初始化时由后台带回来，后台根据联系列表生成，如果列表变化了，id也变化），第一次访问时，ajax调用接口缓存了；第二次调用时，如果联系人列表没有变动过，id还是不变，url也不会变，直接从缓存读取。</p>
-<h1 id="尽早刷新输出缓冲"><a href="#尽早刷新输出缓冲" class="headerlink" title="尽早刷新输出缓冲"></a>尽早刷新输出缓冲</h1><p>后台生成一个完整的页面，要经历数据库查询，一系列业务流程，假设耗时为A，再由服务器容器转化成html页面返回给浏览器。浏览器边下载边解析DOM，下载页面相关的静态资源，假设耗时为B，整个耗时就是（A+B）。 如果A和B并行呢？ 服务器容器先将静态资源的相关内容返回给浏览器，服务器一边进行查询等耗时操作（A），浏览器同时一边解析DOM中到引用静态资源，就开始下载（B）。 目前php支持。</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">... &lt;!-- css, js --&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;?php flush(); ?&gt;</div><div class="line">&lt;body&gt;</div><div class="line">... &lt;!-- content --&gt;</div></pre></td></tr></table></figure></p>
-<h1 id="使用GET来完成AJAX请求"><a href="#使用GET来完成AJAX请求" class="headerlink" title="使用GET来完成AJAX请求"></a>使用GET来完成AJAX请求</h1><p>使用post请求，浏览器要进行两个过程，先发头信息，再发送数据。而使用get，请求数据都在url上，只需发一次，IE下最大长度为2k，从语义化角度，来说，get是获取数据的意思。get请求会被缓存，post不会，post传输比较安全。</p>
-<h1 id="推迟加载内容"><a href="#推迟加载内容" class="headerlink" title="推迟加载内容"></a>推迟加载内容</h1><p>将所有静态资源都下载好了之后，再执行Js渲染等操作，会影响首屏内容最快显示。在模块化开发时，当用到插件效果时去下载，或者等浏览器加载的标签转圈圈好了之后，触发load之后再执行其它下载，使用require.async延迟加载。</p>
-<h1 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h1><p>在页面空闲时，预加载接下来操作可能需要的资源。有些网站改版时，第一次加载要加载许多新的静态资源，导致用户体验很差，可以在改版前预加载新的静态资源。</p>
-<h1 id="减少DOM元素数量"><a href="#减少DOM元素数量" class="headerlink" title="减少DOM元素数量"></a>减少DOM元素数量</h1><p>将静态资源划分到不同的静态服务上<br>不同浏览器对同一域名的并发数如下，将域名数控制在2-4个。</p>
-<h1 id="使iframe的数量最小"><a href="#使iframe的数量最小" class="headerlink" title="使iframe的数量最小"></a>使iframe的数量最小</h1><p>耗性能，即使是blank；阻塞父页面的onload。</p>
-<h1 id="不要出现404错误"><a href="#不要出现404错误" class="headerlink" title="不要出现404错误"></a>不要出现404错误</h1><p>404请求会阻碍并行下载，并且浏览器可能去尝试解析404返回内容发现有用的东西。</p>
-<h1 id="减小Cookie大小"><a href="#减小Cookie大小" class="headerlink" title="减小Cookie大小"></a>减小Cookie大小</h1><p>cookie在每次http请求会带到服务端，cookie越大，传输的数据量越大。</p>
-<h1 id="对静态资源使用无cookie域名"><a href="#对静态资源使用无cookie域名" class="headerlink" title="对静态资源使用无cookie域名"></a>对静态资源使用无cookie域名</h1><p>如果站点域名是www.demo.com，静态资源放在s.demo.com域名下，请求静态资源时会将.demo.com下的cookie带过去。 要做到free cookie，可以申请个单独的域名，比如domestic.com，拆分几个二级域名，s0.demostatic.com，s1.demostatic.com。</p>
-<h1 id="减少DOM访问"><a href="#减少DOM访问" class="headerlink" title="减少DOM访问"></a>减少DOM访问</h1><p>Dom操作时，js要通过js-dom桥访问dom，速度比js内部操作慢，所以要减少DOM操作。写代码时，</p>
-<p>1。缓存指向dom的引用</p>
-<p>2。离线操作节点，最后才更新到DOM中</p>
-<p>3。避免Js操作一些属性导致浏览器的页面重绘</p>
-<h1 id="优化事件绑定"><a href="#优化事件绑定" class="headerlink" title="优化事件绑定"></a>优化事件绑定</h1><p>采用事件委托，避免重复绑定；如果操作DOM，事件回调绑定在DOMContentLoaded，避免使用onload。</p>
-<h1 id="不要使用-import-用link"><a href="#不要使用-import-用link" class="headerlink" title="不要使用@import 用link"></a>不要使用@import 用link</h1><p>无法使用并行下载</p>
-<h1 id="避免使用滤镜"><a href="#避免使用滤镜" class="headerlink" title="避免使用滤镜"></a>避免使用滤镜</h1><p>IE下使用AlphaImageLoader filter来解决IE&lt;7不支持透明，在下载图像过程中，使用这个属性会阻塞浏览器，并且会加大内存消耗。避免使用而用png8代替，如果实在要使用AlphaImageLoader，用_filter。</p>
-<h1 id="优化图像"><a href="#优化图像" class="headerlink" title="优化图像"></a>优化图像</h1><p>优化图像大小</p>
-<h1 id="优化CSS-Spirite"><a href="#优化CSS-Spirite" class="headerlink" title="优化CSS Spirite"></a>优化CSS Spirite</h1><p>不要在HTML中缩放图像</p>
-<h1 id="favicon-ico要小而且可缓存"><a href="#favicon-ico要小而且可缓存" class="headerlink" title="favicon.ico要小而且可缓存"></a>favicon.ico要小而且可缓存</h1><p>保持单个内容小于25K(针对手机)<br>iPhone手机最大能缓存25k，ios3有这个限制，但是有人在ios7上用css测试3Mb的文件，缓存了没发起请求。</p>
-<h1 id="打包组件成复合文本（针对手机）"><a href="#打包组件成复合文本（针对手机）" class="headerlink" title="打包组件成复合文本（针对手机）"></a>打包组件成复合文本（针对手机）</h1><p>手机端请求是很昂贵的，打包成一个复合文本，减少请求数。但先要检测终端是否支持。</p>
-<h1 id="避免img标签的src为空"><a href="#避免img标签的src为空" class="headerlink" title="避免img标签的src为空"></a>避免img标签的src为空</h1><p>两种情况下会发生<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img src=“”&gt;</div><div class="line"> </div><div class="line">var img = new Image();</div><div class="line">img.src=&quot;&quot;;</div></pre></td></tr></table></figure></p>
-<p>浏览器可能发起请求当前页面所在目录，或者当前页面，引起没必要的麻烦，比如影响日志统计，服务端重新生成页面，浏览器重新接收引起的数据丢失。</p>
-<p>其它优化点</p>
-<h1 id="DNS域名解析加速"><a href="#DNS域名解析加速" class="headerlink" title="DNS域名解析加速"></a>DNS域名解析加速</h1><p>咨询了运维，目前万网已经支持域名解析加速，可以向com推送变更，1分钟内生效，各省的域名解析服务器目前应该有双向能力。</p>
-<h1 id="Http请求要保持Keep-Alive"><a href="#Http请求要保持Keep-Alive" class="headerlink" title="Http请求要保持Keep-Alive"></a>Http请求要保持Keep-Alive</h1><p>获取静态资源之前要建立通道，如果每次获取静态资源都要建立通道，会加大传输时间。</p>
-<h1 id="图片要声明width和height"><a href="#图片要声明width和height" class="headerlink" title="图片要声明width和height"></a>图片要声明width和height</h1><p>尽快渲染出，避免重排与重绘。</p>
-<h1 id="使用webp格式图片"><a href="#使用webp格式图片" class="headerlink" title="使用webp格式图片"></a>使用webp格式图片</h1><p>最大可以将图片减小到原图片的1/3大小，是google制定了，其它浏览器厂商并不吃google的菜，只有chrome支持，直接在网页保存webp格式的图片，本地不能预览，目前淘宝商品详情页采用这种格式图片。</p>
-<p>document.write<br>不要在外链中使用document.write加载资源</p>
-<h1 id="文档编码类型"><a href="#文档编码类型" class="headerlink" title="文档编码类型"></a>文档编码类型</h1><p>doc 返回编码charset=uft-8，加快解析；不要在html中设置，貌似ie8下有bug。</p>
-<h1 id="使用MXHR"><a href="#使用MXHR" class="headerlink" title="使用MXHR"></a>使用MXHR</h1><p>将css、图片、js资源整合成一个文件请求，程序后台使用分隔符将这些数据分隔开来，然后在前台拆分；还可以readystatus=3边传输边解析。缺点是，不能缓存；老版本的IE不支持readystatus =3和data:url，在Ie8中就可以了，必须在Ie6、7下设法变通。觉得在淘宝，浏览商品许多图片时，用这个不错，不过淘宝商品的图片，不在当前发起请求文档的同个域名下，有跨域问题吧</p>
-<h1 id="无阻塞的脚本"><a href="#无阻塞的脚本" class="headerlink" title="无阻塞的脚本"></a>无阻塞的脚本</h1><p>将脚本放在页面底部是Yahoo!性能优化的优化点，其实，是解决脚本下载与执行是阻塞问题。如果使用无阻塞的脚本呢？ Js引擎和UI线程公用一个线程，无阻塞引入脚本，可解决在引入js时，阻塞UI渲染。</p>
-<p>1) 在script标签加入defer属性</p>
-<p>当页面解析到script标签时，开始下载Js文件，页面并不等待继续解析，不会阻碍其它页面资源的下载，由于只有 Explorer 4+ 和 Firefox 3.5+支持，这里就不详细讨论。</p>
-<p>2) 动态脚本注入（dynamic script tag insert）</p>
-<p>在body结束标签处，通过Js的Dom操作，新建script元素，设置好src之后，添加到head中（最好是head,body中可能），就开始下载，不会影响浏览器UI线程，下载完触发script标签的onload事件（不同浏览器有差异），如果创建多个script后并行下载，有可能后增的Js先下载完成，有的浏览器会等待，比如FireFox、Opera，有的先下载完先执行。对于有依赖关系的Js文件，可以在前一个Js下载完成后，再加载新的Js。目前豆瓣的do.js、in.js都根据这个原理实现的封装。</p>
-<p>3) XMLHttpRequest注入</p>
-<p>在项目里，我们俗称ajax，请求的路径改为一个js的url,在返回成功的回调里面，进行Dom操作，创建一个script，将请求得到的响应报文，设置为scritpt的dom对象的text属性。 评析：不能请求跨域的js，设置text属性后，立马就执行Js，所以通过控制设置text属性的时机，来控制Js的执行。不过这种方法还是被很少用，可能是将js内容直接填充到html页面的script元素中，总人本能觉得不整洁吧。</p>
-<h1 id="优化数据传输"><a href="#优化数据传输" class="headerlink" title="优化数据传输"></a>优化数据传输</h1><p>传输数据的几种方式<br>xhr jsonp 获取信息，json-padding，基于动态脚本注入，支持跨域 Beacons 图片信标，简单效率高，一般用来发送页面统计信息</p>
-<p>数据的传输格式<br>xml、Json、拼接的字符串、json-p</p>
-<p>数据的本地存储<br>使用ajax缓存、localstorage</p>
-<p>提升Js代码的执行效率</p>
-<p>缓存DOM节点查找的结果<br>用jquery选择器选中的元素，如果还需第二次使用，建议缓存到变量中，避免重复的创建jQuery对象。</p>
-<p>用hash-table来优化查找<br>在查找元素时，使用对象比使用数组更有效，使用数组还需要遍历，但对象不会保持默认的排序。</p>
-<p>用innerHTML代替DOM操作，减少DOM操作次数<br>dom操作是有代价的，访问它</p>
-<p>实践性能优化</p>
-<p>有些性能优化点，需要前端工程师在编码过程中遵守；有些需要配置服务器，设置缓存、etag、gzip；ajax缓存需要后台提供接口时设置；一些关键的优化点，需要前端工程支持。</p>
-<p>前端工程化支持<br>在模块化开发时，细分了许多小文件，如何合并压缩脚本、样式，并在多页面中利用好缓存，如何使css spirites、inline images用起来很easy。如何保证将样式表放在页面上方、将脚本放在底部、剔除重复的脚本。</p>
-<p>nginx缓存设置<br>expires 浏览器本地缓存设置</p>
-<p>语法：expires [time|epoch|max|off]<br>默认值：expires off<br>使用字段：http, server, location</p>
-<p>off 将禁止修改头部中的 Expires和Cache-Control字段。<br>Time控制“Cache-Control”的值，负数表示no-cache<br>epoch 将Expires头设置为1 January, 1970 00:00:01 GMT。<br>max 将Expires头设置为31 December 2037 23:59:59 GMT，将Cache-Control最大化到10 年。<br>expires 30d;<br>expires 1h;</p>
-<p>nginx的gzip设置</p>
-<p>nginx 在http{….}两个大括号之间，配置gzip段如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">gzip on;</div><div class="line">gzip_min_length 1k;</div><div class="line">gzip_buffers 16 64k;</div><div class="line">gzip_http_version 1.1;</div><div class="line">gzip_comp_level 6;</div><div class="line">gzip_types text/plain application/x-javascript text/css application/xml;</div><div class="line">gzip_vary on;</div></pre></td></tr></table></figure></p>
-
+              <p>Yahoo!性能优化现在有35条，划分成了几个类别，content、server、Cookie、CSS、JavaScript、Images、Mobile。<br>
+          
       
     </div>
     
@@ -552,6 +448,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网页优化/">网页优化</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/15/网页性能优化/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -596,32 +496,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在网页上使 HTML 元素居中看似一件很简单的事情. 至少在某些情况下是这样的，但是复杂的布局往往使一些解决方案不能很好的发挥作用。</p>
-<p>在网页布局中元素水平居中比元素垂直居中要简单不少，同时实现水平居中和垂直居中往往是最难的。现在是响应式设计的时代，我们很难确切的知道元素的准确高度和宽度，所以一些方案不大适用。据我所知, 在CSS中至少有六种实现居中的方法。我将使用下面的HTML结构从简单到复杂开始讲解:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center&quot;&gt;</div><div class="line">  &lt;img src=&quot;jimmy-choo-shoe.jpg&quot; alt&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>鞋子图片会改变，但是他们都会保持500pxX500px的大小。 HSL colors 用于使背景颜色保持一致。</p>
-<p>使用text-align水平居中</p>
-<p>有时显而易见的方案是最佳的选择：</p>
-<p>div.center {<br>  text-align: center;<br>  background: hsl(0, 100%, 97%);<br>}<br>div.center img {<br>  width: 33%; height: auto;<br>}<br>这种方案没有使图片垂直居中：你需要给<div> 添加 padding 或者给内容添加 margin-top 和 margin-bottom使容器与内容之间有一定的距离。</div></p>
-<p>使用 margin: auto 居中<br>这种方式实现水平居中和上面使用text-align的方法有相同局限性。</p>
-<p>div.center {<br>  background: hsl(60, 100%, 97%);<br>}<br>div.center img {<br>  display: block;<br>  width: 33%;<br>  height: auto;<br>  margin: 0 auto;<br>}<br>注意： 必须使用display: block使 margin: 0 auto对img元素生效。</p>
-<p>使用table-cell居中<br>使用 display: table-cell, 而不是使用table标签; 可以实现水平居中和垂直居中，但是这种方法需要添加额外的元素作为外部容器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center-aligned&quot;&gt;</div><div class="line">    &lt;div class=&quot;center-core&quot;&gt;</div><div class="line">        &lt;img src=&quot;jimmy-choo-shoe.jpg&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>CSS:</p>
-<p>.center-aligned {<br>    display: table;<br>    background: hsl(120, 100%, 97%);<br>    width: 100%;<br>}<br>.center-core {<br>    display: table-cell;<br>    text-align: center;<br>    vertical-align: middle;<br>}<br>.center-core img {<br>    width: 33%;<br>    height: auto;<br>}<br>注意：为了使div 不折叠必须加上 width: 100%，外部容器元素也需要加上一定高度使得内容垂直居中。给html和body设置高度后，也可以使元素在body垂直居中。此方法在IE8+浏览器上生效。</p>
-<p>使用absolute定位居中<br>这种 方案 有非常好的跨浏览器支持。有一个缺点就是必须显式声明外部容器元素的height：</p>
-<p>.absolute-aligned {<br>    position: relative;<br>    min-height: 500px;<br>    background: hsl(200, 100%, 97%);<br>}<br>.absolute-aligned img {<br>    width: 50%;<br>    min-width: 200px;<br>    height: auto;<br>    overflow: auto;<br>    margin: auto;<br>    position: absolute;<br>    top: 0; left: 0;<br>    bottom: 0; right: 0;<br>}<br>Stephen在他的 博客 中演示了这种方案的几种变化。</p>
-<p>使用translate居中</p>
-<p>Chris Coiyer 提出了一个使用 CSS transforms 的新方案。 同样支持水平居中和垂直居中:</p>
-<p>.center {<br>    background: hsl(180, 100%, 97%);<br>    position: relative;<br>    min-height: 500px;<br>}<br>.center img {<br>    position: absolute;<br>    top: 50%; left: 50%;<br>    transform: translate(-50%, -50%);<br>    width: 30%; height: auto;<br>}<br>但是有以下几种缺点:</p>
-<p>CSS transform 在部分就浏览器上需要使用 前缀。<br>不支持 IE9 以下的浏览器。<br>外部容器需要设置height （或者用其他方式设置），因为不能获取 绝对定位 的内容的高度。<br>如果内容包含文字，现在的浏览器合成技术会使文字模糊不清。<br>使用Flexbox居中<br>当新旧语法差异和浏览器前缀消失时，这种方法会成为主流的居中方案。</p>
-<p>.center {<br>    background: hsl(240, 100%, 97%);<br>    display: flex;<br>    justify-content: center;<br>    align-items: center;<br>}<br>.center img {<br>    width: 30%; height: auto;<br>}<br>在很多方面 flexbox 是一种简单的方案， 但是它有新旧两种语法以及早期版本的IE缺乏支持 （尽管可以使用 display: table-cell作为降级方案）。</p>
-<p>现在规范已经最终确定，现代浏览器也大都支持,我写了一篇详细的教程 教程。</p>
-<p>使用calc居中<br>在某些情况下比flexbox更全面：</p>
-<p>.center {<br>    background: hsl(300, 100%, 97%);<br>    min-height: 600px;<br>    position: relative;<br>}<br>.center img {<br>    width: 40%;<br>    height: auto;<br>    position: absolute;<br>    top: calc(50% - 20%);<br>    left: calc(50% - 20%);<br>}<br>很简单，calc 允许你基于当前的页面布局计算尺寸。在上面的简单计算中， 50% 是容器元素的中心点，但是如果只设置50%会使图片的左上角对齐div的中心位置。 我们需要把图片向左和向上各移动图片宽高的一半。计算公式为：</p>
-<p>top: calc(50% - (40% / 2));<br>left: calc(50% - (40% / 2));<br>在现在的浏览其中你会发现，这种方法更适用于当内容的宽高为固定尺寸：</p>
-<p>.center img {<br>    width: 500px; height: 500px;<br>    position: absolute;<br>    top: calc(50% - (300px / 2));<br>    left: calc(50% - (300px – 2));<br>}<br>我在 这篇文章 中详细讲解了calc。</p>
-<p>这种方案和flex一样有许多相同的缺点： 虽然在现代浏览器中有良好的支持，但是在较早的版本中仍然需要浏览器前缀，并且不支持IE8。</p>
-<p>.center img {<br>    width: 40%; height: auto;<br>    position: absolute;<br>    top: calc(50% - 20%);<br>    left: calc(50% - 20%);<br>}<br>当然还有 其他更多的方案。</p>
-
+              <p>在网页上使 HTML 元素居中看似一件很简单的事情. 至少在某些情况下是这样的，但是复杂的布局往往使一些解决方案不能很好的发挥作用。<br>
+          
       
     </div>
     
@@ -638,6 +514,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/09/使用CSS完成元素居中的七种方法/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

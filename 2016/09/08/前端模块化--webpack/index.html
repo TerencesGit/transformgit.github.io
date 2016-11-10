@@ -5,19 +5,16 @@
   
   <title>前端模块化--webpack | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……
-备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的">
+  <meta name="description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端模块化--webpack">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/前端模块化--webpack/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……
-备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的">
-<meta property="og:updated_time" content="2016-11-09T15:47:23.357Z">
+<meta property="og:description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……">
+<meta property="og:updated_time" content="2016-11-10T07:36:13.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端模块化--webpack">
-<meta name="twitter:description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……
-备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的">
+<meta name="twitter:description" content="时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -119,9 +116,7 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                            <li><a href="/">博客首页</a></li>
                         
                         </ul>
                     </nav>
@@ -190,9 +185,7 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                    <li><a href="/">博客首页</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -253,8 +246,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……</p>
-<p>备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的历史使命。</p>
+        <p>时光回溯到2009年，CommonJS规范和NodeJS都还在襁褓之中，离Bower诞生还有三年时间，Ruby还统治着github，CoffeeScript在年末提交了第一个commit……<br><a id="more"></a><br>备受加载顺序，依赖关系折磨的前端开发，开始站起来试图解决日益复杂的前端开发的种种问题，RequireJS降临了。如果说NodeJS吹响了JS全栈革命的号角，那么同时发生的前端模块化革命便是RequireJS的历史使命。</p>
 <p>五年过去了，RequireJS战胜了同级生LabJS，带起了中国小伙伴SeaJS。他完美地引领了前端模块化的革命，但今天看来，它有些过时了：它重浏览器端，轻打包编译，没有及时跟进包管理体系，almond没有成为标配而只是周边，配置晦涩……诞生太早的RequireJS，虽然一度成为了前端模块化的某种程度上的事实标准，但难掩其缺点。</p>
 <p>五年间，NodeJS成为了服务端以及脚本工具的一代翘楚，NPM的成功让大家意识到一个集中式的依赖／包管理体系的重要性，Bower应运而生，还有试图将CMD和NPM包带到前端领域，统一前后端包格式的Browserify等等，大量的前端工具爆发式地出现，WebPack是其中的(又)一款模块打包工具。</p>
 <p>webpack的优势一言难尽，相比其他竞争者，他的好处有</p>
@@ -275,7 +267,7 @@
         <p><span>本文标题:</span><a href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
         <p><span>发布时间:</span>2016年09月08日 - 22时42分</p>
-        <p><span>最后更新:</span>2016年11月09日 - 23时47分</p>
+        <p><span>最后更新:</span>2016年11月10日 - 15时36分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/09/08/前端模块化--webpack/" title="前端模块化--webpack">http://yoursite.com/2016/09/08/前端模块化--webpack/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/08/前端模块化--webpack/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

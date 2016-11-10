@@ -5,16 +5,16 @@
   
   <title>react入门 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数">
+  <meta name="description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react入门">
 <meta property="og:url" content="http://yoursite.com/2016/10/08/react入门/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数">
-<meta property="og:updated_time" content="2016-11-09T01:11:14.001Z">
+<meta property="og:description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。">
+<meta property="og:updated_time" content="2016-11-10T07:36:39.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react入门">
-<meta name="twitter:description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数">
+<meta name="twitter:description" content="在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -116,9 +116,7 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/Home">博客首页</a></li>
-                        
-                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                            <li><a href="/">博客首页</a></li>
                         
                         </ul>
                     </nav>
@@ -187,9 +185,7 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/Home">博客首页</a></li>
-                
-                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                    <li><a href="/">博客首页</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -250,7 +246,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数据变化时，React都会重新构建整个DOM树，然后React将当前整个DOM树和上一次的DOM树进行对比，得到DOM结构的区别，然后仅仅将需要变化的部分进行实际的浏览器DOM更新。而且React能够批处理虚拟DOM的刷新，在一个事件循环（Event Loop）内的两次数据变化会被合并，例如你连续的先将节点内容从A变成B，然后又从B变成A，React会认为UI不发生任何变化，而如果通过手动控制，这种逻辑通常是极其复杂的。尽管每一次都需要构造完整的虚拟DOM树，但是因为虚拟DOM是内存数据，性能是极高的，而对实际DOM进行操作的仅仅是Diff部分，因而能达到提高性能的目的。这样，在保证性能的同时，开发者将不再需要关注某个数据的变化如何更新到一个或多个具体的DOM元素，而只需要关心在任意一个数据状态下，整个界面是如何Render的。</p>
+        <p>在Web开发中，我们总需要将变化的数据实时反应到UI上，这时就需要对DOM进行操作。而复杂或频繁的DOM操作通常是性能瓶颈产生的原因（如何进行高性能的复杂DOM操作通常是衡量一个前端开发人员技能的重要指标）。<br><a id="more"></a><br>React为此引入了虚拟DOM（Virtual DOM）的机制：在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造都是通过虚拟DOM进行，每当数据变化时，React都会重新构建整个DOM树，然后React将当前整个DOM树和上一次的DOM树进行对比，得到DOM结构的区别，然后仅仅将需要变化的部分进行实际的浏览器DOM更新。而且React能够批处理虚拟DOM的刷新，在一个事件循环（Event Loop）内的两次数据变化会被合并，例如你连续的先将节点内容从A变成B，然后又从B变成A，React会认为UI不发生任何变化，而如果通过手动控制，这种逻辑通常是极其复杂的。尽管每一次都需要构造完整的虚拟DOM树，但是因为虚拟DOM是内存数据，性能是极高的，而对实际DOM进行操作的仅仅是Diff部分，因而能达到提高性能的目的。这样，在保证性能的同时，开发者将不再需要关注某个数据的变化如何更新到一个或多个具体的DOM元素，而只需要关心在任意一个数据状态下，整个界面是如何Render的。</p>
 <p>如果你像在90年代那样写过服务器端Render的纯Web页面那么应该知道，服务器端所要做的就是根据数据Render出HTML送到浏览器端。如果这时因为用户的一个点击需要改变某个状态文字，那么也是通过刷新整个页面来完成的。服务器端并不需要知道是哪一小段HTML发生了变化，而只需要根据数据刷新整个页面。换句话说，任何UI的变化都是通过整体刷新来完成的。而React将这种开发模式以高性能的方式带到了前端，每做一点界面的更新，你都可以认为刷新了整个页面。至于如何进行局部更新以保证性能，则是React框架要完成的事情。</p>
 <p>借用Facebook介绍React的视频中聊天应用的例子，当一条新的消息过来时，传统开发的思路如上图，你的开发过程需要知道哪条数据过来了，如何将新的DOM结点添加到当前DOM树上；而基于React的开发思路如下图，你永远只需要关心数据整体，两次数据之间的UI如何变化，则完全交给框架去做。可以看到，使用React大大降低了逻辑复杂性，意味着开发难度降低，可能产生Bug的机会也更少。</p>
 <p>2、组件化</p>
@@ -270,7 +266,7 @@
         <p><span>本文标题:</span><a href="/2016/10/08/react入门/">react入门</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
         <p><span>发布时间:</span>2016年10月08日 - 23时24分</p>
-        <p><span>最后更新:</span>2016年11月09日 - 09时11分</p>
+        <p><span>最后更新:</span>2016年11月10日 - 15时36分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/08/react入门/" title="react入门">http://yoursite.com/2016/10/08/react入门/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/08/react入门/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
