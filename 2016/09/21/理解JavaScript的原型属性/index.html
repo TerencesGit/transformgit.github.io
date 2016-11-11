@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用create-react-app快速构建React开发环境 | Transform&#39;s Blog</title>
+  <title>理解JavaScript的原型属性 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
+  <meta name="description" content="理解 JavaScript 的prototype属性不太容易。你也许知道它同面向对象编程（OOP）和对象继承有关，但未必对其技术原理非常清楚。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用create-react-app快速构建React开发环境">
-<meta property="og:url" content="http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/index.html">
+<meta property="og:title" content="理解JavaScript的原型属性">
+<meta property="og:url" content="http://transform.com/2016/09/21/理解JavaScript的原型属性/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
-<meta property="og:updated_time" content="2016-11-10T08:09:01.456Z">
+<meta property="og:description" content="理解 JavaScript 的prototype属性不太容易。你也许知道它同面向对象编程（OOP）和对象继承有关，但未必对其技术原理非常清楚。">
+<meta property="og:updated_time" content="2016-11-11T03:14:31.863Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用create-react-app快速构建React开发环境">
-<meta name="twitter:description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
+<meta name="twitter:title" content="理解JavaScript的原型属性">
+<meta name="twitter:description" content="理解 JavaScript 的prototype属性不太容易。你也许知道它同面向对象编程（OOP）和对象继承有关，但未必对其技术原理非常清楚。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-使用create-react-app快速构建React开发环境" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-理解JavaScript的原型属性" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" class="article-date">
-      <time datetime="2016-10-10T07:57:43.000Z" itemprop="datePublished">2016-10-10</time>
+      <a href="/2016/09/21/理解JavaScript的原型属性/" class="article-date">
+      <time datetime="2016-09-21T03:10:25.000Z" itemprop="datePublished">2016-09-21</time>
 </a>
     </div>
   
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用create-react-app快速构建React开发环境
+      理解JavaScript的原型属性
     </h1>
   
 
@@ -230,13 +230,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JS框架/">JS框架</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构建工具/">构建工具</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型/">原型</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,10 +246,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line">create-react-app my-app</div><div class="line">cd my-app/</div><div class="line">npm start</div></pre></td></tr></table></figure></p>
-<p>执行完上述命令之后，你可以直接打开<a href="http://localhost:3000，即可以看到你" target="_blank" rel="external">http://localhost:3000，即可以看到你</a> React APP 的运行效果。此时也是处于开发模式下，如果你要进行发布，则使用npm run build进行编译。<br>create-react-app生成的目录格式如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">my-app/</div><div class="line">  README.md</div><div class="line">  index.html</div><div class="line">  favicon.ico</div><div class="line">  node_modules/</div><div class="line">  package.json</div><div class="line">  src/</div><div class="line">    App.css</div><div class="line">    App.js</div><div class="line">    index.css</div><div class="line">    index.js</div><div class="line">    logo.svg</div></pre></td></tr></table></figure></p>
-<p>这样一个简单React开发环境就搭建好了。<br>如果你是使用npm start来启动配置，那么自动会进入开发模式，此时热替换是处于自动激活状态，你也可以实时地在界面或者命令行中看到错误提示。</p>
-<p>如果你使用npm run build来编译得到生产环境，此时代码会被编译到build目录下，此时会自动将整个应用打包发布，它会自动使用Webpack控件进行优化与压缩。</p>
+        <p>理解 JavaScript 的prototype属性不太容易。你也许知道它同面向对象编程（OOP）和对象继承有关，但未必对其技术原理非常清楚。<br><a id="more"></a></p>
+<h1 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h1><p>面向对象编程可以通过很多途径实现。其他的语言，比如 Java，使用基于类的模型实现： 类及对象实例区别对待。但在 JavaScript 中没有类的概念，取而代之的是一切皆对象。JavaScript 中的继承通过原型继承实现：一个对象直接从另一对象继承。对象中包含其继承体系中祖先的引用——对象的 prototype 属性。</p>
+<p>class 关键字是在 ES6 中首次引入 JavaScript 的。其实，它并没有为面向对象继承引入新模型， class 关键字通过语法糖，实现了本文介绍的原型特性和构造函数。</p>
+<h1 id="JavaScript-实现继承的语言特性"><a href="#JavaScript-实现继承的语言特性" class="headerlink" title="JavaScript 实现继承的语言特性"></a>JavaScript 实现继承的语言特性</h1><p>以下语言特性共同实现了 JavaScript 继承。<br>当尝试访问 JavaScript 对象中不存在的属性时，解析器会查找匹配的对象原型。例如调用 car.toString()，如果 car 没有 toString 方法，就会调用 car 对象的原型。 这个查找过程会一直递归， 直到查找到匹配的原型或者继承链尽头。<br>调用  new Car() 会创建一个新的对象，并初始化为 Car.prototype。 这样就允许为新对象设置原型链。需要注意的是，new Car() 只有当  Car 是函数时才有意义。 此类函数即所谓构造函数。<br>调用对象的一个成员函数时， this 的值被绑定为当前对象。例如调用 “abc”.toString()，this 的值被设置为 “abc”，然后调用 toString 函数。该技术支持代码重用：同样的代码，可在 this 为各种不同的值时调用。对象的成员函数，也被称为对象的方法。</p>
+<h1 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h1><p>我们用面向对象编程，实现一个计算矩形周长的例子。</p>
+<p>JavaScript</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function Rectangle(x, y) &#123;</div><div class="line">    this.x = x;</div><div class="line">    this.y = y;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">Rectangle.prototype.perimeter = function() &#123;</div><div class="line">    return 2 * (this.x + this.y);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">var rect = new Rectangle(1, 2);</div><div class="line">console.log(rect.perimeter()); // outputs &apos;6&apos;</div></pre></td></tr></table></figure>
+<p>首先，我们定义构造函数 Rectangle。 按照规范，我们大写构造函数名首字母，表明它可以用 new 调用，以示与其他常规函数的区别。构造函数自动将 this 赋值为一空对象，然后代码中用 x 和 y 属性填充它，以备后用。</p>
+<p>然后， Rectangle.prototype 新增一个通过 x 和 y 属性计算周长成员函数。 注意 this 的使用，在不同的对象中，this 会有不同的值，这些代码都可以正常工作。</p>
+<p>最后， 一个名为 rect 的对象创建出来了。 它继承了 Rectangle.prototype， 我们可以调用 rect.perimeter()， 然后将结果打印到控制台。</p>
+<h1 id="prototype-属性名称带来的误解"><a href="#prototype-属性名称带来的误解" class="headerlink" title="prototype 属性名称带来的误解"></a>prototype 属性名称带来的误解</h1><p>有一些关于 JavaScript 的原型的误解。 一个对象的原型与对象的 prototype 属性并非一回事。 前者用于在原型链中匹配不存在的属性。后者用于通过 new 关键字创建对象，它将作为新创建对象的原型。 理解二者的差异，将帮助你彻底理解 JavaScript 中的原型特性。</p>
+<p>在我们的例子中， Rectangle.prototype 是用 new Rectangle() 创建出来对象的原型， 而 Rectangle 的原型实际上是 JavaScript 的 Function.prototype。（子对象的原型是父对象的 prototype 属性）</p>
+<p>对象中保存原型的变量，也被称之为内部原型引用（the internal prototype link），历史上也曾称之为 <strong>proto</strong> ，对这个称谓始终存在一些争议。 更精确的，它可以被称为 Object.getPrototypeOf(…) 的返回值。</p>
 
       
     </div>
@@ -258,13 +267,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></p>
+        <p><span>本文标题:</span><a href="/2016/09/21/理解JavaScript的原型属性/">理解JavaScript的原型属性</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年10月10日 - 15时57分</p>
-        <p><span>最后更新:</span>2016年11月10日 - 16时09分</p>
+        <p><span>发布时间:</span>2016年09月21日 - 11时10分</p>
+        <p><span>最后更新:</span>2016年11月11日 - 11时14分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/10/使用create-react-app快速构建React开发环境/" title="使用create-react-app快速构建React开发环境">http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/21/理解JavaScript的原型属性/" title="理解JavaScript的原型属性">http://transform.com/2016/09/21/理解JavaScript的原型属性/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/09/21/理解JavaScript的原型属性/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -277,9 +286,18 @@
 
 <nav id="article-nav">
   
+    <a href="/2016/10/08/React入门/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          React入门
+        
+      </div>
+    </a>
   
-    <a href="/2016/10/09/选择 Reac​​tJS 的理由/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">选择 Reac​​tJS 的理由</div>
+  
+    <a href="/2016/09/18/理解JS中的this指向/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解JS中的this指向</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -290,7 +308,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#原型继承"><span class="toc-number">1.</span> <span class="toc-text">原型继承</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-实现继承的语言特性"><span class="toc-number">2.</span> <span class="toc-text">JavaScript 实现继承的语言特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#举个栗子"><span class="toc-number">3.</span> <span class="toc-text">举个栗子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prototype-属性名称带来的误解"><span class="toc-number">4.</span> <span class="toc-text">prototype 属性名称带来的误解</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -338,7 +356,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/10/10/使用create-react-app快速构建React开发环境/" data-title="使用create-react-app快速构建React开发环境" data-url="http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/"></div>
+    <div class="ds-thread" data-thread-key="2016/09/21/理解JavaScript的原型属性/" data-title="理解JavaScript的原型属性" data-url="http://transform.com/2016/09/21/理解JavaScript的原型属性/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -361,11 +379,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/10/08/React入门/" title="上一篇: React入门">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/10/09/选择 Reac​​tJS 的理由/" title="下一篇: 选择 Reac​​tJS 的理由">
+            <a href="/2016/09/18/理解JS中的this指向/" title="下一篇: 理解JS中的this指向">
                 <i class="fa fa-angle-right"></i>
             </a>
         
