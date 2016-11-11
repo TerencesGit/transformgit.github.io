@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux常用命令 | Transform&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用Linux的时候会经常使用到很多Linux命令，其中有大部分不是经常使用到的。在本文中主要为大家总结了最常用Linux命令行，希望对刚刚接触Linux命令行的使用者有所帮助。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:url" content="http://transform.com/2016/09/11/Linux常用命令/index.html">
+<meta property="og:site_name" content="Transform's Blog">
+<meta property="og:description" content="使用Linux的时候会经常使用到很多Linux命令，其中有大部分不是经常使用到的。在本文中主要为大家总结了最常用Linux命令行，希望对刚刚接触Linux命令行的使用者有所帮助。">
+<meta property="og:updated_time" content="2016-11-11T02:24:54.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令">
+<meta name="twitter:description" content="使用Linux的时候会经常使用到很多Linux命令，其中有大部分不是经常使用到的。在本文中主要为大家总结了最常用Linux命令行，希望对刚刚接触Linux命令行的使用者有所帮助。">
+  
+    <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Transform</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我的博客</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/u/5063790859" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://TransformGit.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">技术控、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Transform</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Transform</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/u/5063790859" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/11/Linux常用命令/" class="article-date">
+      <time datetime="2016-09-11T02:06:05.000Z" itemprop="datePublished">2016-09-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux常用命令
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令行/">命令行</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用Linux的时候会经常使用到很多Linux命令，其中有大部分不是经常使用到的。在本文中主要为大家总结了最常用Linux命令行，希望对刚刚接触Linux命令行的使用者有所帮助。<br><a id="more"></a></p>
+<h1 id="1-最常用的命令列表"><a href="#1-最常用的命令列表" class="headerlink" title="1. 最常用的命令列表"></a>1. 最常用的命令列表</h1><p>下面列出十个在使用linux过程中使用频率最高的命令。这里只作简单介绍，具体用法请参考后面内容。</p>
+<ul>
+<li>cat，显示文件内容。</li>
+<li>cd，改变目录路径。</li>
+<li>cp，复制文件。</li>
+<li>find，查找文件。</li>
+<li>grep，搜索、过滤信息。</li>
+<li>ls，列出目录信息。</li>
+<li>more，分页显示。</li>
+<li>rm，删除文件或目录。</li>
+<li>vi，调用vi文本编辑器。</li>
+<li>who，显示登录用户信息。<h1 id="2-chmod—-改变一个或多个文件的存取模式-mode"><a href="#2-chmod—-改变一个或多个文件的存取模式-mode" class="headerlink" title="2. chmod—-改变一个或多个文件的存取模式(mode)"></a>2. chmod—-改变一个或多个文件的存取模式(mode)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod [options] mode files</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>只能文件属主或特权用户才能使用该功能来改变文件存取模式。mode可以是数字形式或以who opcode permission形式表示。who是可选的，默认是a(所有用户)。只能选择一个opcode(操作码)。可指定多个mode，以逗号分开。</p>
+<p>options：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-c，--changes只输出被改变文件的信息</div><div class="line">-f，--silent，--quiet当chmod不能改变文件模式时，不通知文件的用户</div><div class="line">--help输出帮助信息。</div><div class="line">-R，--recursive可递归遍历子目录，把修改应到目录下所有文件和子目录</div><div class="line">--reference=filename参照filename的权限来设置权限</div><div class="line">-v，--verbose无论修改是否成功，输出每个文件的信息</div><div class="line">--version输出版本信息。</div></pre></td></tr></table></figure></p>
+<p>who<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">u用户</div><div class="line">g组</div><div class="line">o其它</div><div class="line">a所有用户(默认)</div></pre></td></tr></table></figure></p>
+<p>opcode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">+增加权限</div><div class="line">-删除权限</div><div class="line">=重新分配权限</div></pre></td></tr></table></figure></p>
+<p>permission<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">r读</div><div class="line">w写</div><div class="line">x执行</div><div class="line">s设置用户(或组)的ID号</div><div class="line">t设置粘着位(sticky bit)，防止文件或目录被非属主删除</div><div class="line">u用户的当前权限</div><div class="line">g组的当前权限</div><div class="line">o其他用户的当前权限</div></pre></td></tr></table></figure></p>
+<p>作为选择，我们多数用三位八进制数字的形式来表示权限，第一位指定属主的权限，第二位指定组权限，第三位指定其他用户的权限，每位通过4(读)、2(写)、1(执行)三种数值的和来确定权限。如6(4+2)代表有读写权，7(4+2+1)有读、写和执行的权限。</p>
+<p>还可设置第四位，它位于三位权限序列的前面，第四位数字取值是4，2，1，代表意思如下：</p>
+<p>4，执行时设置用户ID，用于授权给基于文件属主的进程，而不是给创建此进程的用户。<br>2，执行时设置用户组ID，用于授权给基于文件所在组的进程，而不是基于创建此进程的用户。<br>1，设置粘着位<br>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ chmod u+x file 给file的属主增加执行权限</div><div class="line">$ chmod 751 file 给file的属主分配读、写、执行(7)的权限，给file的所在组分配读、执行(5)的权限，给其他用户分配执行(1)的权限</div><div class="line">$ chmod u=rwx,g=rx,o=x file 上例的另一种形式</div><div class="line">$ chmod =r file 为所有用户分配读权限</div><div class="line">$ chmod 444 file 同上例</div><div class="line">$ chmod a-wx,a+r 同上例</div><div class="line">$ chmod -R u+r directory 递归地给directory目录下所有文件和子目录的属主分配读的权限</div><div class="line">$ chmod 4755 设置用ID，给属主分配读、写和执行权限，给组和其他用户分配读、执行的权限</div></pre></td></tr></table></figure></p>
+<h1 id="3-chgrp—-修改文件或目录的所属组"><a href="#3-chgrp—-修改文件或目录的所属组" class="headerlink" title="3. chgrp—-修改文件或目录的所属组"></a>3. chgrp—-修改文件或目录的所属组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chgrp [options] newgroup files/directorys</div></pre></td></tr></table></figure>
+<p>组名可以用组的ID号，也可用/etc/group中的组名。只有文件的属主或特权用户(root)才可改变它的组。</p>
+<p>options：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-c，--changes  只输出被改变文件的信息</div><div class="line">-f，--silent，</div><div class="line">--quiet  当不能改变文件组属性时，不通知文件的用户</div><div class="line">--help 输出帮助信息。</div><div class="line">-R，--recursive 可递归遍历子目录，把修改应到目录下所有文件和子目录</div><div class="line">--reference=filename 参照filename的组信息来设置当前文件的组</div><div class="line">-v，--verbose 输出详细信息</div><div class="line">--version 输出版本信息</div></pre></td></tr></table></figure></p>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ chgrp root test 把test的所属组更改root组</div><div class="line">$ chgrp -R mysql test 递归地把test目录及该目录下所有文件和子目录的组属性设置成mysql</div><div class="line">$ chgrp root * 把当前目录中所有文件的组属性设置成root</div></pre></td></tr></table></figure></p>
+<h1 id="4-chown—-设置一个或多个文件或目录的属主身份"><a href="#4-chown—-设置一个或多个文件或目录的属主身份" class="headerlink" title="4. chown—-设置一个或多个文件或目录的属主身份"></a>4. chown—-设置一个或多个文件或目录的属主身份</h1><p>chown [options] newowner files/directorys<br>新的属主可以是用户的ID号，也可以是/etc/passwd里的登录名。chown也可接受这样的形式：newowner:newgroup或newowner.newgroup。同时改变所属组的属性。如果句点和冒号后没有组名，则组改变为新属主的组。只有文件或目录的当前属主才有权改变它的属性。</p>
+<p>options：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">-c，--changes  只输出被改变文件的信息</div><div class="line">--dereference  跟踪符号链接</div><div class="line">-h，--no-dereference  改变每一个符号链的属主身份，而不是被引用文件的属主身份</div><div class="line">-f，--silent，--quiet  当不能改变文件属主属性时，不通知文件的用户</div><div class="line">--help  输出帮助信息。</div><div class="line">-R，--recursive  可递归遍历子目录，把修改应到目录下所有文件和子目录</div><div class="line">--reference=filename  把属主改变成filename文件的属主</div><div class="line">-v，--verbose  输出详细信息</div><div class="line">--version  输出版本信息。</div></pre></td></tr></table></figure></p>
+<p>实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ chown root test 把test文件的属主改进root</div><div class="line">$ chown -R root test_directory 递归地把test_directory目录下的所有文件属主改成root</div><div class="line">$ chown --dereference root test_link 把test_link链接的原文件属主改成root，链接文件属主不变</div><div class="line">$ chown --no-dereference root test_link 把test_link的链接文件属主改成root，原文件属主不变</div></pre></td></tr></table></figure></p>
+<h1 id="5-date—-显示、修改系统时间"><a href="#5-date—-显示、修改系统时间" class="headerlink" title="5. date—-显示、修改系统时间"></a>5. date—-显示、修改系统时间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">date [options][+format][date]</div><div class="line">$ date -s 06/09/2004 修改日期（按月日年格式）</div><div class="line">$ date -s 13:56:00 修改时间（按时分秒格式）</div><div class="line">$ date -r test 显示test文件最后一次的修改时间</div><div class="line">$ date +&apos;%Y-%m-%d&apos; 以yyyy-mm-dd格式显示日期,其它格式请参考帮助</div><div class="line">$ clock -r 查询BIOS时间</div><div class="line">$ clock -w 把修改后的时间写回BIOS</div></pre></td></tr></table></figure>
+<h1 id="6-df—–显示已安装文件系统的磁盘容量状态"><a href="#6-df—–显示已安装文件系统的磁盘容量状态" class="headerlink" title="6. df—–显示已安装文件系统的磁盘容量状态"></a>6. df—–显示已安装文件系统的磁盘容量状态</h1><p>df [options][name]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ df -h 以友好的格式输出所有已安装文件系统的磁盘容量状态</div><div class="line">$ df -m /home 以M为单位输出home目录的磁盘容量状态</div><div class="line">$ df -k 以K为单位输出所有已安装文件系统的磁盘容量状态</div><div class="line">$ df -i 报告空闲的、用过的或部份用过的（百份比）索引节点</div><div class="line">$ df -t ext3 仅显示文件类型为ext3的文件系统的磁盘状态</div><div class="line">$ df -x ext3 仅显示文件类型不为ext3的文件系统的磁盘状态</div><div class="line">$ df -T 除显示文件系统磁盘容量大小外还显示文件系统类型</div><div class="line">$ df -l 仅显示本地文件系统。</div></pre></td></tr></table></figure></p>
+<h1 id="7-fdisk—-分区表查询工具"><a href="#7-fdisk—-分区表查询工具" class="headerlink" title="7. fdisk—-分区表查询工具"></a>7. fdisk—-分区表查询工具</h1><p>fdisk [options][driver]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ fdisk -l 列出所有分区信息</div></pre></td></tr></table></figure></p>
+<h1 id="8-hdparm—-硬盘管理"><a href="#8-hdparm—-硬盘管理" class="headerlink" title="8. hdparm—-硬盘管理"></a>8. hdparm—-硬盘管理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">hdparm [options][driver]</div><div class="line">$ hdparm -d /dev/hda 显示硬盘的DMA模式是不打开，1代表on</div><div class="line">$ hdparm -tT /dev/hda 测试硬盘的写性能</div><div class="line">$ hdparm -d1 /dev/hda 开启dma功能</div><div class="line">$ hdparm -d1 -X68 -c3 -m16 /dev/hd</div><div class="line">选项说明：</div><div class="line"></div><div class="line">-c3：把硬盘的IO模式从16位转成32位。</div><div class="line">-m16：改变硬盘的多路扇区的读功能，-m16使硬盘在一次I/O中断中读入16个扇区的数据。</div><div class="line">-d1：打开DMA模式。</div><div class="line">-X68：支持ATA66的数据传输模式。下面是其它模式的设置对照</div><div class="line">ATA33.......参数是-X66</div><div class="line">ATA66.......参数是-X68</div><div class="line">ATA100......参数是-X69</div><div class="line">$ hdparm -k1 /dev/hda 保存设置</div></pre></td></tr></table></figure>
+<h1 id="9-ln—–为文件建立别名"><a href="#9-ln—–为文件建立别名" class="headerlink" title="9. ln—–为文件建立别名"></a>9. ln—–为文件建立别名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ln [options] sourcename [destname]</div><div class="line">ln [options] sourcenames destdirectory</div><div class="line">$ ln -s file1 file2 建立一个到file1的符号链接file2，删除file2不会影响file1</div><div class="line">$ ln -s -f file1 file2 建立一个到file1的符号链接file2，并不提示是否重写</div></pre></td></tr></table></figure>
+<h1 id="10-shutdown—–终止所有进程序，关闭计算机。"><a href="#10-shutdown—–终止所有进程序，关闭计算机。" class="headerlink" title="10. shutdown—–终止所有进程序，关闭计算机。"></a>10. shutdown—–终止所有进程序，关闭计算机。</h1><p>shutdown [options] when [message]<br>用when可以是指定的关机时间(以hh:mm格式)、关机前要等待的时间(以+m格式)、或者now。message指定一条广播消息通知所有用户退出系统。showdown给所有进程发送SIGTERM信号，并调用init 1执行实际的关机动作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ shutdown -c 取消正在进行的关闭操作</div><div class="line">$ shutdown -f 快速重新启动，在重新启动时禁止对fsck的常规调用</div><div class="line">$ shutdown -h 当关闭完成时停止系统</div><div class="line">$ shutdown -k 输出警告信息，但禁止实际的关闭</div><div class="line">$ shutdown -n 不调用init就执行关闭</div><div class="line">$ shutdown -r 当关闭完成时重新启动系统</div><div class="line">$ shutdown -t 5 在杀死进程和改变运行级别之间确保延时5秒</div></pre></td></tr></table></figure></p>
+<h1 id="11-sleep—–执行另一个命令之前等待的时间"><a href="#11-sleep—–执行另一个命令之前等待的时间" class="headerlink" title="11. sleep—–执行另一个命令之前等待的时间"></a>11. sleep—–执行另一个命令之前等待的时间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sleep amount [units]</div><div class="line">units默认为秒(s)，m表示分钟，h表示小时，d表示天。</div></pre></td></tr></table></figure>
+<h1 id="12-swapon-swapoff—–启动和关闭交换分区"><a href="#12-swapon-swapoff—–启动和关闭交换分区" class="headerlink" title="12. swapon/swapoff—–启动和关闭交换分区"></a>12. swapon/swapoff—–启动和关闭交换分区</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">swapon/swapoff [options] device</div><div class="line">$ swapon -s 显示交换分区信息</div><div class="line">$ swapon -a 激活所有在/etc/fstab中有sw标记的分区</div><div class="line">$ swapon -p 1 设置交换分区优先级为1</div></pre></td></tr></table></figure>
+<h1 id="13-tune2fs—–调整Linux第二扩展文件系统的参数"><a href="#13-tune2fs—–调整Linux第二扩展文件系统的参数" class="headerlink" title="13. tune2fs—–调整Linux第二扩展文件系统的参数"></a>13. tune2fs—–调整Linux第二扩展文件系统的参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tune2fs [options] device</div><div class="line">$ tune2fs -l /dev/hda1 显示hda1分区的超级块内容</div><div class="line">$ tune2fs -c 100 /dev/hda1 设置hda1分区每mount100次就进行磁盘检查</div></pre></td></tr></table></figure>
+<h1 id="14-uniq—-过滤、统计、删除重复行"><a href="#14-uniq—-过滤、统计、删除重复行" class="headerlink" title="14. uniq—-过滤、统计、删除重复行"></a>14. uniq—-过滤、统计、删除重复行</h1><p>uniq [options][file1 [files]]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ uniq -c file file中的重复行输出一次，并在每行前显示重复次数</div><div class="line">$ uniq -d file file中的重复行输出一次，但不输出唯一的行</div><div class="line">$ uniq -u file 只输出file中的唯一行</div><div class="line">$ uniq file1 file2 把file1中的重复的相邻行删除，并把每行的一个拷贝送到file2</div></pre></td></tr></table></figure></p>
+<h1 id="15-wc—–输出每个文件中的字符数、单词数及行数。"><a href="#15-wc—–输出每个文件中的字符数、单词数及行数。" class="headerlink" title="15. wc—–输出每个文件中的字符数、单词数及行数。"></a>15. wc—–输出每个文件中的字符数、单词数及行数。</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wc [options][files]$</div><div class="line">wc -l file 输出file中的行数</div><div class="line">$ wc -w file 输出file中的单词数</div><div class="line">$ wc -c file 输出file中的字符数</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/11/Linux常用命令/">Linux常用命令</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
+        <p><span>发布时间:</span>2016年09月11日 - 10时06分</p>
+        <p><span>最后更新:</span>2016年11月11日 - 10时24分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/11/Linux常用命令/" title="Linux常用命令">http://transform.com/2016/09/11/Linux常用命令/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/09/11/Linux常用命令/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/10/08/React入门/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          React入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/08/前端模块化--webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端模块化--webpack</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-最常用的命令列表"><span class="toc-number">1.</span> <span class="toc-text">1. 最常用的命令列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-chmod—-改变一个或多个文件的存取模式-mode"><span class="toc-number">2.</span> <span class="toc-text">2. chmod—-改变一个或多个文件的存取模式(mode)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-chgrp—-修改文件或目录的所属组"><span class="toc-number">3.</span> <span class="toc-text">3. chgrp—-修改文件或目录的所属组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-chown—-设置一个或多个文件或目录的属主身份"><span class="toc-number">4.</span> <span class="toc-text">4. chown—-设置一个或多个文件或目录的属主身份</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-date—-显示、修改系统时间"><span class="toc-number">5.</span> <span class="toc-text">5. date—-显示、修改系统时间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-df—–显示已安装文件系统的磁盘容量状态"><span class="toc-number">6.</span> <span class="toc-text">6. df—–显示已安装文件系统的磁盘容量状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-fdisk—-分区表查询工具"><span class="toc-number">7.</span> <span class="toc-text">7. fdisk—-分区表查询工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-hdparm—-硬盘管理"><span class="toc-number">8.</span> <span class="toc-text">8. hdparm—-硬盘管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-ln—–为文件建立别名"><span class="toc-number">9.</span> <span class="toc-text">9. ln—–为文件建立别名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-shutdown—–终止所有进程序，关闭计算机。"><span class="toc-number">10.</span> <span class="toc-text">10. shutdown—–终止所有进程序，关闭计算机。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-sleep—–执行另一个命令之前等待的时间"><span class="toc-number">11.</span> <span class="toc-text">11. sleep—–执行另一个命令之前等待的时间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-swapon-swapoff—–启动和关闭交换分区"><span class="toc-number">12.</span> <span class="toc-text">12. swapon/swapoff—–启动和关闭交换分区</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-tune2fs—–调整Linux第二扩展文件系统的参数"><span class="toc-number">13.</span> <span class="toc-text">13. tune2fs—–调整Linux第二扩展文件系统的参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-uniq—-过滤、统计、删除重复行"><span class="toc-number">14.</span> <span class="toc-text">14. uniq—-过滤、统计、删除重复行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-wc—–输出每个文件中的字符数、单词数及行数。"><span class="toc-number">15.</span> <span class="toc-text">15. wc—–输出每个文件中的字符数、单词数及行数。</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/09/11/Linux常用命令/" data-title="Linux常用命令" data-url="http://transform.com/2016/09/11/Linux常用命令/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/10/08/React入门/" title="上一篇: React入门">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/09/08/前端模块化--webpack/" title="下一篇: 前端模块化--webpack">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/React入门/">React入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/Linux常用命令/">Linux常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/网页性能优化/">网页性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Transform
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
