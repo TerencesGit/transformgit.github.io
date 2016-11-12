@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>选择 Reac​​tJS 的理由 | Transform&#39;s Blog</title>
+  <title>NodeJS跨域问题解决 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：">
+  <meta name="description" content="前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：
+
+后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；
+CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；
+用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="选择 Reac​​tJS 的理由">
-<meta property="og:url" content="http://transform.com/2016/10/09/选择 Reac​​tJS 的理由/index.html">
+<meta property="og:title" content="NodeJS跨域问题解决">
+<meta property="og:url" content="http://transform.com/2016/09/12/NodeJS跨域问题解决/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：">
-<meta property="og:updated_time" content="2016-11-10T08:13:18.154Z">
+<meta property="og:description" content="前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：
+
+后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；
+CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；
+用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发">
+<meta property="og:updated_time" content="2016-11-12T03:27:10.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="选择 Reac​​tJS 的理由">
-<meta name="twitter:description" content="ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：">
+<meta name="twitter:title" content="NodeJS跨域问题解决">
+<meta name="twitter:description" content="前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：
+
+后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；
+CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；
+用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +216,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-选择 Reac​​tJS 的理由" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-NodeJS跨域问题解决" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/09/选择 Reac​​tJS 的理由/" class="article-date">
-      <time datetime="2016-10-09T01:06:32.000Z" itemprop="datePublished">2016-10-09</time>
+      <a href="/2016/09/12/NodeJS跨域问题解决/" class="article-date">
+      <time datetime="2016-09-12T03:20:39.000Z" itemprop="datePublished">2016-09-12</time>
 </a>
     </div>
   
@@ -221,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      选择 Reac​​tJS 的理由
+      NodeJS跨域问题解决
     </h1>
   
 
@@ -230,13 +242,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JS框架/">JS框架</a>
+    <a class="article-category-link" href="/categories/NodeJS/">NodeJS</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,22 +258,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>　ReactJS是一个开源的JavaScript库，并且由Facebook和Instagram这样的顶尖IT企业以及开发者社区所维护。该框架广泛使用于为web应用程序开发用户界面的时候。这个特殊的框架被发明时带有这样一个目的：<br><a id="more"></a><br>“构建数据随着时间的推移一次又一次改变的大型应用程序。”</p>
-<p>　　我们经常使用的工具有很多，但只有少数彻底改变了我们的工作流程。ReactJS就是其中之一。随着现在可用框架变得越来越多，我们很难找到一个最终不会穷途末路的框架。这就是为什么在ValueCoders我们建议去往React。<br>　下面是如Facebook，Instagram和WhatsApp这些巨头之所以依赖于ReactJS的5大理由：</p>
-<p>　React极其高效</p>
-<p>　　React创建了自己的DOM（虚拟），这也是组件存在的地方。这种方法为开发人员提供了高度的灵活性和惊人的性能提升，因为React提前计算到了在DOM中所需要的改变并相应地更新了DOM树。React用这种方式避免了高昂的DOM操作并用一种高效的方式执行更新。</p>
-<p>JavaScript库</p>
-<p>　　JSX语法是JavaScript和HTML良好又健康的交融，专用于ReactJS。JSX简化了为网站编写组件的全过程。并且HTML方面允许开发人员渲染函数而无需连接字符串。</p>
-<p>　　React的主要优点是，正确使用本地API以及，导致的结果是，跨平台栈工作。<br>对于SEO真的太棒了</p>
-<p>　　JavaScript框架的主要挑战之一是，它们对搜索引擎一点也不友好，虽然最近在这方面已经有了一些改进。</p>
-<p>　　出人意料的是，React.js与众不同，因为你能在服务器上运行React.js，并且将返回虚拟DOM，并作为常规网页呈现给浏览器。无需任何其他技巧！</p>
-<p>　专注用户界面</p>
-<p>　　React Native不同于MeteorJS，Firebase和AngularJS，它更关注于用户界面。它在JavaScript与设备及React Native之间互动的帮助下，给予你用户高度灵敏的界面。其结果是，增加了应用程序的加载时间，有助于保持运行顺利没有任何瞬断。</p>
-<p>　简单、开箱即用</p>
-<p>　　当你用React启动项目时，不要忘了安装ReactJS的官方Chrome扩展程序。它能使得调试app变得更加容易。</p>
-<p>　　安装该扩展后，你可以直接查看虚拟DOM，如果你是在元素面板中浏览规则DOM树的话。相当令人惊叹！</p>
-<p>　总结</p>
-<p>　　希望使用ReactJS的这五大好处可以让你相信这个框架的独特性。如果你正试图开发一个需要对SEO友好并能处理沉重流量负担的web应用程序，那么ReactJS或许可以帮到你。</p>
+        <p>前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：</p>
+<ol>
+<li>后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；</li>
+<li>CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；</li>
+<li>用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发时候的跨域问题。<a id="more"></a>
+<h1 id="用到的技术："><a href="#用到的技术：" class="headerlink" title="用到的技术："></a>用到的技术：</h1></li>
+<li>nodejs搭建本地http服务器</li>
+<li>应用node-http-proxy，做接口url的转发<h1 id="具体方法："><a href="#具体方法：" class="headerlink" title="具体方法："></a>具体方法：</h1></li>
+<li>node.js搭建本地http服务器</li>
+<li>node.js做转发使用node-http-proxy实现，官方文档：<a href="https://github.com/nodejitsu/node-http-proxy#using-https" target="_blank" rel="external">https://github.com/nodejitsu/node-http-proxy#using-https</a></li>
+</ol>
+<h1 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h1><ol>
+<li><p>npm初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装node-http-proxy模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install http-proxy --save-dev</div></pre></td></tr></table></figure>
+</li>
+<li><p>项目结构</p>
+</li>
+</ol>
+<p>下面的例子中，我们把html文件直接放在根目录’./‘，也可以指定一个网站目录，在proxy.js中可以自定义<br>配置HTTP服务器和PROXY转发<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">var PORT = 3000;</div><div class="line">var http = require(&apos;http&apos;);</div><div class="line">var url=require(&apos;url&apos;);</div><div class="line">var fs=require(&apos;fs&apos;);</div><div class="line">var mine=require(&apos;./mine&apos;).types;</div><div class="line">var path=require(&apos;path&apos;);</div><div class="line">var httpProxy = require(&apos;http-proxy&apos;);</div><div class="line">var proxy = httpProxy.createProxyServer(&#123;</div><div class="line">target: &apos;http://192.168.10.38:8180/&apos;, //接口地址</div><div class="line">// 下面的设置用于https</div><div class="line">// ssl: &#123;</div><div class="line">// key: fs.readFileSync(&apos;server_decrypt.key&apos;, &apos;utf8&apos;),</div><div class="line">// cert: fs.readFileSync(&apos;server.crt&apos;, &apos;utf8&apos;)</div><div class="line">// &#125;,</div><div class="line">// secure: false</div><div class="line">&#125;);</div><div class="line">proxy.on(&apos;error&apos;, function(err, req, res)&#123;</div><div class="line">res.writeHead(500, &#123;</div><div class="line">&apos;content-type&apos;: &apos;text/plain&apos;</div><div class="line">&#125;);</div><div class="line">console.log(err);</div><div class="line">res.end(&apos;Something went wrong. And we are reporting a custom error message.&apos;);</div><div class="line">&#125;);</div><div class="line">var server = http.createServer(function (request, response) &#123;</div><div class="line">var pathname = url.parse(request.url).pathname;</div><div class="line">//var realPath = path.join(&quot;main-pages&quot;, pathname); // 指定根目录</div><div class="line">var realPath = path.join(&quot;./&quot;, pathname);</div><div class="line">console.log(pathname);</div><div class="line">console.log(realPath);</div><div class="line">var ext = path.extname(realPath);</div><div class="line">ext = ext ? ext.slice(1) : &apos;unknown&apos;;</div><div class="line">//判断如果是接口访问，则通过proxy转发</div><div class="line">if(pathname.indexOf(&quot;mspj-mall-admin&quot;) &gt; 0)&#123;</div><div class="line">proxy.web(request, response);</div><div class="line">return;</div><div class="line">&#125;</div><div class="line">fs.exists(realPath, function (exists) &#123;</div><div class="line">if (!exists) &#123;</div><div class="line">response.writeHead(404, &#123;</div><div class="line">&apos;Content-Type&apos;: &apos;text/plain&apos;</div><div class="line">&#125;);</div><div class="line">response.write(&quot;This request URL &quot; + pathname + &quot; was not found on this server.&quot;);</div><div class="line">response.end();</div><div class="line">&#125; else &#123;</div><div class="line">fs.readFile(realPath, &quot;binary&quot;, function (err, file) &#123;</div><div class="line">if (err) &#123;</div><div class="line">response.writeHead(500, &#123;</div><div class="line">&apos;Content-Type&apos;: &apos;text/plain&apos;</div><div class="line">&#125;);</div><div class="line">response.end(err);</div><div class="line">&#125; else &#123;</div><div class="line">var contentType = mine[ext] || &quot;text/plain&quot;;</div><div class="line">response.writeHead(200, &#123;</div><div class="line">&apos;Content-Type&apos;: contentType</div><div class="line">&#125;);</div><div class="line">response.write(file, &quot;binary&quot;);</div><div class="line">response.end();</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">&#125;);</div><div class="line">server.listen(PORT);</div><div class="line">console.log(&quot;Server runing at port: &quot; + PORT + &quot;.&quot;);</div></pre></td></tr></table></figure></p>
+<p>MINE.JS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">exports.types = &#123;</div><div class="line">&quot;css&quot;: &quot;text/css&quot;,</div><div class="line">&quot;gif&quot;: &quot;image/gif&quot;,</div><div class="line">&quot;html&quot;: &quot;text/html&quot;,</div><div class="line">&quot;ico&quot;: &quot;image/x-icon&quot;,</div><div class="line">&quot;jpeg&quot;: &quot;image/jpeg&quot;,</div><div class="line">&quot;jpg&quot;: &quot;image/jpeg&quot;,</div><div class="line">&quot;js&quot;: &quot;text/javascript&quot;,</div><div class="line">&quot;json&quot;: &quot;application/json&quot;,</div><div class="line">&quot;pdf&quot;: &quot;application/pdf&quot;,</div><div class="line">&quot;png&quot;: &quot;image/png&quot;,</div><div class="line">&quot;svg&quot;: &quot;image/svg+xml&quot;,</div><div class="line">&quot;swf&quot;: &quot;application/x-shockwave-flash&quot;,</div><div class="line">&quot;tiff&quot;: &quot;image/tiff&quot;,</div><div class="line">&quot;txt&quot;: &quot;text/plain&quot;,</div><div class="line">&quot;wav&quot;: &quot;audio/x-wav&quot;,</div><div class="line">&quot;wma&quot;: &quot;audio/x-ms-wma&quot;,</div><div class="line">&quot;wmv&quot;: &quot;video/x-ms-wmv&quot;,</div><div class="line">&quot;xml&quot;: &quot;text/xml&quot;,</div><div class="line">&quot;woff&quot;: &quot;application/x-woff&quot;,</div><div class="line">&quot;woff2&quot;: &quot;application/x-woff2&quot;,</div><div class="line">&quot;tff&quot;: &quot;application/x-font-truetype&quot;,</div><div class="line">&quot;otf&quot;: &quot;application/x-font-opentype&quot;,</div><div class="line">&quot;eot&quot;: &quot;application/vnd.ms-fontobject&quot;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>然后把项目中的接口地址改成<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a>……<br>启动nodejs服务<br>启动cmd，定位到项目目录，运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node proxy.js</div></pre></td></tr></table></figure></p>
+<p>访问：<br><a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a><br>可以看到项目中调用的<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a>….. 都会从<a href="http://192.168.10.38:8180/" target="_blank" rel="external">http://192.168.10.38:8180/</a>…… 获取数据，然后转发到本地。<br>这样就不存在跨域了。</p>
 
       
     </div>
@@ -270,13 +291,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></p>
+        <p><span>本文标题:</span><a href="/2016/09/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年10月09日 - 09时06分</p>
-        <p><span>最后更新:</span>2016年11月10日 - 16时13分</p>
+        <p><span>发布时间:</span>2016年09月12日 - 11时20分</p>
+        <p><span>最后更新:</span>2016年11月12日 - 11时27分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/09/选择 Reac​​tJS 的理由/" title="选择 Reac​​tJS 的理由">http://transform.com/2016/10/09/选择 Reac​​tJS 的理由/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/10/09/选择 Reac​​tJS 的理由/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/12/NodeJS跨域问题解决/" title="NodeJS跨域问题解决">http://transform.com/2016/09/12/NodeJS跨域问题解决/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/09/12/NodeJS跨域问题解决/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -289,18 +310,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/09/18/理解JS中的this指向/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          使用create-react-app快速构建React开发环境
+          理解JS中的this指向
         
       </div>
     </a>
   
   
-    <a href="/2016/10/08/React入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">React入门</div>
+    <a href="/2016/09/11/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux常用命令</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -311,7 +332,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用到的技术："><span class="toc-number">1.</span> <span class="toc-text">用到的技术：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体方法："><span class="toc-number">2.</span> <span class="toc-text">具体方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目准备"><span class="toc-number">3.</span> <span class="toc-text">项目准备</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -359,7 +380,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/10/09/选择 Reac​​tJS 的理由/" data-title="选择 Reac​​tJS 的理由" data-url="http://transform.com/2016/10/09/选择 Reac​​tJS 的理由/"></div>
+    <div class="ds-thread" data-thread-key="2016/09/12/NodeJS跨域问题解决/" data-title="NodeJS跨域问题解决" data-url="http://transform.com/2016/09/12/NodeJS跨域问题解决/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -382,13 +403,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" title="上一篇: 使用create-react-app快速构建React开发环境">
+            <a href="/2016/09/18/理解JS中的this指向/" title="上一篇: 理解JS中的this指向">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/10/08/React入门/" title="下一篇: React入门">
+            <a href="/2016/09/11/Linux常用命令/" title="下一篇: Linux常用命令">
                 <i class="fa fa-angle-right"></i>
             </a>
         
