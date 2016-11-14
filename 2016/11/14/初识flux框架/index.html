@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用create-react-app快速构建React开发环境 | Transform&#39;s Blog</title>
+  <title>初识flux框架 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
+  <meta name="description" content="Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用create-react-app快速构建React开发环境">
-<meta property="og:url" content="http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/index.html">
+<meta property="og:title" content="初识flux框架">
+<meta property="og:url" content="http://transform.com/2016/11/14/初识flux框架/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
-<meta property="og:updated_time" content="2016-11-10T08:09:01.456Z">
+<meta property="og:description" content="Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。">
+<meta property="og:updated_time" content="2016-11-14T15:14:24.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用create-react-app快速构建React开发环境">
-<meta name="twitter:description" content="create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。">
+<meta name="twitter:title" content="初识flux框架">
+<meta name="twitter:description" content="Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-使用create-react-app快速构建React开发环境" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-初识flux框架" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" class="article-date">
-      <time datetime="2016-10-10T07:57:43.000Z" itemprop="datePublished">2016-10-10</time>
+      <a href="/2016/11/14/初识flux框架/" class="article-date">
+      <time datetime="2016-11-14T15:14:09.000Z" itemprop="datePublished">2016-11-14</time>
 </a>
     </div>
   
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用create-react-app快速构建React开发环境
+      初识flux框架
     </h1>
   
 
@@ -236,7 +236,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/构建工具/">构建工具</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flux/">flux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,10 +246,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>create-react-app是来自于Facebook的零配置命令行工具，能够帮你自动创建基于 Webpack+ES6的最简易的React项目模板，有助于初学者快速上手实践。安装 create-react-app的方式也非常简单，可以直接使用npm命令进行全局安装。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install -g create-react-app</div><div class="line">create-react-app my-app</div><div class="line">cd my-app/</div><div class="line">npm start</div></pre></td></tr></table></figure></p>
-<p>执行完上述命令之后，你可以直接打开<a href="http://localhost:3000，即可以看到你" target="_blank" rel="external">http://localhost:3000，即可以看到你</a> React APP 的运行效果。此时也是处于开发模式下，如果你要进行发布，则使用npm run build进行编译。<br>create-react-app生成的目录格式如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">my-app/</div><div class="line">  README.md</div><div class="line">  index.html</div><div class="line">  favicon.ico</div><div class="line">  node_modules/</div><div class="line">  package.json</div><div class="line">  src/</div><div class="line">    App.css</div><div class="line">    App.js</div><div class="line">    index.css</div><div class="line">    index.js</div><div class="line">    logo.svg</div></pre></td></tr></table></figure></p>
-<p>这样一个简单React开发环境就搭建好了。<br>如果你是使用npm start来启动配置，那么自动会进入开发模式，此时热替换是处于自动激活状态，你也可以实时地在界面或者命令行中看到错误提示。</p>
-<p>如果你使用npm run build来编译得到生产环境，此时代码会被编译到build目录下，此时会自动将整个应用打包发布，它会自动使用Webpack控件进行优化与压缩。</p>
+        <p>Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。<br><a id="more"></a><br>　　Flux应用有三个主要部分：Dispatcher调度 、存储Store和视图View(React 组件)，这些不应该和MVC:Model-View-Controll(模型-视图-控制器)混淆，控制器在Flux应用中是存在的，但是他们是controller-view(控制器-视图)，视图通常在一个结构顶部，而这种结构是用来从存储stroe获得数据，然后将数据传递到自己的子结构们，此外，Action创建者-Dispatcher的帮助类的方法 -用于支持一个语义API，这个API是描述应用程序中所有变化的可能，通常可将它们看成是Flux更新循环的第四部分。</p>
+<p>　　Flux是以单向数据流方式支持MVC，当一个用户和React视图交互时，视图会将这个动作传播到一个中央Dispatcher，一直到各种村粗，在那里保存着应用的数据和业务逻辑，这个使用React的声明式风格的过程是非常棒的，能够允许存储发送更新信息，而无需指定在状态之间如何切换视图。(传统方式更新状态后，会推出一个新的视图页面。)</p>
+<p>　　Flux最初是用于正确导出数据，比如如果我们要显示一系列消息的未读数字，而另外一个视图显示的是所有消息，其中未读的消息会高亮显示。这种情况使用MVC很难处理，将一个消息变为已读状态需要更新消息模型，然后再需要更新未读的计数模型(将未读模型数字减1，因为刚发生一个已读改变)，这种依赖和级联更新经常发生在大型MVC应用，导致一个混乱的数据流编织和不可预知的结果。</p>
+<p>　　控制器被存储反转控制：存储接受更新，适当地调节这些更新，而不是一致地依赖外部更新其数据，存储之外根本不知道它是如何管理领域数据的，这有助于实现一种清晰的分离关注。存储并没有直接的类似setAsRead()之类的方法，而是只有一个单一方式获取数据到其自成一体的世界中，这个方式就是回调，注册在dispatcher中的callback。</p>
 
       
     </div>
@@ -258,13 +258,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/14/初识flux框架/">初识flux框架</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年10月10日 - 15时57分</p>
-        <p><span>最后更新:</span>2016年11月10日 - 16时09分</p>
+        <p><span>发布时间:</span>2016年11月14日 - 23时14分</p>
+        <p><span>最后更新:</span>2016年11月14日 - 23时14分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/10/使用create-react-app快速构建React开发环境/" title="使用create-react-app快速构建React开发环境">http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/14/初识flux框架/" title="初识flux框架">http://transform.com/2016/11/14/初识flux框架/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/11/14/初识flux框架/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -277,18 +277,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/10/14/使用‘use-strict的好处/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          使用&#39;use strict&#39;的好处
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/09/选择 Reac​​tJS 的理由/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">选择 Reac​​tJS 的理由</div>
+    <a href="/2016/10/14/使用‘use-strict的好处/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用&#39;use strict&#39;的好处</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -347,7 +338,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/10/10/使用create-react-app快速构建React开发环境/" data-title="使用create-react-app快速构建React开发环境" data-url="http://transform.com/2016/10/10/使用create-react-app快速构建React开发环境/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/14/初识flux框架/" data-title="初识flux框架" data-url="http://transform.com/2016/11/14/初识flux框架/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -370,13 +361,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/14/使用‘use-strict的好处/" title="上一篇: 使用&#39;use strict&#39;的好处">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/10/09/选择 Reac​​tJS 的理由/" title="下一篇: 选择 Reac​​tJS 的理由">
+            <a href="/2016/10/14/使用‘use-strict的好处/" title="下一篇: 使用&#39;use strict&#39;的好处">
                 <i class="fa fa-angle-right"></i>
             </a>
         
