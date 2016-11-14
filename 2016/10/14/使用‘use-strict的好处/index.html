@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Mongodb中的—_id和ObjectId | Transform&#39;s Blog</title>
+  <title>使用&#39;use strict&#39;的好处 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MongoDB中存储的文档必须有一个”_id”键。这个键的值可以是任何类型的，默认是个ObjectId对象。">
+  <meta name="description" content="“use strict”是JavaScript中一个非常好的特性，而且非常容易使用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mongodb中的—_id和ObjectId">
-<meta property="og:url" content="http://transform.com/2016/08/11/Mongodb中的—-id和ObjectId/index.html">
+<meta property="og:title" content="使用'use strict'的好处">
+<meta property="og:url" content="http://transform.com/2016/10/14/使用‘use-strict的好处/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="MongoDB中存储的文档必须有一个”_id”键。这个键的值可以是任何类型的，默认是个ObjectId对象。">
-<meta property="og:updated_time" content="2016-11-11T04:13:02.665Z">
+<meta property="og:description" content="“use strict”是JavaScript中一个非常好的特性，而且非常容易使用。">
+<meta property="og:updated_time" content="2016-11-14T12:26:50.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mongodb中的—_id和ObjectId">
-<meta name="twitter:description" content="MongoDB中存储的文档必须有一个”_id”键。这个键的值可以是任何类型的，默认是个ObjectId对象。">
+<meta name="twitter:title" content="使用'use strict'的好处">
+<meta name="twitter:description" content="“use strict”是JavaScript中一个非常好的特性，而且非常容易使用。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Mongodb中的—-id和ObjectId" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-使用‘use-strict的好处" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/11/Mongodb中的—-id和ObjectId/" class="article-date">
-      <time datetime="2016-08-11T04:10:15.000Z" itemprop="datePublished">2016-08-11</time>
+      <a href="/2016/10/14/使用‘use-strict的好处/" class="article-date">
+      <time datetime="2016-10-14T12:24:00.000Z" itemprop="datePublished">2016-10-14</time>
 </a>
     </div>
   
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Mongodb中的—_id和ObjectId
+      使用&#39;use strict&#39;的好处
     </h1>
   
 
@@ -230,13 +230,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Mongodb/">Mongodb</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongodb/">Mongodb</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,16 +246,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>MongoDB中存储的文档必须有一个”_id”键。这个键的值可以是任何类型的，默认是个ObjectId对象。<br><a id="more"></a><br>在一个集合里面，每个集合都有唯一的”_id”值，来确保集合里面每个文档都能被唯一标识。如果有<br>两个集合的话，两个集合可以都有一个值为”123”的”_id”的键，但是每个集合里面只能有一个”_id”<br>是123的文档。 </p>
-<h1 id="1-ObjectId"><a href="#1-ObjectId" class="headerlink" title="1.ObjectId"></a>1.ObjectId</h1><p>ObjectId是”_id”的默认类型。它设计成轻量型的，不同的机器都能用全局唯一的同种方法方便地生成它。<br>这是MongoDB采用ObjectId，而不是其他比较常规的做法（比如自动增加的主键）的主要原因，因为在多个<br>服务器上同步自动增加主键值既费力还费时。MongoDB从一开始就设计用来作为分布式数据库，处理多个节<br>点是一个核心要求。后面会讲到ObjectId类型在分片环境中容易生成得多。</p>
-<p>ObjectId使用12字节的存储空间，每个字节两位十六进制数字，是一个24位的字符串。由于看起来很长，不<br>少人会觉得难以处理。但关键是要知道这个长长的ObjectId是实际存储数据的两倍长。</p>
-<p>如果快速连续创建多个ObjectId，会发现每次只有最后几位数字有变化。另外中间的几位数字也会变化（要<br>是在创建的过程中停顿几秒钟）。这是ObjectId的创建方式导致的。12字节按照如下方式生成：<br>      0|1|2|3 | 4|5|6 | 7|8 | 9|10|11<br>        时间戳 | 机器  | PID | 计数器<br>前4字节是从标准纪元开始的时间戳，单位为秒。这会带来一些有用的属性。</p>
-<p>时间戳，与随后的5个字节组合起来，提供了秒级别的唯一性。<br>由于时间戳在前，这意味着ObjectId大致会按照插入的顺序排列。这对于某些方面很有用，如将其作为索引提<br>高效率，但是这个是没有保证的，仅仅是”大致”。这4个字节也隐含了文档创建的时间。绝大多数驱动都会公开<br>一个方法从ObjectId获取这个信息。</p>
-<p>因为使用的是当前时间，很多用户担心要对服务器进行时间同步，其实这个没有必要，因为时间戳的实际值并不<br>重要，只要其总是不停增加就好了（每秒一次）。</p>
-<p>接下来的三个字节是所在主机的唯一标识符。通常是机器主机名的散列值。这样就可以确保不同主机生成不同的<br>ObjectId，不产生冲突。</p>
-<p>为了确保在同一台机器上并发的多个进程产生的ObjectId是唯一的。后3个字节就是一个自动增加的计数器，确<br>保相同进程同一秒产生的ObjectId也是不一样的。同一秒钟最多允许每个进程拥有256（16777216）个不同的ObjectId。</p>
-<h1 id="2-自动生成-id"><a href="#2-自动生成-id" class="headerlink" title="2.自动生成_id"></a>2.自动生成_id</h1><p>前面讲到，如果插入文档的时候没有”_id”键，系统会帮你自动创建一个。可以由MongoDB服务器来做这件事情，但<br>通常会在客户端由驱动程序完成。理由如下：<br>虽然ObjectId设计成轻量型的，易于生成，但是毕竟生成的时候还是产生开销。在客户端生成体现了MongoDB的设计<br>理念：能从服务器端转移到驱动程序来做的事，就尽量转移。这种理念背后的原因是，即便是像MongoDB这样的可扩<br>展数据库，扩展应用层也要比扩展数据库层容易的多。将事务交由客户端来处理，就减轻了数据库扩展的负担。</p>
-<p>在客户端生成ObjectId，驱动程序能够提供更加丰富的API。例如，驱动程序可以有自己的insert方法，可以返回生<br>成的ObjectId，也可以直接将其插入文档。如果驱动程序允许服务器生成ObjectId，那么将需要单独的查询，以确<br>定插入的文档中的”_id”值。</p>
+        <p>“use strict”是JavaScript中一个非常好的特性，而且非常容易使用。<br><a id="more"></a><br>使用方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// file.js</div><div class="line">&quot;use strict&quot;</div><div class="line">function doStuff()&#123;</div><div class="line">    // use strict is enabled here!</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样file.js都会应用上”use strict”模式。</p>
+<p>如果你仅想在一个函数中使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// file.js</div><div class="line">function a()&#123;</div><div class="line">    &quot;use strict&quot;;</div><div class="line">    // use strict is enabled in this context</div><div class="line">    function nestedFunction()&#123;</div><div class="line">        // and here too</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>好处</p>
+<p>检查对象中的重复键<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var zombie = &#123;</div><div class="line">    eyeLeft : 0,</div><div class="line">    eyeRight: 1,</div><div class="line">    // ... a lot of keys ...</div><div class="line">    eyeLeft : 1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这段代码会抛出一个错误因为 eyeLeft 出现了两次。这比你用眼睛去找错误要快多了。</p>
+<p>未声明变量</p>
+<p>plane = 5;<br>你现在已经知道忘记在这个变量前面加var了。不过如果你不知道，调试起来是非常痛苦的，因为这个变量是声明在全局上下文（global context）中的，而且可能被其他地方改掉。想象一下，如果你声明了一个全局的 i， 在嵌套循环中可能会引起混乱。</p>
+<p>重复的参数</p>
+<p>function run(fromWhom, fromWhom){}<br>注意fromWho出现了两次，因此会抛出一个错误。</p>
+<p>限制函数中的arguments<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var run = function(fromWhom)&#123;</div><div class="line">    arguments[0] = &apos;alien&apos;;</div><div class="line">    alert(fromWhom);</div><div class="line">&#125;</div><div class="line">run(&apos;zombie&apos;);</div><div class="line">// alert: &apos;alien&apos;;</div></pre></td></tr></table></figure></p>
+<p>现在你可以使用”use strict”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var run = function(fromWhom)&#123;</div><div class="line">    &quot;use strict&quot;;</div><div class="line">    arguments[0] = &apos;alien&apos;;</div><div class="line">    alert(fromWhom);</div><div class="line">&#125;</div><div class="line">run(&apos;zombie&apos;);</div><div class="line">// alert: &apos;zombie&apos;;</div></pre></td></tr></table></figure></p>
+<p>arguments[0] = ‘alien’ 改变了参数fromWhom，use strict 又节约了你的时间。</p>
 
       
     </div>
@@ -264,13 +267,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/08/11/Mongodb中的—-id和ObjectId/">Mongodb中的—_id和ObjectId</a></p>
+        <p><span>本文标题:</span><a href="/2016/10/14/使用‘use-strict的好处/">使用&#39;use strict&#39;的好处</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年08月11日 - 12时10分</p>
-        <p><span>最后更新:</span>2016年11月11日 - 12时13分</p>
+        <p><span>发布时间:</span>2016年10月14日 - 20时24分</p>
+        <p><span>最后更新:</span>2016年11月14日 - 20时26分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/08/11/Mongodb中的—-id和ObjectId/" title="Mongodb中的—_id和ObjectId">http://transform.com/2016/08/11/Mongodb中的—-id和ObjectId/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/08/11/Mongodb中的—-id和ObjectId/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/14/使用‘use-strict的好处/" title="使用&#39;use strict&#39;的好处">http://transform.com/2016/10/14/使用‘use-strict的好处/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/10/14/使用‘use-strict的好处/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -283,18 +286,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/08/12/移动端兼容性问题解决方案/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          移动端兼容性问题解决方案
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/07/05/OOCSS-Sass/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">OOCSS+Sass</div>
+    <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用create-react-app快速构建React开发环境</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -305,7 +299,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-ObjectId"><span class="toc-number">1.</span> <span class="toc-text">1.ObjectId</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-自动生成-id"><span class="toc-number">2.</span> <span class="toc-text">2.自动生成_id</span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -353,7 +347,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/08/11/Mongodb中的—-id和ObjectId/" data-title="Mongodb中的—_id和ObjectId" data-url="http://transform.com/2016/08/11/Mongodb中的—-id和ObjectId/"></div>
+    <div class="ds-thread" data-thread-key="2016/10/14/使用‘use-strict的好处/" data-title="使用&#39;use strict&#39;的好处" data-url="http://transform.com/2016/10/14/使用‘use-strict的好处/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -376,13 +370,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/12/移动端兼容性问题解决方案/" title="上一篇: 移动端兼容性问题解决方案">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/07/05/OOCSS-Sass/" title="下一篇: OOCSS+Sass">
+            <a href="/2016/10/10/使用create-react-app快速构建React开发环境/" title="下一篇: 使用create-react-app快速构建React开发环境">
                 <i class="fa fa-angle-right"></i>
             </a>
         
