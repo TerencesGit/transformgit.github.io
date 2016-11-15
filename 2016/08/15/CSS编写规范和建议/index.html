@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS编写规范和建议 | Transform&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在参与规模庞大、历时漫长且参与人数众多的项目时，所有开发者遵守如下规则极为重要：
+
+保持 CSS 易于维护
+保持代码清晰易懂
+保持 CSS 的可拓展性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS编写规范和建议">
+<meta property="og:url" content="http://transform.com/2016/08/15/CSS编写规范和建议/index.html">
+<meta property="og:site_name" content="Transform's Blog">
+<meta property="og:description" content="在参与规模庞大、历时漫长且参与人数众多的项目时，所有开发者遵守如下规则极为重要：
+
+保持 CSS 易于维护
+保持代码清晰易懂
+保持 CSS 的可拓展性">
+<meta property="og:updated_time" content="2016-11-15T09:32:10.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS编写规范和建议">
+<meta name="twitter:description" content="在参与规模庞大、历时漫长且参与人数众多的项目时，所有开发者遵守如下规则极为重要：
+
+保持 CSS 易于维护
+保持代码清晰易懂
+保持 CSS 的可拓展性">
+  
+    <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Transform</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我的博客</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                            
+                                <a class="fl facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100013027516814" title="facebook">facebook</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://TransformGit.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">技术控、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Transform</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Transform</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100013027516814" title="facebook">facebook</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-CSS编写规范和建议" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/15/CSS编写规范和建议/" class="article-date">
+      <time datetime="2016-08-15T09:16:57.000Z" itemprop="datePublished">2016-08-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS编写规范和建议
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/规范/">规范</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>　在参与规模庞大、历时漫长且参与人数众多的项目时，所有开发者遵守如下规则极为重要：</p>
+<ul>
+<li>保持 CSS 易于维护</li>
+<li>保持代码清晰易懂</li>
+<li>保持 CSS 的可拓展性<a id="more"></a>
+<h1 id="代码顺序"><a href="#代码顺序" class="headerlink" title="代码顺序"></a>代码顺序</h1></li>
+</ul>
+<p>　　尽量按照特定顺序编写规则，这将确保你充分发挥 CSS 中第一个 C 的意义：cascade，层叠。</p>
+<p>　　一份规划良好的 CSS 应当按照如下排列：</p>
+<ul>
+<li>Reset 万物之根源</li>
+<li>元素类型 没有 class 的 h1、ul 等</li>
+<li>对象以及抽象内容 最一般、最基础的设计模式</li>
+<li>子元素 由对象延伸出来的所有拓展及其子元素</li>
+<li>修补 针对异常状态<br>　　如此一来，当你依次编写 CSS 时，每个区块都可以自动继承在它之前区块的属性。这样就可以减少代码相互抵消的部分，减少某些特殊的问题，组成更理想的 CSS 结构。<h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1></li>
+</ul>
+<p>　　一般情况下我都是以连字符（-）连接 class 的名字（例如 .foo-bar 而非 .foo_bar 或 .fooBar），不过在某些特定的时候我会用 BEM（Block, Element, Modifier）命名法。</p>
+<p>　　BEM 命名法可以使得选择器更规范，更清晰，更具语义。</p>
+<p>　　该命名法按照如下格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.block&#123;&#125;</div><div class="line">.block__element&#123;&#125;</div><div class="line">.block--modifier&#123;&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="JavaScript-钩子"><a href="#JavaScript-钩子" class="headerlink" title="JavaScript 钩子"></a>JavaScript 钩子</h1><p>　　切勿将标记 CSS 样式的 class 用作 JavaScript 钩子。把 JS 行为与样式混在一起将无法对其分别处理。</p>
+<p>　　如果你要把 JS 和某些标记绑定起来的话，写一个 JS 专用的 class。简单地说就是划定一个前缀 .js- 的命名空间，例如 .js-toggle，.js-drag-and-drop。这意味着我们可以通过 class 同时绑定 JS 和 CSS 而不会因为冲突而引发麻烦。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;th class=&quot;is-sortable  js-is-sortable&quot;&gt;</div><div class="line">&lt;/th&gt;</div></pre></td></tr></table></figure></p>
+<p>　　上面的这个标记有两个 class，你可以用其中一个来给这个可排序的表格栏添加样式，用另一个添加排序功能。</p>
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><p>　　所有组件都不要声明宽度，而由其亲元素或格栅系统来决定。</p>
+<p>　　坚决不要声明高度。高度应当仅仅用于尺寸已经固定的东西，例如图片和 CSS Sprite。在 p，ul，div 等元素上不应当声明高度。如果需要的话可以使用更加灵活的 line-height。</p>
+<p>　　格栅系统应当当作书架来理解。是它们容纳内容，而不是把它们本身当成内容装起来，正如你先搭起书架再把东西放进去。比起声明它们的尺寸，把格栅系统和元素的其它属性分来开处理更有助于布局，也使得我们的前端工作更高效。</p>
+<p>　　你在格栅系统上不应当添加任何样式，它们仅仅是为布局而用。在格栅系统内部再添加样式。在格栅系统中任何情况下都不要添加盒模型相关属性。<br>　简写</p>
+<h1 id="CSS-简写应当谨慎使用。"><a href="#CSS-简写应当谨慎使用。" class="headerlink" title="CSS 简写应当谨慎使用。"></a>CSS 简写应当谨慎使用。</h1><p>　　编写像 background: red; 这样的属性的确很省事，但是你这么写的意思其实是同时声明 background-image: none; background-position: top left; background-repeat: repeat; background-color: red;。虽然大多数时候这样不会出什么问题，但是哪怕只出一次问题就值得考虑要不要放弃简写了。这里应当改为 background-color: red;。</p>
+<p>　　类似的，像 margin: 0; 这样的声明的确简洁清爽，但是还是应当尽量写清楚。如果你只是想修改底边边距，就要具体一些，写成 margin-bottom: 0;。</p>
+<p>　　与此同时你需要声明的属性也要写清楚，不要因为简写而波及其它属性。例如如果你只想改掉底部的 margin，那就不要用会把其它边距也清零的 margin: 0。</p>
+<p>　　简写虽然好，但也很容易滥用。</p>
+<h1 id="ID"><a href="#ID" class="headerlink" title="ID"></a>ID</h1><p>　　在我们开始处理选择器之前，牢记这句话：</p>
+<p>　　在 CSS 里坚决不要用 ID。</p>
+<p>　　在 HTML 里 ID 可以用于 JS 以及锚点定位，但是在 CSS 里只要用 class，一个 ID 也不要用。</p>
+<p>　　Class 的优势在于复用性，而且私有度也并不高。在项目中私有度非常容易导致问题，所以将其降低就尤为重要。ID 的私有度是 class 的 255 倍，所以在 CSS 中坚决不要使用。</p>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>　　务必保持选择器简短高效。</p>
+<p>　　通过页面元素位置而定位的选择器并不理想。例如 .sidebar h3 span{} 这样的选择器就是定位过于依赖相对位置，如果把 span 移到 h3 和 sidebar 外面时就很难保持其样式。</p>
+<p>　　结构复杂的选择器将会影响性能。选择器结构越复杂（如 .sidebar h3 span 为三层，.content ul p a 是四层），浏览器的开销就越大。</p>
+<p>　　尽量使得样式不依赖于其定位，尽量保持选择器简洁清晰。</p>
+<p>　　作为一个整体，选择器应当尽量简短（例如只有一层结构），但是 class 名则不应当过于简略，例如 .user-avatar 就远比 .usr-avt 好。</p>
+<p>　　牢记：class 无所谓是否语义化；应当关注它们是否合理。不要强调 class 名要符合语义，而要注重使用合理且不会过时的名称。</p>
+<h1 id="过度修饰的选择器"><a href="#过度修饰的选择器" class="headerlink" title="过度修饰的选择器"></a>过度修饰的选择器</h1><p>　　由前文所述，过度修饰的选择器并不理想。</p>
+<p>　　过度修饰的选择器是指像 div.promo 这样的。很可能你只用 .promo 也能得到相同的效果。当然你可能偶尔会需要用元素类型来修饰 class（例如你写了一个 .error 而且想让它在不同的元素类型中显示效果不一样，例如 .error { color: red; } div.error { padding: 14px; }），但是大多数时候还是应当尽量避免。</p>
+<p>　　再举一个修饰过度的选择器例子，ul.nav li a{}。如前文所说，我们马上就可以删掉 ul 因为我们知道 .nav 是个列表，然后我们就可以发现 a 一定在 li 中，所以我们就能将这个选择器改写成 .nav a{}。</p>
+<h1 id="选择器性能"><a href="#选择器性能" class="headerlink" title="选择器性能"></a>选择器性能</h1><p>　　虽然浏览器性能日渐提升，渲染 CSS 速度越来越快，但是你还是应当关注效率。使用简短、没有嵌套的选择器，不使用全局选择器（* {}）作为核心选择器，避免使用日渐复杂的 CSS3 新选择器可以避免这样的问题。</p>
+<p>　　译注，核心选择器：浏览器解析选择器为从右向左的顺序，最右端的元素是样式生效的元素，是为核心选择器。</p>
+<h1 id="使用-CSS-选择器的目的"><a href="#使用-CSS-选择器的目的" class="headerlink" title="使用 CSS 选择器的目的"></a>使用 CSS 选择器的目的</h1><p>　　比起努力运用选择器定位到某元素，更好的办法是给你想要添加样式的元素直接添加一个 class。我们以 .header ul {} 这样一个选择器为例。</p>
+<p>　　假定这个 ul 就是这个网站的全站导航，它位于 header 中，而且目前为止是 header 中唯一的 ul 元素。.header ul{} 的确可以生效，但是这样并不是好方法，它很容易过时，而且非常晦涩。如果我们在 header 中再添加一个 ul 的话，它就会套用我们给这个导航部分写的样式，哪怕我们设想的不是这个效果。这意味着我们要么要重构许多代码，要么给后面的 ul 新写许多样式来抵消之前的影响。</p>
+<p>　　你的选择器必须符合你要给这个元素添加样式的原因。思考一下，「我定位到这个元素，是因为它是 .header 下的 ul，还是因为它是我的网站导航？」这将决定你应当如何使用选择器。</p>
+<p>　　确保你的核心选择器不是类型选择器，也不是高级对象或抽象选择器。例如你在我们的 CSS 中肯定找不到诸如 .sidebar ul {} 或者 .footer .media {} 这样的选择器。</p>
+<p>　　表达清晰：直接找到你要添加样式的元素，而非其亲元素。不要想当然地认为 HTML 不会改变。用 CSS 直接命中你需要的元素，而非投机取巧。</p>
+<p>　　完整内容请参考我的文章 Shoot to kill; CSS selector intent</p>
+<h1 id="important"><a href="#important" class="headerlink" title="!important"></a>!important</h1><p>　　只在起辅助作用的 class 上用 !important。用 !important 提升优先级也可以，例如如果你要让某条规则一直生效的话，可以用 .error { color:red!important; }。</p>
+<p>　　避免主动使用 !important。例如 CSS 写得很复杂时不要用它来取巧，要好好整理并重构之前的部分，保持选择器简短并且避免用 ID 将效果拔群。</p>
+<h1 id="魔数与绝对定位"><a href="#魔数与绝对定位" class="headerlink" title="魔数与绝对定位"></a>魔数与绝对定位</h1><p>　　魔数（Magic Number）是指那些「凑巧有效果」的数字，使用魔数非常不好，因为它们只是治标不治本而且缺乏拓展性。</p>
+<p>　　例如使用 .dropdown-nav li:hover ul { top: 37px; } 把下拉菜单移动下来远非良策，因为这里的 37px 就是个魔数。37px 会生效的原因是因为这时 .dropbox-nav 碰巧高 37px 而已。</p>
+<p>　　这时你应该用 .dropdown-nav li:hover ul { top: 100%; }，也即无论 .dropbox-down 多高，这个下拉菜单都会往下移动 100%。</p>
+<p>　　每当你要在代码中放入数字的时候，请三思而行。如果你能用一个关键字（例如 top: 100% 意即「从上面拉到最下面」）替换之，或者有更好的解决方法的话，就尽量避免直接出现数字。</p>
+<p>　　你在 CSS 中留下的每一个数字，都是你许下而不愿遵守的承诺。</p>
+<h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><p>　　专门为 IE 写的样式基本上都是可以避免的，唯一需要为 IE 专门处理的是为了处理 IE 不支持的内容（例如 PNG）。</p>
+<p>　　简而言之，如果你重构 CSS 的话，所有的布局和盒模型都不用额外兼容 IE。也就是说你基本上不用 <!--[if IE 7]> element{ margin-left:-9px; } < ![endif]--> 或者类似的兼容 IE 的写法。</p>
+<h1 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h1><p>　　如果你要解决 CSS 问题的话，先把旧代码拿掉再写新的。如果旧的 CSS 中有问题的话，写新代码是解决不了的。</p>
+<p>　　把 CSS 代码和 HTML 部分删掉，直到没有 BUG 为止，然后你就知道问题出在哪里了。</p>
+<p>　　有时候写上一个 overflow: hidden 或者其它能把问题藏起来的代码的确效果立竿见影，但是 overflow 方面可能根本就没问题。所以要治本，而不是单纯治标。</p>
+<h1 id="CSS-预处理器"><a href="#CSS-预处理器" class="headerlink" title="CSS 预处理器"></a>CSS 预处理器</h1><p>　　我用 Sass。使用时应当灵活运用。用 Sass 可以令你的 CSS 更强大，但是不要嵌套得太复杂。在 Vanilla CSS 中，只在必要的地方用嵌套即可，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.header&#123;&#125;</div><div class="line">.header .site-nav&#123;&#125;</div><div class="line">.header .site-nav li&#123;&#125;</div><div class="line">.header .site-nav li a&#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>　　这样的写法在普通 CSS 里完全用不到。以下为不好的 Sass 写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.header&#123;</div><div class="line">    .site-nav&#123;</div><div class="line">        li&#123;</div><div class="line">            a&#123;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>　　如果你用 Sass 的话，尽量这么写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.header&#123;&#125;</div><div class="line">.site-nav&#123;</div><div class="line">    li&#123;&#125;</div><div class="line">    a&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/08/15/CSS编写规范和建议/">CSS编写规范和建议</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
+        <p><span>发布时间:</span>2016年08月15日 - 17时16分</p>
+        <p><span>最后更新:</span>2016年11月15日 - 17时32分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/08/15/CSS编写规范和建议/" title="CSS编写规范和建议">http://transform.com/2016/08/15/CSS编写规范和建议/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/08/15/CSS编写规范和建议/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/09/08/前端模块化--webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端模块化--webpack
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/14/jQuery使用技巧总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery使用技巧总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#代码顺序"><span class="toc-number">1.</span> <span class="toc-text">代码顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#命名规范"><span class="toc-number">2.</span> <span class="toc-text">命名规范</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-钩子"><span class="toc-number">3.</span> <span class="toc-text">JavaScript 钩子</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#布局"><span class="toc-number">4.</span> <span class="toc-text">布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-简写应当谨慎使用。"><span class="toc-number">5.</span> <span class="toc-text">CSS 简写应当谨慎使用。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ID"><span class="toc-number">6.</span> <span class="toc-text">ID</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择器"><span class="toc-number">7.</span> <span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#过度修饰的选择器"><span class="toc-number">8.</span> <span class="toc-text">过度修饰的选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择器性能"><span class="toc-number">9.</span> <span class="toc-text">选择器性能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-CSS-选择器的目的"><span class="toc-number">10.</span> <span class="toc-text">使用 CSS 选择器的目的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#important"><span class="toc-number">11.</span> <span class="toc-text">!important</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#魔数与绝对定位"><span class="toc-number">12.</span> <span class="toc-text">魔数与绝对定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#条件判断"><span class="toc-number">13.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Debugging"><span class="toc-number">14.</span> <span class="toc-text">Debugging</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-预处理器"><span class="toc-number">15.</span> <span class="toc-text">CSS 预处理器</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/08/15/CSS编写规范和建议/" data-title="CSS编写规范和建议" data-url="http://transform.com/2016/08/15/CSS编写规范和建议/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/08/前端模块化--webpack/" title="上一篇: 前端模块化--webpack">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/08/14/jQuery使用技巧总结/" title="下一篇: jQuery使用技巧总结">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/初识flux框架/">初识flux框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/使用‘use-strict的好处/">使用'use strict'的好处</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/React入门/">React入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/Vim命令总结/">Vim命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/理解JavaScript的原型属性/">理解JavaScript的原型属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/18/理解JS中的this指向/">理解JS中的this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/Linux学习要点/">Linux学习要点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/Linux常用命令/">Linux常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/CSS编写规范和建议/">CSS编写规范和建议</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/jQuery使用技巧总结/">jQuery使用技巧总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/移动端兼容性问题解决方案/">移动端兼容性问题解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/Mongodb中的—-id和ObjectId/">Mongodb中的—_id和ObjectId</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/网页性能优化/">网页性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Transform
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
