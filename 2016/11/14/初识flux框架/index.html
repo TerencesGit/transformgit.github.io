@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>初识flux框架 | Transform&#39;s Blog</title>
+  <title>初识Flux框架 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识flux框架">
-<meta property="og:url" content="http://transform.com/2016/11/14/初识flux框架/index.html">
+<meta property="og:title" content="初识Flux框架">
+<meta property="og:url" content="http://transform.com/2016/11/14/初识Flux框架/index.html">
 <meta property="og:site_name" content="Transform's Blog">
 <meta property="og:description" content="Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。">
-<meta property="og:updated_time" content="2016-11-15T09:12:17.894Z">
+<meta property="og:updated_time" content="2016-11-17T14:16:41.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识flux框架">
+<meta name="twitter:title" content="初识Flux框架">
 <meta name="twitter:description" content="Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
@@ -136,7 +136,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
                     </div>
                 </section>
                 
@@ -204,10 +204,10 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-初识flux框架" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-初识Flux框架" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/14/初识flux框架/" class="article-date">
+      <a href="/2016/11/14/初识Flux框架/" class="article-date">
       <time datetime="2016-11-14T15:14:09.000Z" itemprop="datePublished">2016-11-14</time>
 </a>
     </div>
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      初识flux框架
+      初识Flux框架
     </h1>
   
 
@@ -236,7 +236,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flux/">flux</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flux/">flux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -250,11 +250,43 @@
 <p>　　Flux是以单向数据流方式支持MVC，当一个用户和React视图交互时，视图会将这个动作传播到一个中央Dispatcher，一直到各种村粗，在那里保存着应用的数据和业务逻辑，这个使用React的声明式风格的过程是非常棒的，能够允许存储发送更新信息，而无需指定在状态之间如何切换视图。(传统方式更新状态后，会推出一个新的视图页面。)</p>
 <p>　　Flux最初是用于正确导出数据，比如如果我们要显示一系列消息的未读数字，而另外一个视图显示的是所有消息，其中未读的消息会高亮显示。这种情况使用MVC很难处理，将一个消息变为已读状态需要更新消息模型，然后再需要更新未读的计数模型(将未读模型数字减1，因为刚发生一个已读改变)，这种依赖和级联更新经常发生在大型MVC应用，导致一个混乱的数据流编织和不可预知的结果。</p>
 <p>　　控制器被存储反转控制：存储接受更新，适当地调节这些更新，而不是一致地依赖外部更新其数据，存储之外根本不知道它是如何管理领域数据的，这有助于实现一种清晰的分离关注。存储并没有直接的类似setAsRead()之类的方法，而是只有一个单一方式获取数据到其自成一体的世界中，这个方式就是回调，注册在dispatcher中的callback。</p>
-<h1 id="Flux的核心部分"><a href="#Flux的核心部分" class="headerlink" title="Flux的核心部分"></a>Flux的核心部分</h1><h2 id="1-dispatcher"><a href="#1-dispatcher" class="headerlink" title="1. dispatcher"></a>1. dispatcher</h2><p>事件调度中心，flux模型的中心枢纽，管理着Flux应用中的所有数据流。它本质上是Store的回调注册。每个Store注册它自己并提供一个回调函数。当Dispatcher响应Action时，通过已注册的回调函数，将Action提供的数据负载发送给应用中的所有Store。应用层级单例！！</p>
-<h2 id="2-store"><a href="#2-store" class="headerlink" title="2. store"></a>2. store</h2><p>负责封装应用的业务逻辑跟数据的交互。</p>
+<h1 id="Flux的核心部分"><a href="#Flux的核心部分" class="headerlink" title="Flux的核心部分"></a>Flux的核心部分</h1><ol>
+<li>dispatcher</li>
+</ol>
+<p>事件调度中心，flux模型的中心枢纽，管理着Flux应用中的所有数据流。它本质上是Store的回调注册。每个Store注册它自己并提供一个回调函数。当Dispatcher响应Action时，通过已注册的回调函数，将Action提供的数据负载发送给应用中的所有Store。应用层级单例！！</p>
+<ol>
+<li>store</li>
+</ol>
+<p>负责封装应用的业务逻辑跟数据的交互。</p>
 <p>Store中包含应用所有的数据<br>Store是应用中唯一的数据发生变更的地方<br>Store中没有赋值接口—所有数据变更都是由dispatcher发送到store，新的数据随着Store触发的change事件传回view。Store对外只暴露getter，不允许提供setter！！禁止在任何地方直接操作Store。</p>
-<h2 id="3-view"><a href="#3-view" class="headerlink" title="3. view"></a>3. view</h2><p>controller-view 可以理解成MVC模型中的controller，它一般由应用的顶层容器充当，负责从store中获取数据并将数据传递到子组件中。简单的应用一般只有一个controller-view，复杂应用中也可以有多个。controller-view是应用中唯一可以操作state的地方(setState())<br>view(UI组件) ui-component 职责单一只允许调用action触发事件，数据从由上层容器通过属性传递过来。</p>
-<h2 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h2><p>action creators 作为dispatcher的辅助函数，通常可以认为是Flux中的第四部分。ActionCreators是相对独立的，它作为语法上的辅助函数以action的形式使得dispatcher传递数据更为便利。<br>————未完</p>
+<ol>
+<li>view</li>
+</ol>
+<p>controller-view 可以理解成MVC模型中的controller，它一般由应用的顶层容器充当，负责从store中获取数据并将数据传递到子组件中。简单的应用一般只有一个controller-view，复杂应用中也可以有多个。controller-view是应用中唯一可以操作state的地方(setState())<br>view(UI组件) ui-component 职责单一只允许调用action触发事件，数据从由上层容器通过属性传递过来。</p>
+<ol>
+<li>其他</li>
+</ol>
+<p>action creators 作为dispatcher的辅助函数，通常可以认为是Flux中的第四部分。ActionCreators是相对独立的，它作为语法上的辅助函数以action的形式使得dispatcher传递数据更为便利。</p>
+<h1 id="Flux的优势"><a href="#Flux的优势" class="headerlink" title="Flux的优势"></a>Flux的优势</h1><ol>
+<li>数据状态变得稳定同时行为可预测</li>
+</ol>
+<p>因为angular双向绑定的原因，我们永远无法知道数据在哪一刻处于稳定状态，所以我们经常会在angular中看到通过setTimeout的方式处理一些问题(其实有更优雅的解决方案，不在本次讨论之内)。同时由于双向绑定的原因，行为的流向我们也很难预测，当视图的model变多的时候，如果再加上一堆子视图依赖这些model，问题发生时定位简直是噩梦啊(这也是angular的错误信息那么不友好的原因，因为框架开发者也无法确定当前行为是谁触发的啊，绑定的人太多了…)。但是这里还是要强调一点就是，并不是说双向绑定就一定会导致不稳定的数据状态，在angular中我们通过一些手段依然可以使得数据变得稳定，只是双向绑定(mvvm)相对于flux更容易引发数据不稳定的问题。</p>
+<ol>
+<li>所有的数据变更都发生在store里</li>
+</ol>
+<p>flux里view是不允许直接修改store的，view能做的只是触发action，然后action通过dispatcher调度最后才会流到store。所有数据的更改都发生在store组件内部，store对外只提供get接口，set行为都发生在内部。store里包含所有相关的数据及业务逻辑。所有store相关数据处理逻辑都集中在一起，避免业务逻辑分散降低维护成本。</p>
+<ol>
+<li>数据的渲染是自上而下的</li>
+</ol>
+<p>view所有的数据来源只应该是从属性中传递过来的，view的所有表现由上层控制视图(controller-view)的状态决定。我们可以把controller-view理解为容器组件，这个容器组件中包含若干细小的子组件，容器组件不同的状态对应不同的数据，子组件不能有自己的状态。也就是，数据由store传递到controller-view中之后，controller-view通过setState将数据通过属性的方式自上而下传递给各个子view。</p>
+<ol>
+<li>view层变得很薄，真正的组件化</li>
+</ol>
+<p>由于2、3两条原因，view自身需要做的事情就变得很少了。业务逻辑被store做了，状态变更被controller-view做了，view自己需要做的只是根据交互触发不同的action，仅此而已。这样带来的好处就是，整个view层变得很薄很纯粹，完全的只关注ui层的交互，各个view组件之前完全是松耦合的，大大提高了view组件的复用性。</p>
+<ol>
+<li>dispatcher是单例的</li>
+</ol>
+<p>对单个应用而言dispatcher是单例的，最主要的是dispatcher是数据的分发中心，所有的数据都需要流经dispatcher，dispatcher管理不同action于store之间的关系。因为所有数据都必须在dispatcher这里留下一笔，基于此我们可以做很多有趣的事情，各种debug工具、动作回滚、日志记录甚至权限拦截之类的都是可以的。<br>————未完</p>
 
       
     </div>
@@ -263,13 +295,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/14/初识flux框架/">初识flux框架</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/14/初识Flux框架/">初识Flux框架</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
         <p><span>发布时间:</span>2016年11月14日 - 23时14分</p>
-        <p><span>最后更新:</span>2016年11月15日 - 17时12分</p>
+        <p><span>最后更新:</span>2016年11月17日 - 22时16分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/14/初识flux框架/" title="初识flux框架">http://transform.com/2016/11/14/初识flux框架/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/11/14/初识flux框架/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/14/初识Flux框架/" title="初识Flux框架">http://transform.com/2016/11/14/初识Flux框架/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/11/14/初识Flux框架/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -295,7 +327,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flux的核心部分"><span class="toc-number">1.</span> <span class="toc-text">Flux的核心部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-dispatcher"><span class="toc-number">1.1.</span> <span class="toc-text">1. dispatcher</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-store"><span class="toc-number">1.2.</span> <span class="toc-text">2. store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-view"><span class="toc-number">1.3.</span> <span class="toc-text">3. view</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-其他"><span class="toc-number">1.4.</span> <span class="toc-text">4. 其他</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Flux的核心部分"><span class="toc-number">1.</span> <span class="toc-text">Flux的核心部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flux的优势"><span class="toc-number">2.</span> <span class="toc-text">Flux的优势</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -343,7 +375,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/11/14/初识flux框架/" data-title="初识flux框架" data-url="http://transform.com/2016/11/14/初识flux框架/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/14/初识Flux框架/" data-title="初识Flux框架" data-url="http://transform.com/2016/11/14/初识Flux框架/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -375,7 +407,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/初识flux框架/">初识flux框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/使用‘use-strict的好处/">使用'use strict'的好处</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/React入门/">React入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/Vim命令总结/">Vim命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/理解JavaScript的原型属性/">理解JavaScript的原型属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/18/理解JS中的this指向/">理解JS中的this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/Linux学习要点/">Linux学习要点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/Linux常用命令/">Linux常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/CSS编写规范和建议/">CSS编写规范和建议</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/jQuery使用技巧总结/">jQuery使用技巧总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/移动端兼容性问题解决方案/">移动端兼容性问题解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/Mongodb中的—-id和ObjectId/">Mongodb中的—_id和ObjectId</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/网页性能优化/">网页性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/15/DIV-CSS规范命名集合/">DIV+CSS规范命名集合</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/初识Flux框架/">初识Flux框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/使用‘use-strict的好处/">使用'use strict'的好处</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/React入门/">React入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/Vim命令总结/">Vim命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/理解JavaScript的原型属性/">理解JavaScript的原型属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/18/理解JS中的this指向/">理解JS中的this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/Linux学习要点/">Linux学习要点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/Linux常用命令/">Linux常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/CSS编写规范和建议/">CSS编写规范和建议</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/jQuery使用技巧总结/">jQuery使用技巧总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/移动端兼容性问题解决方案/">移动端兼容性问题解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/Mongodb中的—-id和ObjectId/">Mongodb中的—_id和ObjectId</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/网页性能优化/">网页性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/15/DIV-CSS规范命名集合/">DIV+CSS规范命名集合</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
