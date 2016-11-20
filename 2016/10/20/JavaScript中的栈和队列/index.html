@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用CSS完成元素居中的七种方法 | Transform&#39;s Blog</title>
+  <title>JavaScript中的栈和队列 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在网页上使 HTML 元素居中看似一件很简单的事情. 至少在某些情况下是这样的，但是复杂的布局往往使一些解决方案不能很好的发挥作用。">
+  <meta name="description" content="我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用CSS完成元素居中的七种方法">
-<meta property="og:url" content="http://transform.com/2016/06/09/使用CSS完成元素居中的七种方法/index.html">
+<meta property="og:title" content="JavaScript中的栈和队列">
+<meta property="og:url" content="http://transform.com/2016/10/20/JavaScript中的栈和队列/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="在网页上使 HTML 元素居中看似一件很简单的事情. 至少在某些情况下是这样的，但是复杂的布局往往使一些解决方案不能很好的发挥作用。">
-<meta property="og:updated_time" content="2016-11-10T08:12:06.647Z">
+<meta property="og:description" content="我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。">
+<meta property="og:updated_time" content="2016-11-20T09:55:33.144Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用CSS完成元素居中的七种方法">
-<meta name="twitter:description" content="在网页上使 HTML 元素居中看似一件很简单的事情. 至少在某些情况下是这样的，但是复杂的布局往往使一些解决方案不能很好的发挥作用。">
+<meta name="twitter:title" content="JavaScript中的栈和队列">
+<meta name="twitter:description" content="我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-使用CSS完成元素居中的七种方法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript中的栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/09/使用CSS完成元素居中的七种方法/" class="article-date">
-      <time datetime="2016-06-09T15:10:18.000Z" itemprop="datePublished">2016-06-09</time>
+      <a href="/2016/10/20/JavaScript中的栈和队列/" class="article-date">
+      <time datetime="2016-10-20T09:47:15.000Z" itemprop="datePublished">2016-10-20</time>
 </a>
     </div>
   
@@ -221,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      使用CSS完成元素居中的七种方法
+      JavaScript中的栈和队列
     </h1>
   
 
@@ -230,13 +230,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/css/">css</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/居中/">居中</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,30 +246,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在网页上使 HTML 元素居中看似一件很简单的事情. 至少在某些情况下是这样的，但是复杂的布局往往使一些解决方案不能很好的发挥作用。<br><a id="more"></a><br>在网页布局中元素水平居中比元素垂直居中要简单不少，同时实现水平居中和垂直居中往往是最难的。现在是响应式设计的时代，我们很难确切的知道元素的准确高度和宽度，所以一些方案不大适用。据我所知, 在CSS中至少有六种实现居中的方法。我将使用下面的HTML结构从简单到复杂开始讲解:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center&quot;&gt;</div><div class="line">  &lt;img src=&quot;jimmy-choo-shoe.jpg&quot; alt&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>鞋子图片会改变，但是他们都会保持500pxX500px的大小。 HSL colors 用于使背景颜色保持一致。</p>
-<p>使用text-align水平居中</p>
-<p>有时显而易见的方案是最佳的选择：</p>
-<p>div.center {<br>  text-align: center;<br>  background: hsl(0, 100%, 97%);<br>}<br>div.center img {<br>  width: 33%; height: auto;<br>}<br>这种方案没有使图片垂直居中：你需要给<div> 添加 padding 或者给内容添加 margin-top 和 margin-bottom使容器与内容之间有一定的距离。</div></p>
-<p>使用 margin: auto 居中<br>这种方式实现水平居中和上面使用text-align的方法有相同局限性。</p>
-<p>div.center {<br>  background: hsl(60, 100%, 97%);<br>}<br>div.center img {<br>  display: block;<br>  width: 33%;<br>  height: auto;<br>  margin: 0 auto;<br>}<br>注意： 必须使用display: block使 margin: 0 auto对img元素生效。</p>
-<p>使用table-cell居中<br>使用 display: table-cell, 而不是使用table标签; 可以实现水平居中和垂直居中，但是这种方法需要添加额外的元素作为外部容器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;center-aligned&quot;&gt;</div><div class="line">    &lt;div class=&quot;center-core&quot;&gt;</div><div class="line">        &lt;img src=&quot;jimmy-choo-shoe.jpg&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>CSS:</p>
-<p>.center-aligned {<br>    display: table;<br>    background: hsl(120, 100%, 97%);<br>    width: 100%;<br>}<br>.center-core {<br>    display: table-cell;<br>    text-align: center;<br>    vertical-align: middle;<br>}<br>.center-core img {<br>    width: 33%;<br>    height: auto;<br>}<br>注意：为了使div 不折叠必须加上 width: 100%，外部容器元素也需要加上一定高度使得内容垂直居中。给html和body设置高度后，也可以使元素在body垂直居中。此方法在IE8+浏览器上生效。</p>
-<p>使用absolute定位居中<br>这种 方案 有非常好的跨浏览器支持。有一个缺点就是必须显式声明外部容器元素的height：</p>
-<p>.absolute-aligned {<br>    position: relative;<br>    min-height: 500px;<br>    background: hsl(200, 100%, 97%);<br>}<br>.absolute-aligned img {<br>    width: 50%;<br>    min-width: 200px;<br>    height: auto;<br>    overflow: auto;<br>    margin: auto;<br>    position: absolute;<br>    top: 0; left: 0;<br>    bottom: 0; right: 0;<br>}<br>Stephen在他的 博客 中演示了这种方案的几种变化。</p>
-<p>使用translate居中</p>
-<p>Chris Coiyer 提出了一个使用 CSS transforms 的新方案。 同样支持水平居中和垂直居中:</p>
-<p>.center {<br>    background: hsl(180, 100%, 97%);<br>    position: relative;<br>    min-height: 500px;<br>}<br>.center img {<br>    position: absolute;<br>    top: 50%; left: 50%;<br>    transform: translate(-50%, -50%);<br>    width: 30%; height: auto;<br>}<br>但是有以下几种缺点:</p>
-<p>CSS transform 在部分就浏览器上需要使用 前缀。<br>不支持 IE9 以下的浏览器。<br>外部容器需要设置height （或者用其他方式设置），因为不能获取 绝对定位 的内容的高度。<br>如果内容包含文字，现在的浏览器合成技术会使文字模糊不清。<br>使用Flexbox居中<br>当新旧语法差异和浏览器前缀消失时，这种方法会成为主流的居中方案。</p>
-<p>.center {<br>    background: hsl(240, 100%, 97%);<br>    display: flex;<br>    justify-content: center;<br>    align-items: center;<br>}<br>.center img {<br>    width: 30%; height: auto;<br>}<br>在很多方面 flexbox 是一种简单的方案， 但是它有新旧两种语法以及早期版本的IE缺乏支持 （尽管可以使用 display: table-cell作为降级方案）。</p>
-<p>现在规范已经最终确定，现代浏览器也大都支持,我写了一篇详细的教程 教程。</p>
-<p>使用calc居中<br>在某些情况下比flexbox更全面：</p>
-<p>.center {<br>    background: hsl(300, 100%, 97%);<br>    min-height: 600px;<br>    position: relative;<br>}<br>.center img {<br>    width: 40%;<br>    height: auto;<br>    position: absolute;<br>    top: calc(50% - 20%);<br>    left: calc(50% - 20%);<br>}<br>很简单，calc 允许你基于当前的页面布局计算尺寸。在上面的简单计算中， 50% 是容器元素的中心点，但是如果只设置50%会使图片的左上角对齐div的中心位置。 我们需要把图片向左和向上各移动图片宽高的一半。计算公式为：</p>
-<p>top: calc(50% - (40% / 2));<br>left: calc(50% - (40% / 2));<br>在现在的浏览其中你会发现，这种方法更适用于当内容的宽高为固定尺寸：</p>
-<p>.center img {<br>    width: 500px; height: 500px;<br>    position: absolute;<br>    top: calc(50% - (300px / 2));<br>    left: calc(50% - (300px – 2));<br>}<br>我在 这篇文章 中详细讲解了calc。</p>
-<p>这种方案和flex一样有许多相同的缺点： 虽然在现代浏览器中有良好的支持，但是在较早的版本中仍然需要浏览器前缀，并且不支持IE8。</p>
-<p>.center img {<br>    width: 40%; height: auto;<br>    position: absolute;<br>    top: calc(50% - 20%);<br>    left: calc(50% - 20%);<br>}<br>当然还有 其他更多的方案。</p>
+        <p> 我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。<br> <a id="more"></a></p>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p> 栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或是待删除的元素都保存在栈的末尾。我们称作栈顶，而另一端我们称作栈底。</p>
+<h1 id="栈的创建"><a href="#栈的创建" class="headerlink" title="栈的创建"></a>栈的创建</h1><p>首先我们先创建一个类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function Stack()&#123;</div><div class="line">    //各种属性和方法的声明</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后我们需要一种数据结构来保存栈里面的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var items=[];</div></pre></td></tr></table></figure></p>
+<p>接下来，我们需要给栈声明一些方法：</p>
+<ul>
+<li>push(element):添加一个或是几个新元素到栈顶。</li>
+<li>pop():移除栈顶的元素，同时返回被移除元素。</li>
+<li>peek():返回栈顶的元素，但并不对栈顶的元素做出任何的修改。</li>
+<li>isEmpty():检查栈内是否有元素，如果有返回true，没有返回false。</li>
+<li>clear():清除栈里的元素。</li>
+<li>size():返回栈的元素个数。</li>
+<li>print():打印栈里的元素。<h1 id="栈的完整代码"><a href="#栈的完整代码" class="headerlink" title="栈的完整代码"></a>栈的完整代码</h1></li>
+</ul>
+<p>我们通过javascript提供的API，实现栈如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function Stack() &#123;</div><div class="line">    var items = [];</div><div class="line">    this.push = function(element)&#123;</div><div class="line">        items.push(element);</div><div class="line">    &#125;;</div><div class="line">    this.pop = function()&#123;</div><div class="line">        return items.pop();</div><div class="line">    &#125;;</div><div class="line">    this.peek = function()&#123;</div><div class="line">        return items[items.length-1];</div><div class="line">    &#125;;</div><div class="line">    this.isEmpty = function()&#123;</div><div class="line">        return items.length == 0;</div><div class="line">    &#125;;</div><div class="line">    this.size = function()&#123;</div><div class="line">        return items.length;</div><div class="line">    &#125;;</div><div class="line">    this.clear = function()&#123;</div><div class="line">        items = [];</div><div class="line">    &#125;;</div><div class="line">    this.print = function()&#123;</div><div class="line">        console.log(items.toString());</div><div class="line">    &#125;;</div><div class="line">    this.toString = function()&#123;</div><div class="line">        return items.toString();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="使用栈"><a href="#使用栈" class="headerlink" title="使用栈"></a>使用栈</h1><p>创建完了栈，也给他了方法，然后我们来实例化一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var stack=new Stack();</div><div class="line">console.log(stack.isEmpty());</div><div class="line">//true</div><div class="line">stack.push(1);</div><div class="line">stack.push(3);</div><div class="line">//添加元素</div><div class="line">console.log(stack.peek());</div><div class="line">//输出栈顶元素3</div><div class="line">console.log(stack.size());</div><div class="line">//2</div><div class="line">//输出元素个数</div></pre></td></tr></table></figure></p>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>我们已经接触了栈，接下来要说的队列和栈十分相似，他们都是线性表，元素都是有序的 。队列和栈不同的是，队列遵循的是FIFO，也就是先进先出的原则。队列从尾部添加新元素，从顶部移除元素，最新添加的元素必须排列在队列的末尾。</p>
+<p>队列的创建</p>
+<p>首先我们声明一个类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function()&#123;</div><div class="line">    //这里是队列的属性和方法</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后我们同样创建一个保存元素的数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var items=[];</div></pre></td></tr></table></figure>
+<p>接下来声明一些队列可用的方法：</p>
+<ul>
+<li>enqueue(element):向队列尾部添加一个（或是多个）元素。</li>
+<li>dequeue():移除队列的第一个元素，并返回被移除的元素。</li>
+<li>front():返回队列的第一个元素——最先被添加的也是最先被移除的元素。队列不做任何变动。</li>
+<li>isEmpty():检查队列内是否有元素，如果有返回true，没有返回false。</li>
+<li>size():返回队列的长度。</li>
+<li>print():打印队列的元素。<br>队列的完整代码</li>
+</ul>
+<p>我们通过javascript提供的API，实现队列如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function Queue() &#123;</div><div class="line">    var items = [];</div><div class="line">    this.enqueue = function(element)&#123;</div><div class="line">        items.push(element);</div><div class="line">    &#125;;</div><div class="line">    this.dequeue = function()&#123;</div><div class="line">        return items.shift();</div><div class="line">    &#125;;</div><div class="line">    this.front = function()&#123;</div><div class="line">        return items[0];</div><div class="line">    &#125;;</div><div class="line">    this.isEmpty = function()&#123;</div><div class="line">        return items.length == 0;</div><div class="line">    &#125;;</div><div class="line">    this.clear = function()&#123;</div><div class="line">        items = [];</div><div class="line">    &#125;;</div><div class="line">    this.size = function()&#123;</div><div class="line">        return items.length;</div><div class="line">    &#125;;</div><div class="line">    this.print = function()&#123;</div><div class="line">        console.log(items.toString());</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用队列</p>
+<p>创建完了队列，也给他了方法，然后我们来实例化一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var queue=new Queue();</div><div class="line">console.log(queue.isEmpty());</div><div class="line">//true</div><div class="line">queue.enqueue(1);</div><div class="line">queue.enqueue(3);</div><div class="line">//添加元素</div><div class="line">console.log(queue.front());</div><div class="line">//返回队列的第一个元素1</div><div class="line">console.log(queue.size());</div><div class="line">//2</div><div class="line">//输出元素个数</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -278,13 +287,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></p>
+        <p><span>本文标题:</span><a href="/2016/10/20/JavaScript中的栈和队列/">JavaScript中的栈和队列</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年06月09日 - 23时10分</p>
-        <p><span>最后更新:</span>2016年11月10日 - 16时12分</p>
+        <p><span>发布时间:</span>2016年10月20日 - 17时47分</p>
+        <p><span>最后更新:</span>2016年11月20日 - 17时55分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/06/09/使用CSS完成元素居中的七种方法/" title="使用CSS完成元素居中的七种方法">http://transform.com/2016/06/09/使用CSS完成元素居中的七种方法/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/06/09/使用CSS完成元素居中的七种方法/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/20/JavaScript中的栈和队列/" title="JavaScript中的栈和队列">http://transform.com/2016/10/20/JavaScript中的栈和队列/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/10/20/JavaScript中的栈和队列/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -297,18 +306,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/06/10/如何在Sass中使用BEM/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/14/初识Flux框架/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          如何在Sass中使用BEM
+          初识Flux框架
         
       </div>
     </a>
   
   
-    <a href="/2016/04/15/DIV-CSS规范命名集合/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">DIV+CSS规范命名集合</div>
+    <a href="/2016/10/14/使用‘use-strict的好处/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用&#39;use strict&#39;的好处</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -319,7 +328,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#栈"><span class="toc-number">1.</span> <span class="toc-text">栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#栈的创建"><span class="toc-number">2.</span> <span class="toc-text">栈的创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#栈的完整代码"><span class="toc-number">3.</span> <span class="toc-text">栈的完整代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用栈"><span class="toc-number">4.</span> <span class="toc-text">使用栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#队列"><span class="toc-number">5.</span> <span class="toc-text">队列</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -367,7 +376,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/06/09/使用CSS完成元素居中的七种方法/" data-title="使用CSS完成元素居中的七种方法" data-url="http://transform.com/2016/06/09/使用CSS完成元素居中的七种方法/"></div>
+    <div class="ds-thread" data-thread-key="2016/10/20/JavaScript中的栈和队列/" data-title="JavaScript中的栈和队列" data-url="http://transform.com/2016/10/20/JavaScript中的栈和队列/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -390,13 +399,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/06/10/如何在Sass中使用BEM/" title="上一篇: 如何在Sass中使用BEM">
+            <a href="/2016/11/14/初识Flux框架/" title="上一篇: 初识Flux框架">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/04/15/DIV-CSS规范命名集合/" title="下一篇: DIV+CSS规范命名集合">
+            <a href="/2016/10/14/使用‘use-strict的好处/" title="下一篇: 使用&#39;use strict&#39;的好处">
                 <i class="fa fa-angle-right"></i>
             </a>
         
