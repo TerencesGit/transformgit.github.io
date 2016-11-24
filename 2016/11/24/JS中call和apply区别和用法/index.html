@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JavaScript中的栈和队列 | Transform&#39;s Blog</title>
+  <title>JS中call和apply区别和用法 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。">
+  <meta name="description" content="一、call和apply相同点:a） 产生的效果或作用完全相同；
+b） 至少有一个参数；
+c） 第一个参数必须有且是一个对象（Object）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript中的栈和队列">
-<meta property="og:url" content="http://transform.com/2016/10/20/JavaScript中的栈和队列/index.html">
+<meta property="og:title" content="JS中call和apply区别和用法">
+<meta property="og:url" content="http://transform.com/2016/11/24/JS中call和apply区别和用法/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。">
-<meta property="og:updated_time" content="2016-11-20T09:55:33.144Z">
+<meta property="og:description" content="一、call和apply相同点:a） 产生的效果或作用完全相同；
+b） 至少有一个参数；
+c） 第一个参数必须有且是一个对象（Object）。">
+<meta property="og:updated_time" content="2016-11-24T06:23:15.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript中的栈和队列">
-<meta name="twitter:description" content="我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。">
+<meta name="twitter:title" content="JS中call和apply区别和用法">
+<meta name="twitter:description" content="一、call和apply相同点:a） 产生的效果或作用完全相同；
+b） 至少有一个参数；
+c） 第一个参数必须有且是一个对象（Object）。">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +210,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-JavaScript中的栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JS中call和apply区别和用法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/10/20/JavaScript中的栈和队列/" class="article-date">
-      <time datetime="2016-10-20T09:47:15.000Z" itemprop="datePublished">2016-10-20</time>
+      <a href="/2016/11/24/JS中call和apply区别和用法/" class="article-date">
+      <time datetime="2016-11-24T06:21:18.000Z" itemprop="datePublished">2016-11-24</time>
 </a>
     </div>
   
@@ -221,7 +227,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript中的栈和队列
+      JS中call和apply区别和用法
     </h1>
   
 
@@ -236,7 +242,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apply/">apply</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/call/">call</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,39 +252,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p> 我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。<br> <a id="more"></a></p>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p> 栈是一种遵从后进先出(LIFO)原则的有序集合。新添加的或是待删除的元素都保存在栈的末尾。我们称作栈顶，而另一端我们称作栈底。</p>
-<h1 id="栈的创建"><a href="#栈的创建" class="headerlink" title="栈的创建"></a>栈的创建</h1><p>首先我们先创建一个类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function Stack()&#123;</div><div class="line">    //各种属性和方法的声明</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后我们需要一种数据结构来保存栈里面的数据：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var items=[];</div></pre></td></tr></table></figure></p>
-<p>接下来，我们需要给栈声明一些方法：</p>
-<ul>
-<li>push(element):添加一个或是几个新元素到栈顶。</li>
-<li>pop():移除栈顶的元素，同时返回被移除元素。</li>
-<li>peek():返回栈顶的元素，但并不对栈顶的元素做出任何的修改。</li>
-<li>isEmpty():检查栈内是否有元素，如果有返回true，没有返回false。</li>
-<li>clear():清除栈里的元素。</li>
-<li>size():返回栈的元素个数。</li>
-<li>print():打印栈里的元素。<h1 id="栈的完整代码"><a href="#栈的完整代码" class="headerlink" title="栈的完整代码"></a>栈的完整代码</h1></li>
-</ul>
-<p>我们通过javascript提供的API，实现栈如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">function Stack() &#123;</div><div class="line">    var items = [];</div><div class="line">    this.push = function(element)&#123;</div><div class="line">        items.push(element);</div><div class="line">    &#125;;</div><div class="line">    this.pop = function()&#123;</div><div class="line">        return items.pop();</div><div class="line">    &#125;;</div><div class="line">    this.peek = function()&#123;</div><div class="line">        return items[items.length-1];</div><div class="line">    &#125;;</div><div class="line">    this.isEmpty = function()&#123;</div><div class="line">        return items.length == 0;</div><div class="line">    &#125;;</div><div class="line">    this.size = function()&#123;</div><div class="line">        return items.length;</div><div class="line">    &#125;;</div><div class="line">    this.clear = function()&#123;</div><div class="line">        items = [];</div><div class="line">    &#125;;</div><div class="line">    this.print = function()&#123;</div><div class="line">        console.log(items.toString());</div><div class="line">    &#125;;</div><div class="line">    this.toString = function()&#123;</div><div class="line">        return items.toString();</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h1 id="使用栈"><a href="#使用栈" class="headerlink" title="使用栈"></a>使用栈</h1><p>创建完了栈，也给他了方法，然后我们来实例化一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var stack=new Stack();</div><div class="line">console.log(stack.isEmpty());</div><div class="line">//true</div><div class="line">stack.push(1);</div><div class="line">stack.push(3);</div><div class="line">//添加元素</div><div class="line">console.log(stack.peek());</div><div class="line">//输出栈顶元素3</div><div class="line">console.log(stack.size());</div><div class="line">//2</div><div class="line">//输出元素个数</div></pre></td></tr></table></figure></p>
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>我们已经接触了栈，接下来要说的队列和栈十分相似，他们都是线性表，元素都是有序的 。队列和栈不同的是，队列遵循的是FIFO，也就是先进先出的原则。队列从尾部添加新元素，从顶部移除元素，最新添加的元素必须排列在队列的末尾。</p>
-<p>队列的创建</p>
-<p>首先我们声明一个类：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function()&#123;</div><div class="line">    //这里是队列的属性和方法</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然后我们同样创建一个保存元素的数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var items=[];</div></pre></td></tr></table></figure>
-<p>接下来声明一些队列可用的方法：</p>
-<ul>
-<li>enqueue(element):向队列尾部添加一个（或是多个）元素。</li>
-<li>dequeue():移除队列的第一个元素，并返回被移除的元素。</li>
-<li>front():返回队列的第一个元素——最先被添加的也是最先被移除的元素。队列不做任何变动。</li>
-<li>isEmpty():检查队列内是否有元素，如果有返回true，没有返回false。</li>
-<li>size():返回队列的长度。</li>
-<li>print():打印队列的元素。<br>队列的完整代码</li>
-</ul>
-<p>我们通过javascript提供的API，实现队列如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function Queue() &#123;</div><div class="line">    var items = [];</div><div class="line">    this.enqueue = function(element)&#123;</div><div class="line">        items.push(element);</div><div class="line">    &#125;;</div><div class="line">    this.dequeue = function()&#123;</div><div class="line">        return items.shift();</div><div class="line">    &#125;;</div><div class="line">    this.front = function()&#123;</div><div class="line">        return items[0];</div><div class="line">    &#125;;</div><div class="line">    this.isEmpty = function()&#123;</div><div class="line">        return items.length == 0;</div><div class="line">    &#125;;</div><div class="line">    this.clear = function()&#123;</div><div class="line">        items = [];</div><div class="line">    &#125;;</div><div class="line">    this.size = function()&#123;</div><div class="line">        return items.length;</div><div class="line">    &#125;;</div><div class="line">    this.print = function()&#123;</div><div class="line">        console.log(items.toString());</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用队列</p>
-<p>创建完了队列，也给他了方法，然后我们来实例化一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var queue=new Queue();</div><div class="line">console.log(queue.isEmpty());</div><div class="line">//true</div><div class="line">queue.enqueue(1);</div><div class="line">queue.enqueue(3);</div><div class="line">//添加元素</div><div class="line">console.log(queue.front());</div><div class="line">//返回队列的第一个元素1</div><div class="line">console.log(queue.size());</div><div class="line">//2</div><div class="line">//输出元素个数</div></pre></td></tr></table></figure></p>
+        <h1 id="一、call和apply相同点"><a href="#一、call和apply相同点" class="headerlink" title="一、call和apply相同点:"></a>一、call和apply相同点:</h1><p>a） 产生的效果或作用完全相同；</p>
+<p>b） 至少有一个参数；</p>
+<p>c） 第一个参数必须有且是一个对象（Object）。<br><a id="more"></a></p>
+<h1 id="二、call和apply区别"><a href="#二、call和apply区别" class="headerlink" title="二、call和apply区别"></a>二、call和apply区别</h1><p>传递参数的方式。用法上不同，主要是参数不完全同</p>
+<h1 id="三、call和apply常用实例"><a href="#三、call和apply常用实例" class="headerlink" title="三、call和apply常用实例"></a>三、call和apply常用实例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function Person(name,age) &#123;  </div><div class="line">this.name=name;  </div><div class="line">this.age=age;  </div><div class="line">this.money = 500;</div><div class="line">&#125; </div><div class="line"></div><div class="line">function myFun(money) &#123;        </div><div class="line">    alert(this.money);</div><div class="line">&#125;</div><div class="line"></div><div class="line">var money = 100;</div><div class="line">myFun(money); </div><div class="line">//return 100;  //window.myFun(money); save to myFun(money);</div><div class="line">//这个时候this指向的是window对象，其实myFun函数和定义的var money = 100;都作为window对象子对象（即全局对象）</div><div class="line"></div><div class="line">myFun.apply(window,[]);  //save to window.myFun.apply(window,[]);  </div><div class="line">//return 100;  //同上</div><div class="line"></div><div class="line">myFun.apply(new Person(&apos;zhangsan&apos;,23),[]);  </div><div class="line">//return 500, 空数组作为参数，仅符合语法要求</div><div class="line">//这个时候myFun方法里面的this指向的是new Person(&apos;zhangsan&apos;,23)对象，二不是myFun类(函数)，故弹出500</div><div class="line"></div><div class="line">myFun.call(new Person(&apos;zhangsan&apos;,23),money,300,&apos;mycardId&apos;);  </div><div class="line">//return 500, 后面money,300和mycardId是参数列表作为参数，一一列出</div><div class="line">//这个时候myFun方法里面的this指向的是new Person(&apos;zhangsan&apos;,23)对象，二不是myFun类(函数)，故弹出500</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -287,13 +265,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/10/20/JavaScript中的栈和队列/">JavaScript中的栈和队列</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/24/JS中call和apply区别和用法/">JS中call和apply区别和用法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年10月20日 - 17时47分</p>
-        <p><span>最后更新:</span>2016年11月20日 - 17时55分</p>
+        <p><span>发布时间:</span>2016年11月24日 - 14时21分</p>
+        <p><span>最后更新:</span>2016年11月24日 - 14时23分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/10/20/JavaScript中的栈和队列/" title="JavaScript中的栈和队列">http://transform.com/2016/10/20/JavaScript中的栈和队列/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/10/20/JavaScript中的栈和队列/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/24/JS中call和apply区别和用法/" title="JS中call和apply区别和用法">http://transform.com/2016/11/24/JS中call和apply区别和用法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/11/24/JS中call和apply区别和用法/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -306,18 +284,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/14/初识Flux框架/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          初识Flux框架
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/10/14/使用‘use-strict的好处/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用&#39;use strict&#39;的好处</div>
+    <a href="/2016/11/23/ES6中的let和块级作用域/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6中的let和块级作用域</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -328,7 +297,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#栈"><span class="toc-number">1.</span> <span class="toc-text">栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#栈的创建"><span class="toc-number">2.</span> <span class="toc-text">栈的创建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#栈的完整代码"><span class="toc-number">3.</span> <span class="toc-text">栈的完整代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用栈"><span class="toc-number">4.</span> <span class="toc-text">使用栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#队列"><span class="toc-number">5.</span> <span class="toc-text">队列</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、call和apply相同点"><span class="toc-number">1.</span> <span class="toc-text">一、call和apply相同点:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、call和apply区别"><span class="toc-number">2.</span> <span class="toc-text">二、call和apply区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、call和apply常用实例"><span class="toc-number">3.</span> <span class="toc-text">三、call和apply常用实例</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -376,7 +345,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/10/20/JavaScript中的栈和队列/" data-title="JavaScript中的栈和队列" data-url="http://transform.com/2016/10/20/JavaScript中的栈和队列/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/24/JS中call和apply区别和用法/" data-title="JS中call和apply区别和用法" data-url="http://transform.com/2016/11/24/JS中call和apply区别和用法/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -399,13 +368,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/14/初识Flux框架/" title="上一篇: 初识Flux框架">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/10/14/使用‘use-strict的好处/" title="下一篇: 使用&#39;use strict&#39;的好处">
+            <a href="/2016/11/23/ES6中的let和块级作用域/" title="下一篇: ES6中的let和块级作用域">
                 <i class="fa fa-angle-right"></i>
             </a>
         
