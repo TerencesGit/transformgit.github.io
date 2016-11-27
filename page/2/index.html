@@ -135,7 +135,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
                     </div>
                 </section>
                 
@@ -204,6 +204,72 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-JavaScript中的栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/20/JavaScript中的栈和队列/" class="article-date">
+      <time datetime="2016-10-20T09:47:15.000Z" itemprop="datePublished">2016-10-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/20/JavaScript中的栈和队列/">JavaScript中的栈和队列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p> 我想对于数组每一个学过编程语言的都不会陌生吧，我们知道，我们可以在数组的任意位置添加或是删除元素，然而，有时候我们还需要一种在添加或是删除元素的时候有更多控制的数据结构。有两种数据结构类似于数组。但在添加或是删除元素的时候更为的可控。他们就是栈和队列。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/20/JavaScript中的栈和队列/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-使用‘use-strict的好处" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -451,72 +517,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/10/08/React入门/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Vim命令总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/23/Vim命令总结/" class="article-date">
-      <time datetime="2016-09-23T12:22:10.000Z" itemprop="datePublished">2016-09-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/23/Vim命令总结/">Vim命令总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>在命令行窗口中输入以下命令即可<br>vim 直接启动vim<br>vim filename 打开vim并创建名为filename的文件<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Vim/">Vim</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim命令/">vim命令</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/23/Vim命令总结/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

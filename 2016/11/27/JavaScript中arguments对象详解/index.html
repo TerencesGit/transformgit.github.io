@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript中arguments对象详解 | Transform&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 什么是 argumentsMDN 上解释：arguments 是一个类数组对象。代表传给一个function的参数列表。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中arguments对象详解">
+<meta property="og:url" content="http://transform.com/2016/11/27/JavaScript中arguments对象详解/index.html">
+<meta property="og:site_name" content="Transform's Blog">
+<meta property="og:description" content="1. 什么是 argumentsMDN 上解释：arguments 是一个类数组对象。代表传给一个function的参数列表。">
+<meta property="og:updated_time" content="2016-11-27T06:38:45.364Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中arguments对象详解">
+<meta name="twitter:description" content="1. 什么是 argumentsMDN 上解释：arguments 是一个类数组对象。代表传给一个function的参数列表。">
+  
+    <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Transform</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">我的博客</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                            
+                                <a class="fl facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100013027516814" title="facebook">facebook</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://TransformGit.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">技术控、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Transform</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Transform</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">我的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/TransformGit" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/transformer-78" title="zhihu">zhihu</a>
+                    
+                        <a class="facebook" target="_blank" href="https://www.facebook.com/profile.php?id=100013027516814" title="facebook">facebook</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-JavaScript中arguments对象详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/27/JavaScript中arguments对象详解/" class="article-date">
+      <time datetime="2016-11-27T06:32:57.000Z" itemprop="datePublished">2016-11-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript中arguments对象详解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arguments/">arguments</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1-什么是-arguments"><a href="#1-什么是-arguments" class="headerlink" title="1. 什么是 arguments"></a>1. 什么是 arguments</h1><p>MDN 上解释：<br>arguments 是一个类数组对象。代表传给一个function的参数列表。<br><a id="more"></a><br>我们先用一个例子直观了解下 JavaScript 中的 arguments 长什么样子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function printArgs() &#123;</div><div class="line">    console.log(arguments);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">printArgs(&quot;A&quot;, &quot;a&quot;, 0, &#123; foo: &quot;Hello, arguments&quot; &#125;);</div><div class="line">// [&quot;A&quot;, &quot;a&quot;, 0, Object]</div></pre></td></tr></table></figure></p>
+<p>乍一看，结果是个数组，但并不是真正的数组，所以说 arguments 是一个类数组的对象（想了解真正数组与类数组对象的区别可以一直翻到最后）。</p>
+<p>再看看 arguments 表示的内容，其表示了函数执行时传入函数的所有参数。在上面的例子中，代表了传入 printArgs 函数中的四个参数，可以分别用 arguments[0]、 arguments[1]… 来获取单个的参数。</p>
+<h1 id="2-arguments-操作"><a href="#2-arguments-操作" class="headerlink" title="2. arguments 操作"></a>2. arguments 操作</h1><p>2.1 arguments length</p>
+<p>arguments 是个类数组对象，其包含一个 length 属性，可以用 arguments.length 来获得传入函数的参数个数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function func() &#123;</div><div class="line">    console.log(&quot;The number of parameters is &quot; + arguments.length);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">func();</div><div class="line">func(1, 2);</div><div class="line">func(1, 2, 3);</div><div class="line">执行结果如下：</div><div class="line"></div><div class="line">The number of parameters is 0</div><div class="line">The number of parameters is 2</div><div class="line">The number of parameters is 3</div></pre></td></tr></table></figure>
+<p>2.2 arguments 转数组</p>
+<p>通常使用下面的方法来将 arguments 转换成数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Array.prototype.slice.call(arguments);</div><div class="line">还有一个更简短的写法：</div><div class="line">[].slice.call(arguments);</div></pre></td></tr></table></figure></p>
+<p>在这里，只是简单地调用了空数组的 slice 方法，而没有从 Array 的原型层面调用。</p>
+<p>为什么上面两种方法可以转换呢？</p>
+<p>首先，slice 方法得到的结果是一个数组，参数便是 arguments。事实上，满足一定条件的对象都能被 slice 方法转换成数组。看个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const obj = &#123; 0: &quot;A&quot;, 1: &quot;B&quot;, length: 2 &#125;;</div><div class="line">const result = [].slice.call(obj);</div><div class="line">console.log(Array.isArray(result), result);</div><div class="line">执行结果是：</div><div class="line"></div><div class="line">true [&quot;A&quot;, &quot;B&quot;]</div></pre></td></tr></table></figure></p>
+<p>从上面例子可以看出，条件就是： 1) 属性为 0，1，2…；2） 具有 length 属性；</p>
+<p>另外，有一个需要注意的地方就是，不能将函数的 arguments 泄露或者传递出去。什么意思呢？看下面的几个泄露 arguments 的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// Leaking arguments example1:</div><div class="line">function getArgs() &#123;</div><div class="line">    return arguments;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">// Leaking arguments example2:</div><div class="line">function getArgs() &#123;</div><div class="line">    const args = [].slice.call(arguments);</div><div class="line">    return args;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">// Leaking arguments example3:</div><div class="line">function getArgs() &#123;</div><div class="line">    const args = arguments;</div><div class="line">    return function() &#123;</div><div class="line">        return args;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的做法就直接将函数的 arguments 对象泄露出去了，最终的结果就是 V8 引擎将会跳过优化，导致相当大的性能损失。</p>
+<p>你可以这么做：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function getArgs() &#123;</div><div class="line">    const args = new Array(arguments.length);</div><div class="line">    for(let i = 0; i &lt; args.length; ++i) &#123;</div><div class="line">        args[i] = arguments[i];</div><div class="line">    &#125;</div><div class="line">    return args;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>那就很好奇了，我们每次使用 arguments 时通常第一步都会将其转换为数组，同时 arguments 使用不当还容易导致性能损失，那么为什么不将 arguments 直接设计成数组对象呢？</p>
+<p>这需要从这门语言的一开始说起。arguments 在语言的早期就引入了，当时的 Array 对象具有 4 个方法： toString、 join、 reverse 和 sort。arguments 继承于 Object 的很大原因是不需要这四个方法。而现在，Array 添加了很多强大的方法，比如 forEach、map、filter 等等。那为什么现在不在新的版本里让 arguments 重新继承自 Array呢？其实 ES5 的草案中就包含这一点，但为了向前兼容，最终还是被委员会否决了。</p>
+<p>2.3 修改 arguments 值</p>
+<p>在严格模式与非严格模式下，修改函数参数值表现的结果不一样。看下面的两个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function foo(a) &#123;</div><div class="line">    &quot;use strict&quot;;</div><div class="line">    console.log(a, arguments[0]);</div><div class="line">    a = 10;</div><div class="line">    console.log(a, arguments[0]);</div><div class="line">    arguments[0] = 20;</div><div class="line">    console.log(a, arguments[0]);</div><div class="line">&#125;</div><div class="line">foo(1);</div><div class="line">输出：</div><div class="line"></div><div class="line">1 1</div><div class="line">10 1</div><div class="line">10 20</div></pre></td></tr></table></figure></p>
+<p>另一个非严格模式的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function foo(a) &#123;</div><div class="line">    console.log(a, arguments[0]);</div><div class="line">    a = 10;</div><div class="line">    console.log(a, arguments[0]);</div><div class="line">    arguments[0] = 20;</div><div class="line">    console.log(a, arguments[0]);</div><div class="line">&#125;</div><div class="line">foo(1);</div><div class="line">输出结果为：</div><div class="line"></div><div class="line">1 1</div><div class="line">10 10</div><div class="line">20 20</div></pre></td></tr></table></figure></p>
+<p>从上面的两个例子中可以看出，在严格模式下，函数中的参数与 arguments 对象没有联系，修改一个值不会改变另一个值。而在非严格模式下，两个会互相影响。</p>
+<p>2.4 将参数从一个函数传递到另一个函数</p>
+<p>下面是将参数从一个函数传递到另一个函数的推荐做法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;</div><div class="line">    bar.apply(this, arguments);</div><div class="line">&#125;</div><div class="line">function bar(a, b, c) &#123;</div><div class="line">    // logic</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.5 arguments 与重载</p>
+<p>很多语言中都有重载，但 JavaScript 中没有。先看个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function add(num1, num2) &#123;</div><div class="line">    console.log(&quot;Method one&quot;);</div><div class="line">    return num1 + num2;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">function add(num1, num2, num3) &#123;</div><div class="line">    console.log(&quot;Method two&quot;);</div><div class="line">    return num1 + num2 + num3;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">add(1, 2);</div><div class="line">add(1, 2, 3);</div><div class="line">执行结果为：</div><div class="line">Method two</div><div class="line">Method two</div></pre></td></tr></table></figure></p>
+<p>所以，JavaScript 中，函数并没有根据参数的不同而产生不同的调用。</p>
+<p>是不是 JavaScript 中就没有重载了呢？并不是，我们可以利用 arguments 模拟重载。还是上面的例子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function add(num1, num2, num3) &#123;</div><div class="line">    if (arguments.length === 2) &#123;</div><div class="line">        console.log(&quot;Result is &quot; + (num1 + num2));</div><div class="line">    &#125;</div><div class="line">    else if (arguments.length === 3) &#123;</div><div class="line">        console.log(&quot;Result is &quot; + (num1 + num2 + num3));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">add(1, 2);</div><div class="line">add(1, 2, 3)</div><div class="line">执行结果如下：</div><div class="line"></div><div class="line"></div><div class="line">Result is 3</div><div class="line">Result is 6</div></pre></td></tr></table></figure></p>
+<ol>
+<li>ES6 中的 arguments</li>
+</ol>
+<p>3.1 扩展操作符</p>
+<p>直接上栗子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function func() &#123;</div><div class="line">    console.log(...arguments);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">func(1, 2, 3);</div><div class="line">执行结果是：</div><div class="line"></div><div class="line">1 2 3</div></pre></td></tr></table></figure>
+<p>简洁地讲，扩展操作符可以将 arguments 展开成独立的参数。</p>
+<p>3.2 Rest 参数</p>
+<p>还是上栗子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function func(firstArg, ...restArgs) &#123;</div><div class="line">    console.log(Array.isArray(restArgs));</div><div class="line">    console.log(firstArg, restArgs);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">func(1, 2, 3);</div><div class="line">执行结果是：</div><div class="line"></div><div class="line">true</div><div class="line">1 [2, 3]</div></pre></td></tr></table></figure>
+<p>从上面的结果可以看出，Rest 参数表示除了明确指定剩下的参数集合，类型是 Array。</p>
+<p>3.3 默认参数</p>
+<p>栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function func(firstArg = 0, secondArg = 1) &#123;</div><div class="line">    console.log(arguments[0], arguments[1]);</div><div class="line">    console.log(firstArg, secondArg);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">func(99);</div><div class="line">执行结果是：</div><div class="line"></div><div class="line">99 undefined</div><div class="line">99 1</div></pre></td></tr></table></figure></p>
+<p>可见，默认参数对 arguments 没有影响，arguments 还是仅仅表示调用函数时所传入的所有参数。</p>
+<p>3.4 arguments 转数组</p>
+<p>Array.from() 是个非常推荐的方法，其可以将所有类数组对象转换成数组。</p>
+<ol>
+<li>数组与类数组对象</li>
+</ol>
+<p>数组具有一个基本特征：索引。这是一般对象所没有的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const obj = &#123; 0: &quot;a&quot;, 1: &quot;b&quot; &#125;;</div><div class="line">const arr = [ &quot;a&quot;, &quot;b&quot; ];</div></pre></td></tr></table></figure>
+<p>我们利用 obj[0]、arr[0] 都能取得自己想要的数据，但取得数据的方式确实不同的。obj[0] 是利用对象的键值对存取数据，而 arr[0] 却是利用数组的索引。事实上，Object 与 Array 的唯一区别就是 Object 的属性是 string，而 Array 的索引是 number。</p>
+<p>下面看看类数组对象。</p>
+<p>伪数组的特性就是长得像数组，包含一组数据以及拥有一个 length 属性，但是没有任何 Array 的方法。再具体的说，length 属性是个非负整数，上限是 JavaScript 中能精确表达的最大数字；另外，类数组对象的 length 值无法自动改变。</p>
+<p>如何自己创建一个类数组对象？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;&#125;</div><div class="line">Foo.prototype = Object.create(Array.prototype);</div><div class="line"> </div><div class="line">const foo = new Foo();</div><div class="line">foo.push(&apos;A&apos;);</div><div class="line">console.log(foo, foo.length);</div><div class="line">console.log(&quot;foo is an array? &quot; + Array.isArray(foo));</div><div class="line">执行结果是：</div><div class="line"></div><div class="line">[&quot;A&quot;] 1</div><div class="line">foo is an array? false</div></pre></td></tr></table></figure>
+<p>也就是说 Foo 的示例拥有 Array 的所有方法，但类型不是 Array。</p>
+<p>如果不需要 Array 的所有方法，只需要部分怎么办呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Bar() &#123;&#125;</div><div class="line">Bar.prototype.push = Array.prototype.push;</div><div class="line"> </div><div class="line">const bar = new Bar();</div><div class="line">bar.push(&apos;A&apos;);</div><div class="line">bar.push(&apos;B&apos;);</div><div class="line">console.log(bar);</div><div class="line">执行结果是：</div><div class="line"></div><div class="line">Bar &#123;0: &quot;A&quot;, 1: &quot;B&quot;, length: 2&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/11/27/JavaScript中arguments对象详解/">JavaScript中arguments对象详解</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
+        <p><span>发布时间:</span>2016年11月27日 - 14时32分</p>
+        <p><span>最后更新:</span>2016年11月27日 - 14时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/27/JavaScript中arguments对象详解/" title="JavaScript中arguments对象详解">http://transform.com/2016/11/27/JavaScript中arguments对象详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/11/27/JavaScript中arguments对象详解/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/26/String对象中常用的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">String对象中常用的方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-什么是-arguments"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是 arguments</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-arguments-操作"><span class="toc-number">2.</span> <span class="toc-text">2. arguments 操作</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/11/27/JavaScript中arguments对象详解/" data-title="JavaScript中arguments对象详解" data-url="http://transform.com/2016/11/27/JavaScript中arguments对象详解/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"null"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/11/26/String对象中常用的方法/" title="下一篇: String对象中常用的方法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/27/JavaScript中arguments对象详解/">JavaScript中arguments对象详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/26/String对象中常用的方法/">String对象中常用的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/24/JS中call和apply区别和用法/">JS中call和apply区别和用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/23/ES6中的let和块级作用域/">ES6中的let和块级作用域</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/14/初识Flux框架/">初识Flux框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/20/JavaScript中的栈和队列/">JavaScript中的栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/14/使用‘use-strict的好处/">使用'use strict'的好处</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/使用create-react-app快速构建React开发环境/">使用create-react-app快速构建React开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/选择 Reac​​tJS 的理由/">选择 Reac​​tJS 的理由</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/React入门/">React入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/23/Vim命令总结/">Vim命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/清除浮动总结/">清除浮动总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/21/理解JavaScript的原型属性/">理解JavaScript的原型属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/18/理解JS中的this指向/">理解JS中的this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/Linux学习要点/">Linux学习要点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/11/Linux常用命令/">Linux常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/08/前端模块化--webpack/">前端模块化--webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/15/CSS编写规范和建议/">CSS编写规范和建议</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/14/jQuery使用技巧总结/">jQuery使用技巧总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/12/移动端兼容性问题解决方案/">移动端兼容性问题解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/Mongodb中的—-id和ObjectId/">Mongodb中的—_id和ObjectId</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/05/OOCSS-Sass/">OOCSS+Sass</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/网页性能优化/">网页性能优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/如何在Sass中使用BEM/">如何在Sass中使用BEM</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/09/使用CSS完成元素居中的七种方法/">使用CSS完成元素居中的七种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/15/DIV-CSS规范命名集合/">DIV+CSS规范命名集合</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Transform
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
