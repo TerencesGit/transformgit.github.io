@@ -205,6 +205,62 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-如何解决跨域" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/17/如何解决跨域/" class="article-date">
+      <time datetime="2017-04-17T07:59:51.000Z" itemprop="datePublished">2017-04-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/17/如何解决跨域/">如何解决跨域</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP: json + padding(内填充)，顾名思义，就是把JSON填充到一个盒子里。<br>原理是： 动态插入script标签， 通过script标签引入一个js文件， 这个js 文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。</p>
+<p>由于同源策略的限制，XmlHttpRequest 只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输入JSON数据并执行回调函数，从而解决了跨域的数据请求。</p>
+<p>优点是兼容好，简单易用，支持浏览器与服务器双向通信。缺点是支持GET请求。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-JavaScript中arguments对象详解" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -471,72 +527,6 @@
 
 
   
-    <article id="post-初识Flux框架" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/14/初识Flux框架/" class="article-date">
-      <time datetime="2016-11-14T15:14:09.000Z" itemprop="datePublished">2016-11-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/14/初识Flux框架/">初识Flux框架</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Flux是Facebook用户建立客户端Web应用的前端架构， 它通过利用一个单向的数据流补充了React的组合视图组件，这更是一种模式而非正式框架，你能够无需许多新代码情况下立即开始使用Flux。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JS框架/">JS框架</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flux/">flux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/11/14/初识Flux框架/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -547,7 +537,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2016 Transform
+                &copy; 2018 Transform
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a>
