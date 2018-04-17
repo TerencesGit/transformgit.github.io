@@ -135,7 +135,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                        <a href="/tags/BEM/" style="font-size: 10px;">BEM</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Mongodb/" style="font-size: 10px;">Mongodb</a> <a href="/tags/OOCSS/" style="font-size: 10px;">OOCSS</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/apply/" style="font-size: 10px;">apply</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/call/" style="font-size: 10px;">call</a> <a href="/tags/clearfix/" style="font-size: 10px;">clearfix</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/jsonp/" style="font-size: 10px;">jsonp</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/this指向/" style="font-size: 10px;">this指向</a> <a href="/tags/vim命令/" style="font-size: 10px;">vim命令</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a> <a href="/tags/原型/" style="font-size: 10px;">原型</a> <a href="/tags/命令行/" style="font-size: 10px;">命令行</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/居中/" style="font-size: 10px;">居中</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/构建工具/" style="font-size: 10px;">构建工具</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
                     </div>
                 </section>
                 
@@ -232,18 +232,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP: json + padding(内填充)，顾名思义，就是把JSON填充到一个盒子里。<br>原理是： 动态插入script标签， 通过script标签引入一个js文件， 这个js 文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。</p>
-<p>由于同源策略的限制，XmlHttpRequest 只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输入JSON数据并执行回调函数，从而解决了跨域的数据请求。</p>
-<p>优点是兼容好，简单易用，支持浏览器与服务器双向通信。缺点是支持GET请求。</p>
-
+              <h5 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h5><p>JSONP：json + padding(内填充)，顾名思义，就是把JSON填充到一个盒子里。<br>原理是： 动态插入script标签， 通过script标签引入一个js文件， 这个js 文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。<br>
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/17/如何解决跨域/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
