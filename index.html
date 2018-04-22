@@ -205,11 +205,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-ES6中的let和块级作用域" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-NodeJS跨域问题解决" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/11/23/ES6中的let和块级作用域/" class="article-date">
-      <time datetime="2017-11-23T08:18:11.000Z" itemprop="datePublished">2017-11-23</time>
+      <a href="/2018/03/12/NodeJS跨域问题解决/" class="article-date">
+      <time datetime="2018-03-12T03:20:39.000Z" itemprop="datePublished">2018-03-12</time>
 </a>
     </div>
   
@@ -222,7 +222,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/23/ES6中的let和块级作用域/">ES6中的let和块级作用域</a>
+      <a class="article-title" href="/2018/03/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a>
     </h1>
   
 
@@ -232,7 +232,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="let"><a href="#let" class="headerlink" title="let"></a>let</h1><p>基本语法<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。<br>
+              <p>前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：</p>
+<ol>
+<li>后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；</li>
+<li>CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；</li>
+<li>用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发时候的跨域问题。
           
       
     </div>
@@ -241,18 +245,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/NodeJS/">NodeJS</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a  href="/2017/11/23/ES6中的let和块级作用域/#more">more >></a>
+          <a  href="/2018/03/12/NodeJS跨域问题解决/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -337,11 +341,11 @@
 
 
   
-    <article id="post-NodeJS跨域问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ES6中的let和块级作用域" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/12/NodeJS跨域问题解决/" class="article-date">
-      <time datetime="2017-09-12T03:20:39.000Z" itemprop="datePublished">2017-09-12</time>
+      <a href="/2017/08/23/ES6中的let和块级作用域/" class="article-date">
+      <time datetime="2017-08-23T08:18:11.000Z" itemprop="datePublished">2017-08-23</time>
 </a>
     </div>
   
@@ -354,7 +358,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a>
+      <a class="article-title" href="/2017/08/23/ES6中的let和块级作用域/">ES6中的let和块级作用域</a>
     </h1>
   
 
@@ -364,11 +368,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：</p>
-<ol>
-<li>后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；</li>
-<li>CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；</li>
-<li>用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发时候的跨域问题。
+              <h1 id="let"><a href="#let" class="headerlink" title="let"></a>let</h1><p>基本语法<br>ES6新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。<br>
           
       
     </div>
@@ -377,18 +377,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/NodeJS/">NodeJS</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a  href="/2017/09/12/NodeJS跨域问题解决/#more">more >></a>
+          <a  href="/2017/08/23/ES6中的let和块级作用域/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

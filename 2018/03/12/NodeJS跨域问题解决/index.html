@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linux学习要点 | Transform&#39;s Blog</title>
+  <title>NodeJS跨域问题解决 | Transform&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、学习Linux的基本要求1． 掌握至少50个以上的常用命令。2． 熟悉Gnome/KDE等X-windows桌面环境操作 。">
+  <meta name="description" content="前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：
+
+后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；
+CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；
+用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习要点">
-<meta property="og:url" content="http://transform.com/2016/09/15/Linux学习要点/index.html">
+<meta property="og:title" content="NodeJS跨域问题解决">
+<meta property="og:url" content="http://transform.com/2018/03/12/NodeJS跨域问题解决/index.html">
 <meta property="og:site_name" content="Transform's Blog">
-<meta property="og:description" content="一、学习Linux的基本要求1． 掌握至少50个以上的常用命令。2． 熟悉Gnome/KDE等X-windows桌面环境操作 。">
-<meta property="og:updated_time" content="2016-11-13T12:44:46.485Z">
+<meta property="og:description" content="前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：
+
+后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；
+CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；
+用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发">
+<meta property="og:updated_time" content="2018-04-22T09:59:49.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux学习要点">
-<meta name="twitter:description" content="一、学习Linux的基本要求1． 掌握至少50个以上的常用命令。2． 熟悉Gnome/KDE等X-windows桌面环境操作 。">
+<meta name="twitter:title" content="NodeJS跨域问题解决">
+<meta name="twitter:description" content="前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：
+
+后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；
+CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；
+用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发">
   
     <link rel="alternative" href="/atom.xml" title="Transform&#39;s Blog" type="application/atom+xml">
   
@@ -204,11 +216,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Linux学习要点" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-NodeJS跨域问题解决" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/15/Linux学习要点/" class="article-date">
-      <time datetime="2016-09-15T12:39:54.000Z" itemprop="datePublished">2016-09-15</time>
+      <a href="/2018/03/12/NodeJS跨域问题解决/" class="article-date">
+      <time datetime="2018-03-12T03:20:39.000Z" itemprop="datePublished">2018-03-12</time>
 </a>
     </div>
   
@@ -221,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux学习要点
+      NodeJS跨域问题解决
     </h1>
   
 
@@ -230,13 +242,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/NodeJS/">NodeJS</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -246,9 +258,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="一、学习Linux的基本要求"><a href="#一、学习Linux的基本要求" class="headerlink" title="一、学习Linux的基本要求"></a>一、学习Linux的基本要求</h1><p>1． 掌握至少50个以上的常用命令。<br>2． 熟悉Gnome/KDE等X-windows桌面环境操作 。<br><a id="more"></a><br>3． 掌握.tgz、.rpm等软件包的常用安装方法<br>4． 学习添加外设，安装设备驱动程序（比如网卡）<br>5． 熟悉Grub/Lilo引导器及简单的修复操作 。<br>6． 熟悉Linux文件系统 和目录结构。<br>7． 掌握vi,gcc,gdb等常用编辑器，编译器，调试器 。<br>8． 理解shell别名、管道、I/O重定向、输入和输出以及shell脚本编程。<br>9． 学习Linux环境下的组网。</p>
-<h1 id="二、Linux常用命令"><a href="#二、Linux常用命令" class="headerlink" title="二、Linux常用命令"></a>二、Linux常用命令</h1><p>安装和登录命令：login、 shutdown、 halt、 reboot 、mount、umount 、chsh<br>文件处理命令：file、 mkdir、 grep、dd、 find、 mv 、ls 、diff、 cat、 ln<br>系统管理相关命令： df、 top、 free、 quota 、at、 lp、 adduser、 groupadd kill、 crontab、 tar、 unzip、 gunzip 、last<br>网络操作命令：ifconfig、 ip 、ping 、 netstat 、telnet、 ftp、 route、 rlogin rcp 、finger 、mail 、nslookup<br>系统安全相关命令： passwd 、su、 umask 、chgrp、 chmod、chown、chattr、sudo、 pswho </p>
-<h1 id="三、Linux下常用软件"><a href="#三、Linux下常用软件" class="headerlink" title="三、Linux下常用软件"></a>三、Linux下常用软件</h1><p>[媒体播放]<br>1)divx影片：mplayer<br>2)rm影片：realplayer10 for linux, mplayer<br>3)mp3: xmms,beep media player, mplayer<br>4)ape: xmms+monkey’s audio plugin(<a href="http://supermmx.org/linux/mac/" target="_blank" rel="external">http://supermmx.org/linux/mac/</a>)<br>5)其他格式(wma, wmv, mkv, quicktime): mplayer 各种格式的文档和文件<br>[文件浏览]<br>1)打开微软的office文档: openoffice, starsuite<br>2)查看pdf文件：acroread for linux, kpdf, xpdf, ggv<br>3)查看ps文件： gsview, ggv, kghostview<br>4)chm文件： archmage，chmsee, Xchm，chmviewer<br>5)mht文件： ripmime，firefox+MAF插件<br>6)图表绘制： dia (等同于visio)<br>7).bin虚拟光盘： 用bin2iso或bchunk转成iso后mount<br>8)压缩文件<br>.rar： rar for linux或unrar<br>.zip： unzip<br>.bz2： bunzip2<br>.tar/.tgz： tar<br>[中文输入法]<br>1)scim<br>2)fcitx<br>[网络软件]<br>1) QQ: lumaqq, Gaim+openq plugin<br>2) MSN,icq,yahoo: Gaim<br>3) web浏览器：mozilla-firefox, mozilla, opera<br>4) ftp客户端(图形界面) ：gftp, Iglooftp<br>5) ftp客户端(终端) ： lftp, ncftp<br>6) ftp服务器： pureftpd, proftpd, vsftpd<br>7) http下载(终端)： wget, curl, prozilla<br>8) bt下载： bittorrent(终端)， azureus(图形界面)<br>9) email软件(图形界面）：KMail, thunderbird, sylpheed, evolution, opera M2<br>10) email终端： mutt, pine, gnus<br>11) RSS：liferea, aKregator<br>12) BBS：qterm, {rxvt,xterm,gnome-terminal,…}+BBSbot<br>[编辑器]<br>1) 文本： vim, emacs, jedit<br>2) 16进制： hexedit, ghex, mc<br>3) 图片浏览： gImageView, gqview<br>4) 图片处理： gimp, ImageMagick<br>5) 音频处理： audacity<br>[常用工具]<br>1)英汉字典: stardict(屏幕取词,词库大，英汉，汉英， 英英)<br>ibmdict(包含科技词典，词库大，英汉，汉英)<br>dictd:英汉 汉英 可以使用stardict的全部词库<br>cdict:英汉 汉英 使用安装方便,彩色显示.<br>2)科学计算：matlab, octave<br>3)科学作图：gnuplot, metapost<br>[虚拟机]<br>1) win下虚拟linux: cygwin, virtual-pc, colinux<br>2) linux下虚拟win: win4lin<br>3) 跨平台： vmware, bochs<br>4) linux下运行windows程序: wine, winex, crossover office<br>5) console下的中文环境: zhcon, cce</p>
+        <p>前后端分离，本地前端开发调用接口会有跨域问题，一般有以下3种解决方法：</p>
+<ol>
+<li>后端接口打包到本地运行（缺点：每次后端更新都要去服务器下一个更新包，还要在本地搭建java运行环境，麻烦）；</li>
+<li>CORS跨域：后端接口在返回的时候，在header中加入’Access-Control-Allow-origin’:* 之类；</li>
+<li>用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，完美解决本地开发时候的跨域问题。<a id="more"></a>
+<h1 id="用到的技术："><a href="#用到的技术：" class="headerlink" title="用到的技术："></a>用到的技术：</h1></li>
+<li>nodejs搭建本地http服务器</li>
+<li>应用node-http-proxy，做接口url的转发<h1 id="具体方法："><a href="#具体方法：" class="headerlink" title="具体方法："></a>具体方法：</h1></li>
+<li>node.js搭建本地http服务器</li>
+<li>node.js做转发使用node-http-proxy实现，官方文档：<a href="https://github.com/nodejitsu/node-http-proxy#using-https" target="_blank" rel="external">https://github.com/nodejitsu/node-http-proxy#using-https</a></li>
+</ol>
+<h1 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h1><ol>
+<li><p>npm初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装node-http-proxy模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install http-proxy --save-dev</div></pre></td></tr></table></figure>
+</li>
+<li><p>项目结构</p>
+</li>
+</ol>
+<p>下面的例子中，我们把html文件直接放在根目录’./‘，也可以指定一个网站目录，在proxy.js中可以自定义<br>配置HTTP服务器和PROXY转发<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">var PORT = 3000;</div><div class="line">var http = require(&apos;http&apos;);</div><div class="line">var url=require(&apos;url&apos;);</div><div class="line">var fs=require(&apos;fs&apos;);</div><div class="line">var mine=require(&apos;./mine&apos;).types;</div><div class="line">var path=require(&apos;path&apos;);</div><div class="line">var httpProxy = require(&apos;http-proxy&apos;);</div><div class="line">var proxy = httpProxy.createProxyServer(&#123;</div><div class="line">target: &apos;http://192.168.10.38:8180/&apos;, //接口地址</div><div class="line">// 下面的设置用于https</div><div class="line">// ssl: &#123;</div><div class="line">// key: fs.readFileSync(&apos;server_decrypt.key&apos;, &apos;utf8&apos;),</div><div class="line">// cert: fs.readFileSync(&apos;server.crt&apos;, &apos;utf8&apos;)</div><div class="line">// &#125;,</div><div class="line">// secure: false</div><div class="line">&#125;);</div><div class="line">proxy.on(&apos;error&apos;, function(err, req, res)&#123;</div><div class="line">res.writeHead(500, &#123;</div><div class="line">&apos;content-type&apos;: &apos;text/plain&apos;</div><div class="line">&#125;);</div><div class="line">console.log(err);</div><div class="line">res.end(&apos;Something went wrong. And we are reporting a custom error message.&apos;);</div><div class="line">&#125;);</div><div class="line">var server = http.createServer(function (request, response) &#123;</div><div class="line">var pathname = url.parse(request.url).pathname;</div><div class="line">//var realPath = path.join(&quot;main-pages&quot;, pathname); // 指定根目录</div><div class="line">var realPath = path.join(&quot;./&quot;, pathname);</div><div class="line">console.log(pathname);</div><div class="line">console.log(realPath);</div><div class="line">var ext = path.extname(realPath);</div><div class="line">ext = ext ? ext.slice(1) : &apos;unknown&apos;;</div><div class="line">//判断如果是接口访问，则通过proxy转发</div><div class="line">if(pathname.indexOf(&quot;mspj-mall-admin&quot;) &gt; 0)&#123;</div><div class="line">proxy.web(request, response);</div><div class="line">return;</div><div class="line">&#125;</div><div class="line">fs.exists(realPath, function (exists) &#123;</div><div class="line">if (!exists) &#123;</div><div class="line">response.writeHead(404, &#123;</div><div class="line">&apos;Content-Type&apos;: &apos;text/plain&apos;</div><div class="line">&#125;);</div><div class="line">response.write(&quot;This request URL &quot; + pathname + &quot; was not found on this server.&quot;);</div><div class="line">response.end();</div><div class="line">&#125; else &#123;</div><div class="line">fs.readFile(realPath, &quot;binary&quot;, function (err, file) &#123;</div><div class="line">if (err) &#123;</div><div class="line">response.writeHead(500, &#123;</div><div class="line">&apos;Content-Type&apos;: &apos;text/plain&apos;</div><div class="line">&#125;);</div><div class="line">response.end(err);</div><div class="line">&#125; else &#123;</div><div class="line">var contentType = mine[ext] || &quot;text/plain&quot;;</div><div class="line">response.writeHead(200, &#123;</div><div class="line">&apos;Content-Type&apos;: contentType</div><div class="line">&#125;);</div><div class="line">response.write(file, &quot;binary&quot;);</div><div class="line">response.end();</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">&#125;</div><div class="line">&#125;);</div><div class="line">&#125;);</div><div class="line">server.listen(PORT);</div><div class="line">console.log(&quot;Server runing at port: &quot; + PORT + &quot;.&quot;);</div></pre></td></tr></table></figure></p>
+<p>MINE.JS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">exports.types = &#123;</div><div class="line">&quot;css&quot;: &quot;text/css&quot;,</div><div class="line">&quot;gif&quot;: &quot;image/gif&quot;,</div><div class="line">&quot;html&quot;: &quot;text/html&quot;,</div><div class="line">&quot;ico&quot;: &quot;image/x-icon&quot;,</div><div class="line">&quot;jpeg&quot;: &quot;image/jpeg&quot;,</div><div class="line">&quot;jpg&quot;: &quot;image/jpeg&quot;,</div><div class="line">&quot;js&quot;: &quot;text/javascript&quot;,</div><div class="line">&quot;json&quot;: &quot;application/json&quot;,</div><div class="line">&quot;pdf&quot;: &quot;application/pdf&quot;,</div><div class="line">&quot;png&quot;: &quot;image/png&quot;,</div><div class="line">&quot;svg&quot;: &quot;image/svg+xml&quot;,</div><div class="line">&quot;swf&quot;: &quot;application/x-shockwave-flash&quot;,</div><div class="line">&quot;tiff&quot;: &quot;image/tiff&quot;,</div><div class="line">&quot;txt&quot;: &quot;text/plain&quot;,</div><div class="line">&quot;wav&quot;: &quot;audio/x-wav&quot;,</div><div class="line">&quot;wma&quot;: &quot;audio/x-ms-wma&quot;,</div><div class="line">&quot;wmv&quot;: &quot;video/x-ms-wmv&quot;,</div><div class="line">&quot;xml&quot;: &quot;text/xml&quot;,</div><div class="line">&quot;woff&quot;: &quot;application/x-woff&quot;,</div><div class="line">&quot;woff2&quot;: &quot;application/x-woff2&quot;,</div><div class="line">&quot;tff&quot;: &quot;application/x-font-truetype&quot;,</div><div class="line">&quot;otf&quot;: &quot;application/x-font-opentype&quot;,</div><div class="line">&quot;eot&quot;: &quot;application/vnd.ms-fontobject&quot;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>然后把项目中的接口地址改成<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a>……<br>启动nodejs服务<br>启动cmd，定位到项目目录，运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node proxy.js</div></pre></td></tr></table></figure></p>
+<p>访问：<br><a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a><br>可以看到项目中调用的<a href="http://localhost:3000/" target="_blank" rel="external">http://localhost:3000/</a>….. 都会从<a href="http://192.168.10.38:8180/" target="_blank" rel="external">http://192.168.10.38:8180/</a>…… 获取数据，然后转发到本地。<br>这样就不存在跨域了。</p>
 
       
     </div>
@@ -257,13 +291,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/09/15/Linux学习要点/">Linux学习要点</a></p>
+        <p><span>本文标题:</span><a href="/2018/03/12/NodeJS跨域问题解决/">NodeJS跨域问题解决</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Transform 的个人博客">Transform</a></p>
-        <p><span>发布时间:</span>2016年09月15日 - 20时39分</p>
-        <p><span>最后更新:</span>2016年11月13日 - 20时44分</p>
+        <p><span>发布时间:</span>2018年03月12日 - 11时20分</p>
+        <p><span>最后更新:</span>2018年04月22日 - 17时59分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/09/15/Linux学习要点/" title="Linux学习要点">http://transform.com/2016/09/15/Linux学习要点/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2016/09/15/Linux学习要点/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/12/NodeJS跨域问题解决/" title="NodeJS跨域问题解决">http://transform.com/2018/03/12/NodeJS跨域问题解决/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://transform.com/2018/03/12/NodeJS跨域问题解决/　　作者: Transform" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -276,18 +310,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/09/21/理解JavaScript的原型属性/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          理解JavaScript的原型属性
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/09/11/Linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux常用命令</div>
+    <a href="/2017/09/18/理解JS中的this指向/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">理解JS中的this指向</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -298,7 +323,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、学习Linux的基本要求"><span class="toc-number">1.</span> <span class="toc-text">一、学习Linux的基本要求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、Linux常用命令"><span class="toc-number">2.</span> <span class="toc-text">二、Linux常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Linux下常用软件"><span class="toc-number">3.</span> <span class="toc-text">三、Linux下常用软件</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用到的技术："><span class="toc-number">1.</span> <span class="toc-text">用到的技术：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体方法："><span class="toc-number">2.</span> <span class="toc-text">具体方法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目准备"><span class="toc-number">3.</span> <span class="toc-text">项目准备</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -346,7 +371,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/09/15/Linux学习要点/" data-title="Linux学习要点" data-url="http://transform.com/2016/09/15/Linux学习要点/"></div>
+    <div class="ds-thread" data-thread-key="2018/03/12/NodeJS跨域问题解决/" data-title="NodeJS跨域问题解决" data-url="http://transform.com/2018/03/12/NodeJS跨域问题解决/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -369,13 +394,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/21/理解JavaScript的原型属性/" title="上一篇: 理解JavaScript的原型属性">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/09/11/Linux常用命令/" title="下一篇: Linux常用命令">
+            <a href="/2017/09/18/理解JS中的this指向/" title="下一篇: 理解JS中的this指向">
                 <i class="fa fa-angle-right"></i>
             </a>
         
